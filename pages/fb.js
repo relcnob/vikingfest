@@ -1,8 +1,6 @@
 import React from "react";
 import NavBar from "../components/navbar/NavBar";
 
-function testpage() {
-  return <NavBar />;
-}
+function testpage() {}
 
 export default testpage;

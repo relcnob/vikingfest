@@ -1,8 +1,13 @@
 import "../styles/globals.css";
 import Head from "next/head";
-
+import NavBar from "../components/Navbar/Navbar";
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <NavBar></NavBar>
+      <Component {...pageProps} />
+    </>
+  );
 }
 
 export default MyApp;
