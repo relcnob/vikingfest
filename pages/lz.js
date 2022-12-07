@@ -1,8 +1,12 @@
 import React from "react";
-import ArtistsOverview from "../components/artists-overview/ArtistsOverview";
+import PurchaseFlow from "../components/purchase-flow/PurchaseFlow";
 
 function testpage() {
-  return <>Hello</>;
+  return (
+    <>
+      <PurchaseFlow />
+    </>
+  );
 }
 
 export default testpage;

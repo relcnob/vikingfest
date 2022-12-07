@@ -1,0 +1,24 @@
+.purchase_flow {
+  background-color: var(--primary-100);
+  padding-block: var(--spacing-s);
+}
+.form {
+  background-color: var(--primary-300);
+  border-radius: 1rem;
+  border: 1px solid var(--secondary-300);
+}
+
+@media only screen and (min-width: 400px) {
+}
+@media only screen and (min-width: 768px) {
+  .purchase_flow {
+    padding-block: var(--spacing-m);
+  }
+}
+@media only screen and (min-width: 1200px) {
+}
+@media only screen and (min-width: 1440px) {
+  .purchase_flow {
+    padding-block: var(--spacing-l);
+  }
+}
