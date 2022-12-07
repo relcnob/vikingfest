@@ -20,7 +20,7 @@ function NavBar() {
   return (
     <header className={ToggleMenu}>
       <nav className={styles.nav}>
-        <Anchor href="/">
+        <Anchor href="/" className={styles.logo}>
           <Image alt="logotype" src=""></Image>
         </Anchor>
         <div className={styles.mobileNav}>
