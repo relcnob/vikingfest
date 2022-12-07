@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# whilst developing
+components/footer/footerobile.png
+components/footer/facebook.svg
