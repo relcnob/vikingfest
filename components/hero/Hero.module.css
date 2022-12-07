@@ -1,0 +1,136 @@
+.background {
+  object-fit: contain;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+  margin-top: 0%;
+}
+.middleground {
+  object-fit: contain;
+  width: 100%;
+  display: block;
+  pointer-events: none;
+  margin-bottom: 10%;
+}
+.foreground {
+  width: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  bottom: 0;
+  object-position: bottom;
+}
+
+.headline {
+  color: var(--secondary-300);
+  font-family: var(--ff-display);
+  font-size: var(--type-h3);
+  margin-bottom: 0;
+}
+.heroWrapper {
+  margin-top: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.heroWrapper em {
+  font-style: normal;
+}
+
+.heroWrapper p {
+  margin-top: -0.25rem;
+  font-size: var(--type-big-body);
+  color: var(--secondary-300);
+  font-weight: 700;
+}
+
+.parallaxWrapper {
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: var(--accent-orange);
+  position: relative;
+}
+
+.middlegroundWrapper,
+.foregroundWrapper,
+.backgroundWrapper {
+  display: flex;
+}
+
+.foregroundWrapper,
+.middlegroundWrapper {
+  align-items: flex-end;
+}
+
+@media screen and (min-width: 400px) {
+  .headline {
+    font-size: var(--type-h2);
+  }
+  .heroWrapper p {
+    margin-top: 0rem;
+    margin-left: 2px;
+    font-size: var(--type-big-body);
+    color: var(--secondary-300);
+    font-weight: 700;
+  }
+  .background {
+    margin-top: 18%;
+  }
+}
+@media screen and (min-width: 768px) {
+  .headline {
+    font-size: var(--type-h1);
+  }
+  .heroWrapper p {
+    margin-top: -1rem;
+    margin-left: 6px;
+    font-size: var(--type-big-body);
+    color: var(--secondary-300);
+    font-weight: 700;
+  }
+  .background {
+    margin-top: 28%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .background {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    margin-bottom: 30%;
+  }
+  .middleground {
+    object-fit: cover;
+    width: 100%;
+    display: block;
+    pointer-events: none;
+    margin-bottom: 10%;
+  }
+  .foreground {
+    width: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    bottom: 0;
+    object-position: bottom;
+  }
+
+  .parallaxWrapper {
+    height: 85vh;
+    background: var(--accent-orange);
+    position: relative;
+  }
+  .heroWrapper {
+    margin-top: 400px;
+    max-width: 1440px;
+  }
+  .heroWrapper {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+}
