@@ -1,0 +1,103 @@
+.artist_list {
+  background-color: var(--primary-100);
+  color: var(--secondary-300);
+  padding-top: var(--spacing-m);
+}
+.heading {
+  font-size: var(--type-h2);
+  font-family: var(--ff-display);
+  padding-bottom: var(--spacing-s);
+}
+.list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  column-gap: var(--spacing-l);
+  font-size: var(--type-h5);
+  font-family: var(--ff-display);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  line-height: 1.2;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+  padding-bottom: var(--spacing-xs);
+}
+.list li {
+  position: relative;
+}
+.list li::after {
+  content: "|";
+  position: absolute;
+  right: calc((var(--spacing-l) / 2) * -1);
+  translate: 50%;
+}
+.list li:last-child::after {
+  content: "";
+  display: none;
+}
+.small_list li:last-child::after {
+  content: "";
+  display: none;
+}
+.small_list {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  column-gap: var(--spacing-m);
+  font-size: var(--type-label);
+  text-transform: uppercase;
+  flex-wrap: wrap;
+  line-height: 1.3;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 0px;
+}
+.small_list li {
+  position: relative;
+}
+.small_list li::after {
+  content: "|";
+  position: absolute;
+  right: calc((var(--spacing-m) / 2) * -1);
+  translate: 50%;
+}
+
+@media only screen and (min-width: 768px) {
+  .artist_list {
+    padding-top: var(--spacing-l);
+  }
+  .heading {
+    padding-bottom: var(--spacing-m);
+  }
+  .list {
+    font-size: var(--type-h4);
+    padding-bottom: var(--spacing-s);
+  }
+  .small_list {
+    font-size: var(--type-big-body);
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .artist_list {
+    padding-top: var(--spacing-xl);
+  }
+  .heading {
+    padding-bottom: var(--spacing-l);
+  }
+  .list {
+    font-size: var(--type-h3);
+  }
+  .small_list {
+    font-size: var(--type-h5);
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .artist_list {
+    padding-top: var(--spacing-2xl);
+  }
+}
