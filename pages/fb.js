@@ -1,9 +1,9 @@
 import React from "react";
-import Hero from "../components/hero/Hero";
+import UpcomingEvents from "../components/upcoming-events/UpcomingEvents";
 function testpage() {
   return (
     <>
-      <Hero />
+      <UpcomingEvents />
       <div></div>
       <br></br>
       <br></br>
