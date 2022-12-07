@@ -4,7 +4,7 @@
   color: var(--secondary-300);
   display: flex;
   flex-direction: column;
-  background-color: var(--primary-300);
+  background-color: var(--primary-200);
   margin: 0 var(--spacing-xs);
   border-radius: var(--spacing-xs);
   overflow: hidden;
@@ -28,6 +28,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--spacing-2xs);
+  margin-bottom: var(--spacing-2xs);
 }
 
 .eventDetails {
@@ -51,6 +52,7 @@
   margin-top: 0.15rem;
   transform: scaleY(0.9);
   transform-origin: top;
+  margin-top: -0px;
 }
 
 .eventDetails p:last-of-type:after {
@@ -66,6 +68,7 @@
   font-size: var(--type-small);
   line-height: 1.55;
   margin-top: var(--spacing-2xs);
+  color: var(--secondary-100);
 }
 
 .svartheim {
@@ -102,5 +105,17 @@
 @media screen and (min-width: 1200px) {
   .contentWrapper {
     padding: var(--spacing-s);
+  }
+  .eventDetails p:after {
+    display: block;
+    content: "|";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -0.55rem;
+    font-size: var(--type-normal);
+    margin-top: 0.15rem;
+    transform-origin: top;
+    margin-top: -0px;
   }
 }
