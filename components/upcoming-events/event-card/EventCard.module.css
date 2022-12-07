@@ -1,0 +1,121 @@
+.cardWrapper {
+  width: 310px;
+  min-width: 250px;
+  color: var(--secondary-300);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary-200);
+  margin: 0 var(--spacing-xs);
+  border-radius: var(--spacing-xs);
+  overflow: hidden;
+}
+.cardWrapper:first-of-type {
+  margin-left: 0;
+}
+.cardWrapper:last-of-type {
+  margin-right: 0;
+}
+
+.img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16/9;
+}
+.contentWrapper {
+  padding: var(--spacing-xs);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  margin-bottom: var(--spacing-2xs);
+}
+
+.eventDetails {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xs);
+}
+
+.eventDetails p {
+  position: relative;
+}
+
+.eventDetails p:after {
+  display: block;
+  content: "|";
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: -0.55rem;
+  font-size: var(--type-small);
+  margin-top: 0.15rem;
+  transform: scaleY(0.9);
+  transform-origin: top;
+  margin-top: -0px;
+}
+
+.eventDetails p:last-of-type:after {
+  display: none;
+}
+.cardHeadline {
+  font-size: var(--type-h5);
+  font-family: var(--ff-display);
+  flex-grow: 2;
+  text-transform: uppercase;
+}
+.cardText {
+  font-size: var(--type-small);
+  line-height: 1.55;
+  margin-top: var(--spacing-2xs);
+  color: var(--secondary-100);
+}
+
+.svartheim {
+  color: var(--accent-purple);
+}
+.alfheim {
+  color: var(--accent-yellow);
+}
+.helheim {
+  color: var(--accent-red);
+}
+.niflheim {
+  color: var(--accent-green);
+}
+.muspelheim {
+  color: var(--accent-blue);
+}
+@media screen and (min-width: 768px) {
+  .cardWrapper {
+    width: auto;
+    min-width: 210px;
+    color: var(--secondary-300);
+    display: flex;
+    flex-direction: column;
+  }
+  .contentWrapper {
+    padding: var(--spacing-s);
+  }
+  .cardText {
+    font-size: var(--type-normal);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .contentWrapper {
+    padding: var(--spacing-s);
+  }
+  .eventDetails p:after {
+    display: block;
+    content: "|";
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -0.55rem;
+    font-size: var(--type-normal);
+    margin-top: 0.15rem;
+    transform-origin: top;
+    margin-top: -0px;
+  }
+}
