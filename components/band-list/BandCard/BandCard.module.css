@@ -6,13 +6,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: var(--spacing-2xs);
 }
-
-.svgClippingPath {
-  width: 0;
-  height: 0;
-}
-
 .bandImage {
   width: 100%;
   height: auto;
@@ -28,6 +23,7 @@
   width: 83%;
   aspect-ratio: 1/1;
   display: flex;
+  pointer-events: none;
 }
 
 .bandDetails {
@@ -50,6 +46,7 @@
   font-family: var(--ff-display);
   font-size: var(--type-h5);
   text-transform: capitalize;
+  text-align: center;
 }
 
 .bandDetails p {
@@ -63,7 +60,14 @@
   color: var(--primary-100);
   margin-top: var(--spacing-2xs);
   font-weight: 700;
+  text-align: center;
+  cursor: pointer;
 }
+
+.bandDetails a:hover {
+  filter: brightness(1.3);
+}
+
 .ornaments {
   position: absolute;
   width: 100%;
@@ -107,4 +111,26 @@
   bottom: var(--spacing-xs);
   left: var(--spacing-xs);
   transform: rotate(270deg);
+}
+@media screen and (min-width: 400px) {
+  .bandDetails h2 {
+    font-size: var(--type-h4);
+  }
+  .bandDetails p {
+    font-size: var(--type-body);
+  }
+  .bandDetails a {
+    font-size: var(--type-body);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .bandDetails h2 {
+    font-size: var(--type-big-body);
+  }
+  .bandDetails p {
+    font-size: var(--type-small);
+  }
+  .bandDetails a {
+    font-size: var(--type-small);
+  }
 }
