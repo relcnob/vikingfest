@@ -1,24 +1,41 @@
 .footer {
   background-color: var(--primary-100);
   color: var(--secondary-300);
-  padding: 32px 16px;
+  padding: var(--spacing-m) 16px;
   font-family: var(--ff-main);
 }
 .link {
   color: var(--accent-orange);
   font-size: var(--type-body);
 }
+
+.emailLink {
+  color: var(--accent-orange);
+  font-size: var(--type-body);
+  text-decoration: underline;
+}
+
 .logo {
   color: var(--accent-orange);
-  font-size: 4rem;
-  margin-bottom: 52px;
-  line-height: 4rem;
+  font-size: var(--type-h1);
+  margin-bottom: var(--spacing-l);
+  line-height: var(--type-h1);
+}
+
+.h2 {
+  font-size: var(--type-h5);
+  color: var(--secondary-300);
 }
 
 .top {
   display: flex;
   flex-flow: column nowrap;
-  margin-bottom: 52px;
+  margin-bottom: var(--spacing-l);
+}
+
+.column1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
 .column2 {
@@ -31,11 +48,11 @@
 .address {
   display: flex;
   flex-flow: column nowrap;
-  gap: 12px;
+  gap: var(--spacing-xs);
 }
 
 .info {
-  margin-bottom: 20px;
+  margin-bottom: var(--spacing-s);
 }
 
 .address p,
@@ -43,12 +60,46 @@
   color: var(--secondary-100);
 }
 
+.contact {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-xs);
+}
+
+.contact > div {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-2xs);
+}
+
 .column2 > section > ul {
   display: flex;
   flex-flow: column nowrap;
-  gap: 7px;
+  gap: var(--spacing-2xs);
+  color: var(--secondary-100);
 }
 
+.someList {
+  display: flex;
+  flex-flow: row nowrap;
+  color: var(--accent-orange);
+}
+.bottom {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: var(--spacing-xs);
+  padding-top: var(--spacing-s);
+  border-top: 1px var(--secondary-100) solid;
+}
+
+.privacyTerms {
+  text-decoration: underline;
+  color: var(--accent-orange);
+  display: flex;
+  flex-flow: row nowrap;
+  gap: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+}
 /* Media Queries */
 
 @media screen and (min-width: 400px) {

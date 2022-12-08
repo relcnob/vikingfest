@@ -6,9 +6,9 @@ function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.logo}>VIKINGfest</div>
-        <div className={styles.column2}>
+        <div className={styles.column1}>
           <section className={styles.about}>
-            <h2>About</h2>
+            <h2 className={styles.h2}>About</h2>
             <ul>
               <li>
                 <Anchor href="/About" className={styles.link}>
@@ -30,7 +30,7 @@ function Footer() {
             </ul>
           </section>
           <section className={styles.info}>
-            <h2>Info</h2>
+            <h2 className={styles.h2}>Info</h2>
             <ul>
               <li>
                 <Anchor href="/About" className={styles.link}>
@@ -60,36 +60,36 @@ function Footer() {
         </div>
         <div className={styles.column2}>
           <section className={styles.address}>
-            <h2>Address</h2>
+            <h2 className={styles.h2}>Address</h2>
             <ul className={styles.ul}>
               <li>Valhalla</li>
               <li>Asgard 3TV</li>
             </ul>
           </section>
           <section className={styles.contact}>
-            <h2>Contact</h2>
-            <p>+45 30 18 18</p>
-            <Anchor href="info@vikingfest.io" className={styles.link}>
-              info@vikingfest.io
-            </Anchor>
-            <ul className={styles.someList}>
-              <li>
-                <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
-              </li>
-
-              <li>
-                <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
-              </li>
-
-              <li>
-                <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
-              </li>
-            </ul>
+            <h2 className={styles.h2}>Contact</h2>
+            <div>
+              <p>+45 30 18 18</p>
+              <Anchor href="info@vikingfest.io" className={styles.emailLink}>
+                info@vikingfest.io
+              </Anchor>
+              <ul className={styles.someList}>
+                <li>
+                  <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
+                </li>
+                <li>
+                  <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
+                </li>
+                <li>
+                  <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
+                </li>
+              </ul>
+            </div>
           </section>
         </div>
       </div>
       <div className={styles.bottom}>
-        <div>
+        <div className={styles.privacyTerms}>
           <Anchor href="/about#privacy" className={styles.link}>
             Privacy Policy
           </Anchor>
@@ -97,8 +97,8 @@ function Footer() {
           <Anchor href="/about#terms" className={styles.link}>
             Terms & Conditions{" "}
           </Anchor>
-          <p>2022 TechnoToots. All Rights Reserved</p>
         </div>
+        <p>2022 TechnoToots. All Rights Reserved</p>
       </div>
     </footer>
   );
