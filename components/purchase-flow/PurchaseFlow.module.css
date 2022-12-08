@@ -13,10 +13,23 @@
   padding-bottom: var(--spacing-xs);
   font-weight: 700;
 }
-.fieldset {
+.form article {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-xs);
+}
+.form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+}
+.form fieldset::after {
+  content: "";
+  display: block;
+  background-color: var(--secondary-300);
+  height: 1px;
+  width: 100%;
 }
 
 .h1 {
@@ -25,26 +38,46 @@
   padding-bottom: var(--spacing-2xs);
   font-weight: 700;
 }
-.h3 {
+.form h3 {
   font-size: var(--type-body);
   font-weight: 700;
   padding-bottom: var(--spacing-2xs);
 }
-
-@media only screen and (min-width: 400px) {
+.form p {
+  font-size: var(--type-label);
+  color: var(--secondary-200);
+  max-width: 55ch;
 }
+.inner {
+  padding-bottom: var(--spacing-xs);
+  display: flex;
+  gap: 1rem;
+}
+.thumbnail {
+  border: 2px solid var(--secondary-100);
+  border-radius: 4px;
+}
+.align_end {
+  align-self: flex-end;
+}
+
 @media only screen and (min-width: 768px) {
   .purchase_flow {
     padding-block: var(--spacing-m);
   }
-}
-@media only screen and (min-width: 1200px) {
   .form {
-    background-color: var(--primary-300);
+    max-width: 800px;
+    margin-inline: auto;
     border-radius: 1rem;
     border: 1px solid var(--secondary-300);
     padding: 1rem;
   }
+  .form article {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+@media only screen and (min-width: 1200px) {
 }
 @media only screen and (min-width: 1440px) {
   .purchase_flow {
