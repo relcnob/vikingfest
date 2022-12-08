@@ -109,6 +109,46 @@
 }
 
 @media screen and (min-width: 1200px) {
+  .footer {
+    padding: var(--spacing-xl) 16px;
+  }
+
+  .top {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  .info {
+    margin-bottom: 0;
+  }
+
+  .column2 {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 24px;
+  }
+
+  .contact > div {
+    gap: var(--spacing-xs);
+  }
+
+  .column2 > section > ul {
+    gap: var(--spacing-xs);
+  }
+
+  .someList {
+    gap: var(--spacing-xs);
+  }
+  .bottom {
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding-top: var(--spacing-m);
+  }
+
+  .privacyTerms {
+    order: 2;
+    margin-bottom: 0;
+  }
 }
 
 @media screen and (min-width: 1440px) {
