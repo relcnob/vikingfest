@@ -1,3 +1,5 @@
+@import url("./reset.css");
+
 :root {
   /* Icons and illustrations colours */
 
@@ -8,7 +10,7 @@
   --accent-yellow: #e89821;
 
   /* Main colours */
-  --accent-orange: #d16500;
+  --accent-orange: #ff9c41;
   --primary-300: #2e2e3d;
   --primary-200: #1a1a24;
   --primary-100: #111117;
@@ -65,15 +67,14 @@ a {
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
-ul,
-ol,
-li {
-  list-style: none;
+.container {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
+
 @media only screen and (min-width: 1200px) {
   :root {
     /* Typography */

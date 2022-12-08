@@ -1,0 +1,149 @@
+.nav {
+  width: 100%;
+  background-color: var(--primary-300);
+  color: var(--secondary-300);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative;
+  height: 50px;
+}
+
+.link,
+.button {
+  color: var(--secondary-300);
+  transition: 0.5s ease-in-out;
+}
+
+.link:hover,
+.button:hover {
+  color: var(--accent-orange);
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  height: 100vh;
+  padding: 8rem 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translateX(120%);
+  transition: transform 0.5s ease-in-out;
+  background-color: var(--primary-100);
+  z-index: 10;
+  font-size: var(--type-big-body);
+}
+
+.show .nav .mobileNav {
+  transform: translateX(0%);
+}
+
+.navWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+/* burger icon */
+.burger,
+.cross {
+  position: absolute;
+  right: 0rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  transition: all 0.3s ease-in-out;
+  z-index: 15;
+}
+
+.logo {
+  z-index: 15;
+}
+
+.burger span,
+.cross span {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 30%;
+  width: 40%;
+  border-bottom: 2px solid var(--secondary-300);
+  transition: transform 0.5s ease-in-out;
+}
+.burger span:nth-of-type(2),
+.cross span:nth-of-type(2) {
+  transform: translateY(8px);
+}
+.burger span:nth-of-type(3),
+.cross span:nth-of-type(3) {
+  transform: translateY(-9px);
+}
+
+.cross span:nth-of-type(2) {
+  transform: rotate(45deg);
+}
+
+.cross span:nth-of-type(3) {
+  transform: rotate(-45deg);
+}
+
+.cross span:nth-of-type(1) {
+  transform: scaleX(0);
+}
+
+@media screen and (min-width: 400px) {
+}
+
+@media screen and (min-width: 768px) {
+  .nav {
+    padding: 0 3rem;
+    height: 60px;
+  }
+  .mobileNav {
+    flex-direction: row;
+    position: initial;
+    gap: 1rem;
+    height: auto;
+    padding: 0;
+    transform: translateX(0%);
+    margin-left: 2rem;
+    justify-content: space-between;
+    z-index: initial;
+    background: none;
+    font-size: var(--type-body);
+  }
+  .navWrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  .cross,
+  .burger {
+    display: none;
+  }
+
+  .button {
+    color: var(--primary-100);
+    background-color: var(--accent-orange);
+    display: flex;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    font-weight: 700;
+  }
+  .button:hover {
+    filter: brightness(1.4);
+    color: var(--primary-100);
+  }
+}
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1440px) {
+}
