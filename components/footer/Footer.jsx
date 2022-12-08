@@ -1,37 +1,105 @@
 import React from "react";
 import Anchor from "../Anchor";
+import styles from "./Footer.module.css";
 function Footer() {
   return (
-    <footer>
-      <Anchor href="/">VIKINGfest</Anchor>
-      <section>
-        <h2>About</h2>
-        <Anchor href="/">Our Story</Anchor>
-        <Anchor href="/">Bands</Anchor>
-        <Anchor href="/">Vikingfest area</Anchor>
-      </section>
-      <section>
-        <h2>Info</h2>
-        <Anchor href="/">Order tickets</Anchor>
-        <Anchor href="/">Contact</Anchor>
-        <Anchor href="/">Schedule app</Anchor>
-        <Anchor href="/">FAQ</Anchor>
-      </section>
-      <section>
-        <h2>Info</h2>
-        <p>Valhalla</p>
-        <p>Asgard 21 3TV</p>
-      </section>
-      <section>
-        <h2>Contact</h2>
-        <p>+45 43 67 18 18</p>
-        <Anchor href="/">info@vikingfest.io</Anchor>
-        <div className="social-links">
-          <Anchor href="/">facebook</Anchor>
-          <Anchor href="/">instagram</Anchor>
-          <Anchor href="/">twitter</Anchor>
+    <footer className={styles.footer}>
+      <div className={styles.top}>
+        <div className={styles.logo}>VIKINGfest</div>
+        <div className={styles.column2}>
+          <section className={styles.about}>
+            <h2>About</h2>
+            <ul>
+              <li>
+                <Anchor href="/About" className={styles.link}>
+                  Our Story
+                </Anchor>
+              </li>
+
+              <li>
+                <Anchor href="/Bands" className={styles.link}>
+                  Bands
+                </Anchor>
+              </li>
+
+              <li>
+                <Anchor href="/About#Map" className={styles.link}>
+                  Vikingfest Area
+                </Anchor>
+              </li>
+            </ul>
+          </section>
+          <section className={styles.info}>
+            <h2>Info</h2>
+            <ul>
+              <li>
+                <Anchor href="/About" className={styles.link}>
+                  Order Ticket
+                </Anchor>
+              </li>
+
+              <li>
+                <Anchor href="/About#Contact" className={styles.link}>
+                  Contact
+                </Anchor>
+              </li>
+
+              <li>
+                <Anchor href="/ScheduleApp" className={styles.link}>
+                  Schedule App
+                </Anchor>
+              </li>
+
+              <li>
+                <Anchor href="/About#FAQ" className={styles.link}>
+                  FAQ
+                </Anchor>
+              </li>
+            </ul>
+          </section>
         </div>
-      </section>
+        <div className={styles.column2}>
+          <section className={styles.address}>
+            <h2>Address</h2>
+            <ul className={styles.ul}>
+              <li>Valhalla</li>
+              <li>Asgard 3TV</li>
+            </ul>
+          </section>
+          <section className={styles.contact}>
+            <h2>Contact</h2>
+            <p>+45 30 18 18</p>
+            <Anchor href="info@vikingfest.io" className={styles.link}>
+              info@vikingfest.io
+            </Anchor>
+            <ul className={styles.someList}>
+              <li>
+                <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
+              </li>
+
+              <li>
+                <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
+              </li>
+
+              <li>
+                <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
+              </li>
+            </ul>
+          </section>
+        </div>
+      </div>
+      <div className={styles.bottom}>
+        <div>
+          <Anchor href="/about#privacy" className={styles.link}>
+            Privacy Policy
+          </Anchor>
+
+          <Anchor href="/about#terms" className={styles.link}>
+            Terms & Conditions{" "}
+          </Anchor>
+          <p>2022 TechnoToots. All Rights Reserved</p>
+        </div>
+      </div>
     </footer>
   );
 }
