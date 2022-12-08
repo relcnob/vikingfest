@@ -1,0 +1,48 @@
+.title {
+  font-family: var(--ff-main);
+  font-weight: var(--fw-medium);
+}
+
+.title {
+  font-size: var(--type-small);
+  text-transform: uppercase;
+  color: var(--secondary-300);
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--spacing-2xs);
+}
+
+.artist {
+  font-family: var(--ff-display);
+  font-size: var(--type-h5);
+  text-transform: uppercase;
+  color: var(--secondary-300);
+  font-weight: var(--fw-medium);
+  margin-bottom: var(--spacing-s);
+}
+
+.svartheim,
+.alfheim,
+.helheim,
+.niflheim,
+.muspelheim {
+  font-family: var(--ff-main);
+  font-weight: var(--fw-medium);
+  font-size: var(--type-label);
+  text-transform: lowercase;
+}
+
+.svartheim {
+  color: var(--accent-purple);
+}
+.alfheim {
+  color: var(--accent-yellow);
+}
+.helheim {
+  color: var(--accent-red);
+}
+.niflheim {
+  color: var(--accent-green);
+}
+.muspelheim {
+  color: var(--accent-blue);
+}
