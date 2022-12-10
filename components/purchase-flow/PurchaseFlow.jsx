@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Cart from "./cart/Cart";
 import s from "./PurchaseFlow.module.css";
-import TicketForm from "./form-steps/TicketForm";
-import LocationForm from "./form-steps/LocationForm";
-import BillingForm from "./form-steps/BillingForm";
+import TicketForm from "./form-steps/ticket-form/TicketForm";
+import LocationForm from "./form-steps/location-form/LocationForm";
+import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 function PurchaseFlow() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(3);
   const nextStep = () => {
     // Change to next step
     if (currentStep < 3) {

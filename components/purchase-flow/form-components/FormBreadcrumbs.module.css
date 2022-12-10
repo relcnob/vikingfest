@@ -1,0 +1,29 @@
+.active {
+  font-weight: 700;
+}
+.divider {
+  display: flex;
+  flex-direction: column;
+  color: var(--secondary-300);
+  gap: var(--spacing-xs);
+}
+.indicator {
+  width: 70px;
+  height: 6px;
+  background-color: var(--secondary-100);
+}
+.active .indicator {
+  background-color: var(--accent-orange);
+}
+.wrapper {
+  display: flex;
+  gap: var(--spacing-xs);
+  font-weight: 400;
+  padding: var(--spacing-s) 0 var(--spacing-m);
+}
+
+@media only screen and (min-width: 768px) {
+  .indicator {
+    width: 100px;
+  }
+}

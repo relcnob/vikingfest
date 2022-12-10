@@ -7,33 +7,11 @@
   /* padding: 1rem; */
   color: var(--secondary-300);
 }
-.legend {
+.form legend {
   font-size: var(--type-big-body);
   display: inline-block;
   padding-bottom: var(--spacing-xs);
   font-weight: 700;
-}
-.form article {
-  display: flex;
-  flex-direction: column;
-}
-.form fieldset {
-  display: flex;
-  flex-direction: column;
-  gap: var(--spacing-m);
-  margin-top: var(--spacing-s);
-  padding-bottom: var(--spacing-s);
-}
-.form fieldset::after {
-  content: "";
-  display: block;
-  background-color: var(--secondary-300);
-  height: 1px;
-  width: 100%;
-}
-.form img {
-  width: 64px;
-  aspect-ratio: 1;
 }
 
 .h1 {
@@ -41,43 +19,6 @@
   line-height: 1.2;
   padding-bottom: var(--spacing-2xs);
   font-weight: 700;
-}
-.form h3 {
-  font-size: var(--type-body);
-  font-weight: 700;
-  padding-bottom: var(--spacing-2xs);
-}
-.form p {
-  font-size: var(--type-label);
-  color: var(--secondary-200);
-  max-width: 45ch;
-}
-.inner {
-  padding-bottom: var(--spacing-xs);
-  display: flex;
-  gap: 1rem;
-  align-items: flex-start;
-}
-.thumbnail {
-  border: 2px solid var(--secondary-100);
-  border-radius: 4px;
-}
-.align_end {
-  align-self: flex-end;
-}
-
-.tents div {
-  display: flex;
-  gap: var(--spacing-s);
-  justify-content: space-between;
-}
-.form .flex_vert {
-  display: flex;
-  flex-direction: column;
-}
-.form .flex_vert div:first-child {
-  padding-bottom: var(--spacing-xs);
-  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -91,15 +32,11 @@
     border: 1px solid var(--secondary-300);
     padding: 1rem;
   }
-  .form article {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  .tents {
-    padding-left: var(--spacing-m);
-  }
 }
 @media only screen and (min-width: 1200px) {
+  .form {
+    padding: var(--spacing-l);
+  }
 }
 @media only screen and (min-width: 1440px) {
   .purchase_flow {

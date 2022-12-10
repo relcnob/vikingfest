@@ -1,11 +1,11 @@
 import React from "react";
-import FormBreadcrumbs from "../form-components/FormBreadcrumbs";
-import s from "../PurchaseFlow.module.css";
-import NumberField from "../form-components/NumberField";
+import FormBreadcrumbs from "../../form-components/FormBreadcrumbs";
+import s from "./TicketForm.module.css";
+import NumberField from "../../form-components/NumberField";
 
 function TicketForm() {
   return (
-    <>
+    <div className={s.ticket_form}>
       <fieldset className={s.fieldset}>
         <legend className={s.legend}>Choose your prefered ticket</legend>
         <article>
@@ -70,7 +70,7 @@ function TicketForm() {
           </div>
         </article>
       </fieldset>
-    </>
+    </div>
   );
 }
 

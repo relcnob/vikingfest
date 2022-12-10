@@ -1,0 +1,83 @@
+.ticket_form article {
+  display: flex;
+  flex-direction: column;
+}
+.ticket_form fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  margin-top: var(--spacing-s);
+  padding-bottom: var(--spacing-s);
+}
+.ticket_form fieldset::after {
+  content: "";
+  display: block;
+  background-color: var(--secondary-300);
+  height: 1px;
+  width: 100%;
+}
+.ticket_form img {
+  width: 64px;
+  aspect-ratio: 1;
+}
+
+.h1 {
+  font-size: var(--type-h3);
+  line-height: 1.2;
+  padding-bottom: var(--spacing-2xs);
+  font-weight: 700;
+}
+.ticket_form h3 {
+  font-size: var(--type-body);
+  font-weight: 700;
+  padding-bottom: var(--spacing-2xs);
+}
+.ticket_form p {
+  font-size: var(--type-label);
+  color: var(--secondary-200);
+  max-width: 45ch;
+}
+.inner {
+  padding-bottom: var(--spacing-xs);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+.thumbnail {
+  border: 2px solid var(--secondary-100);
+  border-radius: 4px;
+}
+.align_end {
+  align-self: flex-end;
+}
+
+.tents div {
+  display: flex;
+  gap: var(--spacing-s);
+  justify-content: space-between;
+}
+.ticket_form .flex_vert {
+  display: flex;
+  flex-direction: column;
+}
+.ticket_form .flex_vert div:first-child {
+  padding-bottom: var(--spacing-xs);
+  align-items: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .purchase_flow {
+    padding-block: var(--spacing-m);
+  }
+  .ticket_form article {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .tents {
+    padding-left: var(--spacing-m);
+  }
+}
+@media only screen and (min-width: 1200px) {
+}
+@media only screen and (min-width: 1440px) {
+}
