@@ -3,7 +3,8 @@
   padding-block: var(--spacing-m);
   color: var(--secondary-300);
 }
-.top {
+.top,
+.bottom {
   display: grid;
   grid-template-columns: 1fr;
 }
