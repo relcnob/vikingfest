@@ -8,7 +8,6 @@
   font-size: var(--type-big-body);
   font-family: var(--ff-main);
   line-height: 1;
-  color: red;
   text-transform: capitalize;
   margin-bottom: var(--spacing-s);
 }
@@ -21,4 +20,8 @@
 
 .article section {
   margin-bottom: var(--spacing-m);
+}
+
+.genre {
+  color: red;
 }

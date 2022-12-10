@@ -6,7 +6,7 @@ function BandAbout(props) {
     <article className={styles.article}>
       <section>
         <h1>{props.name}</h1>
-        <h2>{props.genre}</h2>
+        <h2 className={styles.genre}>{props.genre}</h2>
         <p>Members: {props.members}</p>
       </section>
       <section>
