@@ -1,0 +1,9 @@
+.bandView {
+  background-color: var(--primary-100);
+  padding-block: var(--spacing-m);
+  color: var(--secondary-300);
+}
+.top {
+  display: flex;
+  flex-direction: column;
+}
