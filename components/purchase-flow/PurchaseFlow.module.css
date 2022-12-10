@@ -31,6 +31,10 @@
   height: 1px;
   width: 100%;
 }
+.form img {
+  width: 64px;
+  aspect-ratio: 1;
+}
 
 .h1 {
   font-size: var(--type-h3);
@@ -46,12 +50,13 @@
 .form p {
   font-size: var(--type-label);
   color: var(--secondary-200);
-  max-width: 55ch;
+  max-width: 45ch;
 }
 .inner {
   padding-bottom: var(--spacing-xs);
   display: flex;
   gap: 1rem;
+  align-items: flex-start;
 }
 .thumbnail {
   border: 2px solid var(--secondary-100);
@@ -59,6 +64,20 @@
 }
 .align_end {
   align-self: flex-end;
+}
+
+.tents div {
+  display: flex;
+  gap: var(--spacing-s);
+  justify-content: space-between;
+}
+.form .flex_vert {
+  display: flex;
+  flex-direction: column;
+}
+.form .flex_vert div:first-child {
+  padding-bottom: var(--spacing-xs);
+  align-items: center;
 }
 
 @media only screen and (min-width: 768px) {
@@ -75,6 +94,9 @@
   .form article {
     flex-direction: row;
     justify-content: space-between;
+  }
+  .tents {
+    padding-left: var(--spacing-m);
   }
 }
 @media only screen and (min-width: 1200px) {

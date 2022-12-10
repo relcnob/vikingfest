@@ -1,13 +1,11 @@
 import React from "react";
-import FormBreadcrumbs from "./FormBreadcrumbs";
+import FormBreadcrumbs from "../form-components/FormBreadcrumbs";
 import s from "../PurchaseFlow.module.css";
 import NumberField from "../form-components/NumberField";
 
 function TicketForm() {
   return (
     <>
-      <h1 className={s.h1}>Buy a ticket</h1>
-      <FormBreadcrumbs />
       <fieldset className={s.fieldset}>
         <legend className={s.legend}>Choose your prefered ticket</legend>
         <article>
@@ -51,7 +49,7 @@ function TicketForm() {
           </div>
           <p className={s.align_end}>249,- DKK</p>
         </article>
-        <article>
+        <article className={s.flex_vert}>
           <div>
             <label htmlFor="pre_camping">
               <input type="radio" name="camping" id="pre_camping" />
@@ -60,24 +58,18 @@ function TicketForm() {
             <p>The crew will setup all the tents for you.</p>
             <p>*The number of tent spots must match the number of people in the group</p>
           </div>
-          <div>
+          <div className={s.tents}>
             <div>
               <h4>2 Person tent</h4>
               <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"regular"} />
             </div>
             <div>
-              <h4>2 Person tent</h4>
+              <h4>3 Person tent</h4>
               <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"regular"} />
             </div>
           </div>
         </article>
       </fieldset>
-      <section>
-        <p>
-          Total: <span>1496,95,- DKK</span>
-        </p>
-        <button>Continue to location</button>
-      </section>
     </>
   );
 }
