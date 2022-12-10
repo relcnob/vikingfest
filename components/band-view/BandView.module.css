@@ -4,6 +4,21 @@
   color: var(--secondary-300);
 }
 .top {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+@media screen and (min-width: 400px) {
+}
+
+@media screen and (min-width: 768px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }

@@ -7,7 +7,7 @@ function BandView() {
     <div className={styles.bandView}>
       <div className="container">
         <div className={styles.top}>
-          <div className={styles.image}></div>
+          <div className={styles.image}>hi</div>
           <div class={styles.about}>
             <BandAbout
               name="SON & SONS"
