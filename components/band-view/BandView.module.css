@@ -1,0 +1,50 @@
+.bandView {
+  background-color: var(--primary-100);
+  padding-block: var(--spacing-m);
+  color: var(--secondary-300);
+}
+.top,
+.bottom {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.image {
+  position: relative;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+}
+
+.ornamentTopRight,
+.ornamentBottomLeft {
+  position: absolute;
+  width: 26px;
+  z-index: 100;
+}
+
+.ornamentTopRight {
+  top: -33px;
+  right: -4px;
+  rotate: 90deg;
+}
+
+.ornamentBottomLeft {
+  bottom: -33px;
+  left: -4px;
+  rotate: -90deg;
+}
+@media screen and (min-width: 400px) {
+}
+
+@media screen and (min-width: 768px) {
+  .top {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
+}

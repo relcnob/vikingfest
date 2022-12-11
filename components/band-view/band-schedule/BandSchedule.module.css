@@ -1,0 +1,25 @@
+.article {
+  text-align: center;
+}
+
+.article h2 {
+  font-size: var(--type-h4);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-l);
+}
+
+.article ol {
+  display: flex;
+  flex-direction: column;
+  margin: var(--spacing-2xs);
+  gap: var(--spacing-s);
+  max-width: 600px;
+}
+
+.article ol li {
+  background-color: var(--primary-200);
+  padding-block: var(--spacing-xs);
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  padding-inline: var(--spacing-l);
+}

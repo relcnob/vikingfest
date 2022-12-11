@@ -1,0 +1,27 @@
+.article h1 {
+  font-size: var(--type-h1);
+  font-family: var(--ff-display);
+  line-height: 1.5;
+}
+
+.article h2 {
+  font-size: var(--type-big-body);
+  font-family: var(--ff-main);
+  line-height: 1;
+  text-transform: capitalize;
+  margin-bottom: var(--spacing-s);
+}
+
+.article p {
+  font-size: var(--type-body);
+  line-height: 1.55;
+  text-transform: capitalize;
+}
+
+.article section {
+  margin-bottom: var(--spacing-m);
+}
+
+.genre {
+  color: red;
+}

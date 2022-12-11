@@ -1,0 +1,47 @@
+.time {
+  font-weight: var(--fw-bold);
+}
+
+.svartheim,
+.alfheim,
+.helheim,
+.niflheim,
+.muspelheim {
+  text-transform: capitalize;
+}
+
+.svartheim {
+  color: var(--accent-purple);
+}
+.alfheim {
+  color: var(--accent-yellow);
+}
+.helheim {
+  color: var(--accent-red);
+}
+.niflheim {
+  color: var(--accent-green);
+}
+.muspelheim {
+  color: var(--accent-blue);
+}
+
+.li {
+  position: relative;
+}
+
+.ornamentLeft,
+.ornamentRight {
+  position: absolute;
+  top: -2.2px;
+  height: 38px;
+}
+
+.ornamentLeft {
+  left: -15px;
+}
+
+.ornamentRight {
+  right: -15px;
+  transform: scaleX(-1);
+}
