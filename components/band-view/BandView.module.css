@@ -8,6 +8,11 @@
   display: grid;
   grid-template-columns: 1fr;
 }
+
+.bottom {
+  margin-top: 50rem;
+}
+
 .image {
   position: relative;
   width: 100%;
@@ -33,10 +38,14 @@
   left: -4px;
   rotate: -90deg;
 }
+
 @media screen and (min-width: 400px) {
 }
 
 @media screen and (min-width: 768px) {
+  .bandView {
+    margin-top: var(--spacing-2xl);
+  }
   .top {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
