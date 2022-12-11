@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   column-gap: var(--spacing-xs);
-  row-gap: var(--spacing-xs);
+  row-gap: var(--spacing-s);
 }
 .input_grid label {
   display: flex;
@@ -54,7 +54,7 @@
 }
 .selecotr_item {
   position: relative;
-  flex-basis: calc(100% / 4);
+  flex-basis: calc((100% / 4) - 2px);
   height: 100%;
   display: flex;
   justify-content: center;
@@ -86,9 +86,9 @@
   outline: 2px solid var(--accent-orange);
 }
 .selector_item_radio:checked + .selector_item_label {
-  background-color: var(--secondary-300);
+  background-color: #ff9d4192;
   color: var(--primary-300);
-  border: 2px solid var(--primary-300);
+  border: 2px solid var(--accent-orange);
   font-weight: 700;
 }
 

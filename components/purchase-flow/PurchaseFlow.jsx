@@ -6,6 +6,7 @@ import LocationForm from "./form-steps/location-form/LocationForm";
 import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 import FormSubmit from "./form-components/FormSubmit";
+import { CartProvider } from "../../contexts/CartContext";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -40,17 +41,19 @@ function PurchaseFlow() {
     }
   };
   return (
-    <section className={s.purchase_flow}>
-      <div className="container">
-        <form className={s.form}>
-          <h1 className={s.h1}>{currentTitle()}</h1>
-          <FormBreadcrumbs currentStep={currentStep} />
-          {displayCurrentStep()}
-          <FormSubmit currentStep={currentStep} prev={prevStep} next={nextStep} />
-        </form>
-        <Cart className={s.cart}></Cart>
-      </div>
-    </section>
+    <CartProvider>
+      <section className={s.purchase_flow}>
+        <div className="container">
+          <form className={s.form}>
+            <h1 className={s.h1}>{currentTitle()}</h1>
+            <FormBreadcrumbs currentStep={currentStep} />
+            {displayCurrentStep()}
+            <FormSubmit currentStep={currentStep} prev={prevStep} next={nextStep} price={1736.35} />
+          </form>
+          <Cart className={s.cart} />
+        </div>
+      </section>
+    </CartProvider>
   );
 }
 

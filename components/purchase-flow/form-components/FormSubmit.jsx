@@ -1,5 +1,10 @@
+import { useContext } from "react";
 import s from "./FormSubmit.module.css";
+import { CartContext } from "../../../contexts/CartContext";
+import getCartTotal from "../../../utils/CartTotal";
+
 function FormSubmit(props) {
+  const cart = useContext(CartContext);
   function handleClick(e, action) {
     e.preventDefault();
     if (action === "next") {
@@ -27,7 +32,7 @@ function FormSubmit(props) {
       )} */}
 
       <p>
-        Total: <span>1496,95,- DKK</span>
+        Total: <span>{getCartTotal(cart)}</span>
       </p>
       <button className={s.next_button} onClick={(e) => handleClick(e, "next")}>
         {buttonText()}

@@ -1,0 +1,100 @@
+.cart {
+  border: 1px solid var(--secondary-100);
+  background-color: var(--primary-300);
+  border-radius: 1rem;
+  padding: var(--spacing-l) var(--spacing-m);
+  position: relative;
+  position: fixed;
+  inset: 0.5rem 1rem 0.5rem 1rem;
+}
+.cart_close {
+  display: block;
+  position: absolute;
+  inset: 0.5rem 0.5rem auto auto;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--secondary-300);
+  cursor: pointer;
+}
+.cart_open {
+  position: fixed;
+  height: 60px;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  border-top: 1px solid white;
+  /* border: none; */
+  background-color: var(--secondary-300);
+  inset: auto 0 0 0;
+  z-index: 10;
+  cursor: pointer;
+}
+.closed {
+  display: none;
+}
+.open {
+  display: block;
+}
+.cart h2 {
+  font-size: var(--type-h5);
+  font-weight: 700;
+  color: var(--secondary-300);
+}
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  color: var(--secondary-100);
+  font-size: var(--type-small);
+  padding-bottom: var(--spacing-m);
+  padding-top: var(--spacing-m);
+}
+.overview_item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.total_container {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--spacing-2xs);
+  color: var(--secondary-300);
+  padding-top: var(--spacing-s);
+  position: relative;
+}
+.total_container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  inset: 0 0 auto 0;
+  background-color: var(--secondary-300);
+}
+.total_price {
+  margin-left: auto;
+  font-size: var(--type-big-body);
+}
+.total_title {
+  font-size: var(--type-body);
+}
+.total_currency {
+  font-size: var(--type-small);
+}
+.basket_items {
+  padding-top: var(--spacing-s);
+}
+
+.basket_items article {
+  padding-bottom: var(--spacing-xs);
+  color: var(--secondary-300);
+}
+
+@media only screen and (min-width: 1200px) {
+  .cart {
+    position: relative;
+    inset: 0 0 0 0;
+  }
+}

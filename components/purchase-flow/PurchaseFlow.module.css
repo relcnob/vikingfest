@@ -1,10 +1,11 @@
 .purchase_flow {
   background-color: var(--primary-100);
-  padding-block: var(--spacing-s);
+  padding-bottom: calc(var(--spacing-s) + 80px);
+  padding-top: var(--spacing-s);
 }
 .form {
   /* background-color: var(--primary-300); */
-  /* padding: 1rem; */
+  padding: 1rem;
   color: var(--secondary-300);
   width: 100%;
 }

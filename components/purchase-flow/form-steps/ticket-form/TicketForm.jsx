@@ -1,4 +1,3 @@
-import React from "react";
 import FormBreadcrumbs from "../../form-components/FormBreadcrumbs";
 import s from "./TicketForm.module.css";
 import NumberField from "../../form-components/NumberField";
@@ -41,8 +40,8 @@ function TicketForm() {
         </article>
         <article>
           <div>
-            <label htmlFor="green_camping">
-              <input type="radio" name="camping" id="green_camping" />
+            <label htmlFor="green">
+              <input type="radio" name="camping" id="green" />
               Optional: Green Camping
             </label>
             <p>This ticket gives you access to the VikingFest for all 7 days, it also gives you access to vip areas, and accomodation spots.</p>
@@ -51,8 +50,8 @@ function TicketForm() {
         </article>
         <article className={s.flex_vert}>
           <div>
-            <label htmlFor="pre_camping">
-              <input type="radio" name="camping" id="pre_camping" />
+            <label htmlFor="pre">
+              <input type="radio" name="camping" id="pre" />
               Optional: Pre-setup of tents
             </label>
             <p>The crew will setup all the tents for you.</p>
@@ -61,11 +60,11 @@ function TicketForm() {
           <div className={s.tents}>
             <div>
               <h4>2 Person tent</h4>
-              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"regular"} />
+              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"2p"} />
             </div>
             <div>
               <h4>3 Person tent</h4>
-              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"regular"} />
+              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"3p"} />
             </div>
           </div>
         </article>

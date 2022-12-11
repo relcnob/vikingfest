@@ -1,36 +1,22 @@
 export function reducer(state, action) {
   switch (action.type) {
-    case "ADD": {
-      if (state.find((item) => item.id === action.payload.id)) {
-        return state.map((item) => {
-          if (item.id !== action.payload.id) {
-            return item;
-          }
-          const copy = { ...item };
-          copy.amount = copy.amount + 1;
-          return copy;
-        });
-      } else {
-        return state.concat({ ...action.payload, amount: 1 });
-      }
+    case "REGULAR": {
+      const regular = { ...state.regular, quantity: Number(action.payload) };
+      return { ...state, regular };
     }
-    case "REMOVE": {
-      if (action.payload.amount > 1) {
-        return state.map((item) => {
-          if (item.id !== action.payload.id) {
-            return item;
-          }
-          const copy = { ...item };
-          copy.amount = copy.amount - 1;
-          return copy;
-        });
-      }
-      if (action.payload.amount <= 1) {
-        return state.filter((item) => item.id !== action.payload.id);
-      }
+    case "VIP": {
+      const vip = { ...state.vip, quantity: Number(action.payload) };
+      return { ...state, vip };
     }
-    case "CLEAR": {
-      return [];
+    case "GREEN": {
+    }
+    case "2P": {
+      const newValue = { ...state["2p"], quantity: Number(action.payload) };
+      return { ...state, "2p": newValue };
+    }
+    case "3P": {
+      const newValue = { ...state["3p"], quantity: Number(action.payload) };
+      return { ...state, "3p": newValue };
     }
     default:
       return state;
