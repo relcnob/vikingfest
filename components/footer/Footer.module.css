@@ -3,6 +3,7 @@
   color: var(--secondary-300);
   padding: var(--spacing-m) 16px;
   font-family: var(--ff-main);
+  margin-top: var(--spacing-m);
 }
 .ul {
   gap: 2rem;
@@ -121,6 +122,7 @@
 @media screen and (min-width: 1200px) {
   .footer {
     padding: var(--spacing-xl) 16px;
+    margin-top: var(--spacing-2xl);
   }
 
   .top {
