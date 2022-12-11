@@ -2,6 +2,7 @@
   background-color: var(--primary-100);
   color: var(--secondary-300);
   padding-top: var(--spacing-m);
+  margin-bottom: var(--spacing-m);
 }
 .heading {
   font-size: var(--type-h2);
@@ -85,6 +86,7 @@
 @media only screen and (min-width: 1200px) {
   .artist_list {
     padding-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-2xl);
   }
   .heading {
     padding-bottom: var(--spacing-l);
