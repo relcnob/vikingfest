@@ -1,7 +1,11 @@
+.article {
+  margin-bottom: var(--spacing-s);
+}
 .article h1 {
   font-size: var(--type-h1);
   font-family: var(--ff-display);
   line-height: 1.5;
+  margin-top: var(--spacing-s);
 }
 
 .article h2 {
@@ -24,4 +28,19 @@
 
 .genre {
   color: red;
+}
+
+@media screen and (min-width: 400px) {
+}
+
+@media screen and (min-width: 768px) {
+  .article {
+    margin-bottom: var(--spacing-2xl);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (min-width: 1400px) {
 }
