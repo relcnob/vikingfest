@@ -1,7 +1,7 @@
 import Head from "next/head";
 import BandView from "../components/band-view/BandView";
 
-export default function Home() {
+export default function band() {
   return (
     <div>
       <Head>
