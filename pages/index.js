@@ -5,7 +5,7 @@ import ArtistsOverview from "../components/artists-overview/ArtistsOverview.jsx"
 /* import AreaOverview from "../components/area-overview/AreaOverview.jsx"; */
 import Sponsors from "../components/sponsors/Sponsors.jsx";
 import UpcomingEvents from "../components/upcoming-events/UpcomingEvents.jsx";
-/* import Help from "../components/help/Help.jsx"; */
+import Help from "../components/help/Help.jsx";
 export default function Home() {
   return (
     <div>
@@ -22,7 +22,7 @@ export default function Home() {
         {/* <AreaOverview/> */}
         <Sponsors />
         <UpcomingEvents />
-        {/* <Help /> */}
+        <Help />
       </main>
     </div>
   );
