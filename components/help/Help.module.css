@@ -1,0 +1,47 @@
+.helpSection {
+  margin-block: var(--spacing-m);
+  text-align: center;
+  font-family: var(--ff-display);
+}
+
+.helpSection h3 {
+  font-size: var(--type-h2);
+  margin-bottom: var(--spacing-s);
+  line-height: 1.4;
+  color: var(--secondary-300);
+}
+
+.helpSection ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-block: var(--spacing-l);
+  color: var(--primary-300);
+  width: 100%;
+  gap: var(--spacing-xs);
+}
+.helpSection li,
+.helpSection button {
+  width: 100%;
+  display: block;
+}
+.helpSection button {
+  font-size: var(--type-h4);
+  line-height: 1.5;
+  padding-block: var(--spacing-xs);
+  background-color: var(--accent-orange);
+  border: none;
+  font-family: inherit;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .helpSection ul {
+    grid-template-columns: 1fr 1fr 1fr;
+    max-width: 900px;
+    margin: auto;
+  }
+  .helpSection button {
+    font-size: var(--type-body-big);
+  }
+}
