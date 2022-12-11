@@ -53,6 +53,9 @@
   --bp-large: 1200px;
   --bp-xlarge: 1440px; */
 }
+html {
+  background-color: var(--primary-100);
+}
 html,
 body {
   padding: 0;

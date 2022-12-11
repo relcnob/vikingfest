@@ -1,6 +1,11 @@
 import Head from "next/head";
-import Image from "next/image";
-
+import Hero from "../components/hero/Hero.jsx";
+import InformationBar from "../components/informationBar/InformationBar.jsx";
+import ArtistsOverview from "../components/artists-overview/ArtistsOverview.jsx";
+/* import AreaOverview from "../components/area-overview/AreaOverview.jsx"; */
+import Sponsors from "../components/sponsors/Sponsors.jsx";
+import UpcomingEvents from "../components/upcoming-events/UpcomingEvents.jsx";
+/* import Help from "../components/help/Help.jsx"; */
 export default function Home() {
   return (
     <div>
@@ -11,7 +16,13 @@ export default function Home() {
       </Head>
 
       <main>
-        <div>HOMEPAGE</div>
+        <Hero />
+        <InformationBar />
+        <ArtistsOverview />
+        {/* <AreaOverview/> */}
+        <Sponsors />
+        <UpcomingEvents />
+        {/* <Help /> */}
       </main>
     </div>
   );
