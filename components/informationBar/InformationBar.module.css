@@ -1,6 +1,7 @@
 .section {
   background-color: var(--primary-300);
   padding-block: var(--spacing-s);
+  position: relative;
 }
 
 .section > div {
@@ -22,6 +23,27 @@
   justify-content: space-between;
 }
 
+.ornamentRight {
+  rotate: -90deg;
+  right: 10px;
+  top: -15px;
+}
+
+.ornamentLeft {
+  rotate: 90deg;
+  bottom: -15px;
+  left: 10px;
+}
+
+.ornamentLeft,
+.ornamentRight {
+  visibility: hidden;
+  width: 30px;
+  position: absolute;
+  filter: contrast(0);
+  opacity: 0.4;
+}
+
 @media screen and (min-width: 400px) {
 }
 
@@ -37,6 +59,11 @@
   }
   .h2 {
     margin-bottom: 1.4rem;
+  }
+
+  .ornamentLeft,
+  .ornamentRight {
+    visibility: visible;
   }
 }
 
