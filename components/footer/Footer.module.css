@@ -1,8 +1,11 @@
 .footer {
-  background-color: var(--primary-100);
+  background-color: var(--primary-200);
   color: var(--secondary-300);
   padding: var(--spacing-m) 16px;
   font-family: var(--ff-main);
+}
+.ul {
+  gap: 2rem;
 }
 .link {
   color: var(--accent-orange);
@@ -51,6 +54,11 @@
   gap: var(--spacing-xs);
 }
 
+.about ul li,
+.info ul li,
+.address ul li {
+  margin-bottom: var(--spacing-2xs);
+}
 .info {
   margin-bottom: var(--spacing-s);
 }
@@ -80,10 +88,12 @@
 }
 
 .someList {
+  margin-top: var(--spacing-s);
   display: flex;
   flex-flow: row nowrap;
   color: var(--accent-orange);
 }
+
 .bottom {
   display: flex;
   flex-flow: column nowrap;
@@ -148,6 +158,12 @@
   .privacyTerms {
     order: 2;
     margin-bottom: 0;
+  }
+
+  .about ul li,
+  .info ul li,
+  .address ul li {
+    margin-bottom: var(--spacing-xs);
   }
 }
 
