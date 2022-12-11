@@ -6,6 +6,7 @@
   margin: auto;
   padding: var(--spacing-s);
   background-color: var(--primary-100);
+  margin-block: var(--spacing-m);
 }
 
 .headline {
@@ -40,6 +41,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .upcomingEventsWrapper {
+    margin-block: var(--spacing-xl);
+  }
   .cardWrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
