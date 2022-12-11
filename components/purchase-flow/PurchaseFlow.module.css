@@ -1,12 +1,14 @@
 .purchase_flow {
-  background-color: var(--primary-300);
+  background-color: var(--primary-100);
   padding-block: var(--spacing-s);
 }
 .form {
   /* background-color: var(--primary-300); */
   /* padding: 1rem; */
   color: var(--secondary-300);
+  width: 100%;
 }
+
 .form legend {
   font-size: var(--type-big-body);
   display: inline-block;
@@ -26,16 +28,28 @@
     padding-block: var(--spacing-m);
   }
   .form {
-    max-width: 800px;
+    /* max-width: 800px; */
     margin-inline: auto;
     border-radius: 1rem;
     border: 1px solid var(--secondary-300);
-    padding: 1rem;
+    padding: var(--spacing-m);
+    background-color: var(--primary-300);
   }
 }
 @media only screen and (min-width: 1200px) {
+  .purchase_flow > div {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    column-gap: var(--spacing-xs);
+  }
   .form {
     padding: var(--spacing-l);
+  }
+  .h1 {
+    font-size: var(--type-h4);
+    line-height: 1.2;
+    padding-bottom: var(--spacing-2xs);
+    font-weight: 700;
   }
 }
 @media only screen and (min-width: 1440px) {

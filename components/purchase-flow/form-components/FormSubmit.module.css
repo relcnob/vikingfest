@@ -1,0 +1,35 @@
+.form_submit {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+.form_submit p {
+  font-size: var(--type-body);
+}
+.form_submit p span {
+  font-size: var(--type-big-body);
+  font-weight: 700;
+}
+.form_submit button {
+  border: none;
+  padding-block: var(--spacing-s);
+  padding-inline: var(--spacing-m);
+  border-radius: 4px;
+  color: var(--primary-100);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+.next_button:hover {
+  background-color: var(--accent-yellow);
+}
+
+.next_button {
+  background-color: var(--accent-orange);
+}
+.prev_button {
+  background-color: var(--secondary-100);
+  margin-right: auto;
+}

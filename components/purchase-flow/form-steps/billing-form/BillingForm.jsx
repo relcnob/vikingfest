@@ -55,21 +55,27 @@ function BillingForm() {
         <div className={s.container}>
           <div className={s.selector}>
             <div className={s.selecotr_item}>
-              <input type="radio" id="radio1" name="selector" className={s.selector_item_radio} checked />
-              <label for="radio1" className={selector_item_label}>
-                radio 1
+              <input type="radio" id="radio1" name="selector" className={s.selector_item_radio} />
+              <label for="radio1" className={s.selector_item_label}>
+                15%
               </label>
             </div>
             <div className={s.selecotr_item}>
               <input type="radio" id="radio2" name="selector" className={s.selector_item_radio} />
-              <label for="radio2" className={selector - item_label}>
-                radio 2
+              <label for="radio2" className={s.selector_item_label}>
+                20%
               </label>
             </div>
-            <div className={selecotr_item}>
-              <input type="radio" id="radio3" name="selector" className={selector_item_radio} />
-              <label for="radio3" className={selector - item_label}>
-                radio 3
+            <div className={s.selecotr_item}>
+              <input type="radio" id="radio3" name="selector" className={s.selector_item_radio} />
+              <label for="radio3" className={s.selector_item_label}>
+                25%
+              </label>
+            </div>
+            <div className={s.selecotr_item}>
+              <input type="radio" id="radio4" name="selector" className={s.selector_item_radio} />
+              <label for="radio4" className={s.selector_item_label}>
+                None
               </label>
             </div>
           </div>

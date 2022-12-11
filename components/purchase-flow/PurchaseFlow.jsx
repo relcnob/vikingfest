@@ -5,8 +5,10 @@ import TicketForm from "./form-steps/ticket-form/TicketForm";
 import LocationForm from "./form-steps/location-form/LocationForm";
 import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
+import FormSubmit from "./form-components/FormSubmit";
+
 function PurchaseFlow() {
-  const [currentStep, setCurrentStep] = useState(3);
+  const [currentStep, setCurrentStep] = useState(1);
   const nextStep = () => {
     // Change to next step
     if (currentStep < 3) {
@@ -44,12 +46,7 @@ function PurchaseFlow() {
           <h1 className={s.h1}>{currentTitle()}</h1>
           <FormBreadcrumbs currentStep={currentStep} />
           {displayCurrentStep()}
-          <section>
-            <p>
-              Total: <span>1496,95,- DKK</span>
-            </p>
-            <button>Continue to location</button>
-          </section>
+          <FormSubmit currentStep={currentStep} prev={prevStep} next={nextStep} />
         </form>
         <Cart className={s.cart}></Cart>
       </div>
