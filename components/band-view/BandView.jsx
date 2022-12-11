@@ -1,13 +1,20 @@
 import React from "react";
+import Image from "next/image";
 import BandAbout from "./band-about/BandAbout";
 import BandSchedule from "./band-schedule/BandSchedule";
 import styles from "./BandView.module.css";
+import ornament from "../../public/images/ornament.svg";
+import placeholderImage from "../../public/images/placeholderBand.png";
 function BandView() {
   return (
     <div className={styles.bandView}>
       <div className="container">
         <div className={styles.top}>
-          <div className={styles.image}>hi</div>
+          <div className={styles.image}>
+            <Image className={styles.image} src={placeholderImage} alt={"band name"} />
+            <Image className={styles.ornamentTopRight} src={ornament} alt={"ornament"} />
+            <Image className={styles.ornamentBottomLeft} src={ornament} alt={"ornament"} />
+          </div>
           <div class={styles.about}>
             <BandAbout
               name="SON & SONS"
