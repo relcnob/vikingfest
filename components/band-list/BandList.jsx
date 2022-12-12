@@ -1,6 +1,10 @@
 import styles from "./BandList.module.css";
 import BandCard from "./BandCard/BandCard";
-function BandList() {
+import { unstable_renderSubtreeIntoContainer } from "react-dom";
+function BandList(props) {
+  console.log(props);
+  console.log(props.data);
+
   return (
     <section className={styles.wrapper}>
       <header className={styles.bandListHeader}>
@@ -11,91 +15,25 @@ function BandList() {
           <p className={styles.function}>Search</p>
         </div>
       </header>
+
       <div className={styles.bandList}>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
-        <BandCard
-          name="son & sons"
-          genre="alternative rock"
-          id="1"
-          image="img"
-        ></BandCard>
+        {props.data.map((BandCard) => {
+          return <BandCard key={props.data.name} name="son & sons" genre="alternative rock" image="img"></BandCard>;
+        })}
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
+        <BandCard name="son & sons" genre="alternative rock" id="1" image="img"></BandCard>
       </div>
     </section>
   );
