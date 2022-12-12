@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Anchor from "../Anchor";
-import styles from "./NavBar.module.css";
+import styles from "./Navbar.module.css";
 import { useState } from "react";
 
 function NavBar() {

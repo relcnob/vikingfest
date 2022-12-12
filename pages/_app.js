@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import Head from "next/head";
-import NavBar from "../components/navbar/Navbar.jsx";
-import Footer from "../components/footer/Footer.jsx";
+import NavBar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 function MyApp({ Component, pageProps }) {
   return (
     <>
