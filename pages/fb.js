@@ -1,9 +1,10 @@
 import React from "react";
-import BandList from "../components/band-list/BandList";
+import Areaoverview from "../components/area-overview/AreaOverview";
+
 function testpage() {
   return (
     <>
-      <BandList></BandList>
+      <Areaoverview />
     </>
   );
 }
