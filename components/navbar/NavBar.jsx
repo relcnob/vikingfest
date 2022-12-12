@@ -4,7 +4,7 @@ import Anchor from "../Anchor";
 import styles from "./Navbar.module.css";
 import { useState } from "react";
 
-function NavBar() {
+function Navbar() {
   const [ToggleMenu, setToggleMenu] = useState("");
   const [BurgerState, setBurgerState] = useState(styles.burger);
   function changeMenuState() {
@@ -56,4 +56,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default Navbar;
