@@ -17,6 +17,8 @@ function FormSubmit(props) {
     if (props.currentStep === 1) {
       return "Continue to location";
     } else if (props.currentStep === 2) {
+      return "Continue to information";
+    } else if (props.currentStep === 3) {
       return "Continue to payment";
     } else {
       return "Confirm your purchase";

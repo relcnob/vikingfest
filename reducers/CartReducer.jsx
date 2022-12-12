@@ -9,6 +9,8 @@ export function reducer(state, action) {
       return { ...state, vip };
     }
     case "GREEN": {
+      const green = { ...state.green, checked: action.payload };
+      return { ...state, green };
     }
     case "2P": {
       const newValue = { ...state["2p"], quantity: Number(action.payload) };

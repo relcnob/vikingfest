@@ -7,13 +7,14 @@ import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 import FormSubmit from "./form-components/FormSubmit";
 import { CartProvider } from "../../contexts/CartContext";
+import PersonalInfo from "./form-steps/personal-info/PersonalInfo";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
 
   const nextStep = () => {
     // Change to next step
-    if (currentStep < 3) {
+    if (currentStep < 4) {
       setCurrentStep((old) => old + 1);
     }
   };
@@ -37,6 +38,8 @@ function PurchaseFlow() {
       return <TicketForm />;
     } else if (currentStep === 2) {
       return <LocationForm />;
+    } else if (currentStep === 3) {
+      return <PersonalInfo />;
     } else {
       return <BillingForm />;
     }

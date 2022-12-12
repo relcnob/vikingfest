@@ -5,6 +5,8 @@
 }
 .form {
   /* background-color: var(--primary-300); */
+  display: flex;
+  flex-direction: column;
   padding: 1rem;
   color: var(--secondary-300);
   width: 100%;

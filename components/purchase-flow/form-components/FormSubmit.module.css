@@ -4,6 +4,7 @@
   justify-content: flex-end;
   align-items: center;
   gap: var(--spacing-m);
+  margin-top: auto;
 }
 .form_submit p {
   font-size: var(--type-body);

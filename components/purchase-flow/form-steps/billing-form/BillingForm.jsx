@@ -13,31 +13,6 @@ function BillingForm() {
   return (
     <div className={s.billing_form}>
       <fieldset>
-        <legend>Personal information</legend>
-        <div className={s.input_grid}>
-          <label htmlFor="first_name">
-            First name
-            <input type="text" name="first_name" id="first_name" placeholder="First name" />
-          </label>
-          <label htmlFor="last_name">
-            Last name
-            <input type="text" name="last_name" id="last_name" placeholder="Last name" />
-          </label>
-          <label htmlFor="email" className={s.full_row}>
-            Email
-            <input type="text" name="email" id="email" placeholder="Email" />
-          </label>
-          <label htmlFor="dob">
-            Date of birth
-            <input type="date" name="dob" id="dob" placeholder="Date of birth (DD/MM/YY)" />
-          </label>
-          <label htmlFor="phone">
-            Phone number
-            <input type="text" name="phone" id="phone" placeholder="+45 xx xx xx xx" />
-          </label>
-        </div>
-      </fieldset>
-      <fieldset>
         <legend>Payment information</legend>
         <div className={s.input_grid}>
           <label htmlFor="cc" className={s.full_row}>
