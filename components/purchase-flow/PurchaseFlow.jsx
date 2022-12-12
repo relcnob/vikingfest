@@ -10,6 +10,7 @@ import { CartProvider } from "../../contexts/CartContext";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
+
   const nextStep = () => {
     // Change to next step
     if (currentStep < 3) {

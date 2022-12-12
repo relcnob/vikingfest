@@ -23,7 +23,8 @@ export const CartObj = {
     site: "svartheim",
   },
   donation: {
-    value_in_percentage: 0,
+    value_in_percentage: 20,
   },
   tax: 0.25,
+  camping_fee: 99,
 };

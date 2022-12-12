@@ -1,6 +1,15 @@
+import { useContext } from "react";
+import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 import s from "./BillingForm.module.css";
 
 function BillingForm() {
+  const cart = useContext(CartContext);
+  const dispatch = useContext(CartDispatchContext);
+  function handleRadio(e) {
+    console.log(e.target.value);
+    dispatch({ type: "DONATION", payload: e.target.value });
+  }
+
   return (
     <div className={s.billing_form}>
       <fieldset>
@@ -55,25 +64,25 @@ function BillingForm() {
         <div className={s.container}>
           <div className={s.selector}>
             <div className={s.selecotr_item}>
-              <input type="radio" id="radio1" name="selector" className={s.selector_item_radio} />
+              <input type="radio" id="radio1" name="selector" className={s.selector_item_radio} value={15} onChange={handleRadio} checked={cart.donation.value_in_percentage === 15} />
               <label for="radio1" className={s.selector_item_label}>
                 15%
               </label>
             </div>
             <div className={s.selecotr_item}>
-              <input type="radio" id="radio2" name="selector" className={s.selector_item_radio} />
+              <input type="radio" id="radio2" name="selector" className={s.selector_item_radio} value={20} onChange={handleRadio} checked={cart.donation.value_in_percentage === 20} />
               <label for="radio2" className={s.selector_item_label}>
                 20%
               </label>
             </div>
             <div className={s.selecotr_item}>
-              <input type="radio" id="radio3" name="selector" className={s.selector_item_radio} />
+              <input type="radio" id="radio3" name="selector" className={s.selector_item_radio} value={25} onChange={handleRadio} checked={cart.donation.value_in_percentage === 25} />
               <label for="radio3" className={s.selector_item_label}>
                 25%
               </label>
             </div>
             <div className={s.selecotr_item}>
-              <input type="radio" id="radio4" name="selector" className={s.selector_item_radio} />
+              <input type="radio" id="radio4" name="selector" className={s.selector_item_radio} value={0} onChange={handleRadio} checked={cart.donation.value_in_percentage === 0} />
               <label for="radio4" className={s.selector_item_label}>
                 None
               </label>

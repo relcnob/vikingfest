@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import s from "./FormSubmit.module.css";
 import { CartContext } from "../../../contexts/CartContext";
-import getCartTotal from "../../../utils/CartTotal";
+import { getCartTotal } from "../../../utils/CartTotal";
 
 function FormSubmit(props) {
   const cart = useContext(CartContext);

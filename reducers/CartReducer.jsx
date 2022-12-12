@@ -18,6 +18,10 @@ export function reducer(state, action) {
       const newValue = { ...state["3p"], quantity: Number(action.payload) };
       return { ...state, "3p": newValue };
     }
+    case "DONATION": {
+      const donation = { ...state.donation, value_in_percentage: Number(action.payload) };
+      return { ...state, donation };
+    }
     default:
       return state;
   }

@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import s from "./Cart.module.css";
 import CartItem from "./CartItem";
 import { CartContext } from "../../../contexts/CartContext";
+import { getTotalTaxes, getSubTotal, getCartTotal, getTotalDonation } from "../../../utils/CartTotal";
+
 function Cart(props) {
   const [windowWidth, SetWindowWidth] = useState(1);
   const [cartOpen, setCartOpen] = useState(false);
@@ -19,7 +21,7 @@ function Cart(props) {
       {windowWidth < 1200 && !cartOpen && (
         <button className={s.cart_open} onClick={() => setCartOpen(true)}>
           <span>Open Cart - </span>
-          <span>Total: 1200,- DKK</span>
+          <span>Total: {getCartTotal(cart)} DKK</span>
         </button>
       )}
 
@@ -57,24 +59,24 @@ purchase, without VAT.`}
         <div className={s.overview}>
           <div className={s.overview_item}>
             <span>Subtotal</span>
-            <span>1098,- DKK</span>
+            <span>{getSubTotal(cart)} DKK</span>
           </div>
           <div className={s.overview_item}>
             <span>Camping fee</span>
-            <span>99,- DKK</span>
+            <span>{cart.camping_fee} DKK</span>
           </div>
           <div className={s.overview_item}>
             <span>Donation (Excluding VAT)</span>
-            <span>239,40 DKK</span>
+            <span>{getTotalDonation(cart)} DKK</span>
           </div>
           <div className={s.overview_item}>
             <span>Taxes (VAT without the donation)</span>
-            <span>299,95 DKK</span>
+            <span>{getTotalTaxes(cart)} DKK</span>
           </div>
         </div>
         <div className={s.total_container}>
           <span className={s.total_title}>Total</span>
-          <span className={s.total_price}>1736,35</span>
+          <span className={s.total_price}>{getCartTotal(cart)}</span>
           <span className={s.total_currency}>DKK</span>
         </div>
       </section>
