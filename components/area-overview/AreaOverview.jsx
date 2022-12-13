@@ -358,17 +358,17 @@ function AreaOverview() {
         >
           <ul>
             <h4>STAGES</h4>
-            <li>Vanaheim</li>
-            <li>Midgard</li>
             <li>Jotunheim</li>
+            <li>Midgard</li>
+            <li>Vanaheim</li>
           </ul>
           <ul>
             <h4>CAMPING SITES</h4>
-            <li>Helheim</li>
-            <li>Svartheim</li>
-            <li>Niflheim</li>
-            <li>Muspelheim</li>
             <li>Alfheim</li>
+            <li>Helheim</li>
+            <li>Muspelheim</li>
+            <li>Niflheim</li>
+            <li>Svartheim</li>
           </ul>
         </div>
       </section>
