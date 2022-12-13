@@ -74,9 +74,15 @@ function BandCard(props) {
         className={styles.shieldOverlay}
       ></Image>
       <Image
-        src={imageSrc}
+        src={
+          props.image.includes("http")
+            ? props.image
+            : `http://localhost:8080/logos/${props.image}`
+        }
         alt="bandimage"
         className={styles.bandImage}
+        width="768"
+        height="768"
       ></Image>
       <section className={styles.bandDetails}>
         <h2>{props.name}</h2>
