@@ -1,0 +1,25 @@
+.pagenavWrapper {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  color: var(--accent-orange);
+  gap: var(--spacing-xs);
+  align-items: center;
+  justify-content: center;
+  font-size: var(--type-big-body);
+  margin-top: var(--spacing-s);
+}
+
+.pagenavWrapper span:not(span:nth-of-type(2)) {
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+
+.pagenavWrapper span:nth-last-of-type(2) {
+  color: var(--secondary-200);
+}
+
+.grayedOut {
+  color: var(--primary-300);
+  cursor: default !important;
+}

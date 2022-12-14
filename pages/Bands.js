@@ -1,6 +1,7 @@
 import React from "react";
 import BandList from "../components/band-list/BandList";
 import { useEffect, useState } from "react";
+import styles from "../components/band-list/Pagenav.module.css";
 function Bands() {
   const [data, setData] = useState([]);
   useEffect(() => {
@@ -16,21 +17,25 @@ function Bands() {
   return (
     <>
       <BandList data={data} start={currentPage} />
-      <span
-        onClick={() => {
-          currentPage > 1 ? setCurrentPage(currentPage + -1) : [];
-        }}
-      >
-        -
-      </span>
-      <span>{currentPage}</span>
-      <span
-        onClick={() => {
-          currentPage < 9 ? setCurrentPage(currentPage + 1) : [];
-        }}
-      >
-        +
-      </span>
+      <div className={styles.pagenavWrapper}>
+        <span
+          className={currentPage === 1 ? styles.grayedOut : ""}
+          onClick={() => {
+            currentPage > 1 ? setCurrentPage(currentPage + -1) : [];
+          }}
+        >
+          {`<`}
+        </span>
+        <span>{currentPage}</span>
+        <span
+          className={currentPage === 9 ? styles.grayedOut : ""}
+          onClick={() => {
+            currentPage < 9 ? setCurrentPage(currentPage + 1) : [];
+          }}
+        >
+          {`>`}
+        </span>
+      </div>
     </>
   );
 }

@@ -84,10 +84,6 @@
   transition: 0.3s ease-in-out;
 }
 
-.ornaments span svg {
-  fill: red;
-}
-
 .ornaments span {
   position: absolute;
 }
@@ -112,6 +108,39 @@
   left: var(--spacing-xs);
   transform: rotate(270deg);
 }
+
+.Rock span svg {
+  fill: rgb(255, 115, 0);
+}
+
+.Pop span svg {
+  fill: rgb(53, 177, 255);
+}
+
+.Punk span svg {
+  fill: red;
+}
+
+.Soul span svg {
+  fill: hotpink;
+}
+
+.Rap span svg {
+  fill: yellow;
+}
+
+.Country span svg {
+  fill: green;
+}
+
+.Electronic span svg {
+  fill: blue;
+}
+
+.World span svg {
+  fill: rgb(140, 0, 175);
+}
+
 @media screen and (min-width: 400px) {
   .bandDetails h2 {
     font-size: var(--type-h4);

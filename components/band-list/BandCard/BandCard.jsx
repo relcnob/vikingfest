@@ -6,7 +6,7 @@ import Anchor from "../../Anchor";
 function BandCard(props) {
   return (
     <article className={styles.bandCard}>
-      <section className={styles.ornaments}>
+      <section className={`${styles.ornaments} ${styles[props.genre]}`}>
         <span>
           <svg viewBox="0 0 84 84">
             <g>
