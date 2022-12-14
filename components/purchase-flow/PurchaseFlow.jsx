@@ -8,6 +8,8 @@ import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 import FormSubmit from "./form-components/FormSubmit";
 import { CartProvider } from "../../contexts/CartContext";
 import getAvailability from "../../api/get-availability";
+import reserveSpot from "../../api/reserve-spot";
+
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -39,6 +41,7 @@ function PurchaseFlow() {
       getAvailability();
       return <LocationForm />;
     } else {
+      reserveSpot("Svartheim", 2);
       return <BillingForm />;
     }
   };
