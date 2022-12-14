@@ -1,5 +1,9 @@
 import s from "./LocationForm.module.css";
+import getAvailability from "../../../../api/get-availability";
+
 function LocationForm() {
+  getAvailability();
+
   return (
     <div className={s.location_form}>
       <fieldset>
