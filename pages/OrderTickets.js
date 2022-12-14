@@ -1,7 +1,7 @@
 import React from "react";
 import PurchaseFlow from "../components/purchase-flow/PurchaseFlow";
 
-function orderTickets() {
+function OrderTickets() {
   return (
     <>
       <PurchaseFlow />
@@ -9,4 +9,4 @@ function orderTickets() {
   );
 }
 
-export default orderTickets;
+export default OrderTickets;

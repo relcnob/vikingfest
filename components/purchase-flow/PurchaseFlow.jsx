@@ -7,7 +7,7 @@ import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 import FormSubmit from "./form-components/FormSubmit";
 import { CartProvider } from "../../contexts/CartContext";
-
+import getAvailability from "../../api/get-availability";
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -36,6 +36,7 @@ function PurchaseFlow() {
     if (currentStep === 1) {
       return <TicketForm />;
     } else if (currentStep === 2) {
+      getAvailability();
       return <LocationForm />;
     } else {
       return <BillingForm />;
