@@ -7,7 +7,6 @@ import BillingForm from "./form-steps/billing-form/BillingForm";
 import FormBreadcrumbs from "./form-components/FormBreadcrumbs";
 import FormSubmit from "./form-components/FormSubmit";
 import { CartProvider } from "../../contexts/CartContext";
-import getAvailability from "../../api/get-availability";
 import reserveSpot from "../../api/reserve-spot";
 
 function PurchaseFlow() {
@@ -38,7 +37,6 @@ function PurchaseFlow() {
     if (currentStep === 1) {
       return <TicketForm />;
     } else if (currentStep === 2) {
-      getAvailability();
       return <LocationForm />;
     } else {
       reserveSpot("Svartheim", 2);
