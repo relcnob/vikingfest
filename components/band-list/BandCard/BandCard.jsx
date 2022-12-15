@@ -6,7 +6,7 @@ import Anchor from "../../Anchor";
 function BandCard(props) {
   return (
     <article className={styles.bandCard}>
-      <section className={styles.ornaments}>
+      <section className={`${styles.ornaments} ${styles[props.genre]}`}>
         <span>
           <svg viewBox="0 0 84 84">
             <g>
@@ -74,14 +74,20 @@ function BandCard(props) {
         className={styles.shieldOverlay}
       ></Image>
       <Image
-        src={imageSrc}
+        src={
+          props.image.includes("http")
+            ? props.image
+            : `http://localhost:8080/logos/${props.image}`
+        }
         alt="bandimage"
         className={styles.bandImage}
+        width="768"
+        height="768"
       ></Image>
       <section className={styles.bandDetails}>
         <h2>{props.name}</h2>
         <p>{props.genre}</p>
-        <Anchor href="props.bandID">Check details</Anchor>
+        <Anchor href={`/bands/${props.id}`}>Check details</Anchor>
       </section>
     </article>
   );

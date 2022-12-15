@@ -37,6 +37,34 @@
   gap: var(--spacing-xs);
 }
 
+.function {
+  position: relative;
+}
+
+.function select {
+  background: var(--primary-100);
+  height: var(--spacing-m);
+  color: var(--accent-orange);
+  font-size: var(--type-body);
+  border: 0;
+  padding: 4px;
+  width: fit-content;
+  text-align: right;
+  font-weight: bold;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  padding-inline: 0;
+}
+
+.function select option {
+  background-color: var(--primary-100);
+}
+
 @media screen and (min-width: 768px) {
   .bandList {
     grid-template-columns: repeat(2, 1fr);
