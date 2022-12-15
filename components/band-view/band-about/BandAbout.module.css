@@ -4,7 +4,7 @@
 .article h1 {
   font-size: var(--type-h1);
   font-family: var(--ff-display);
-  line-height: 1.5;
+  line-height: 0.9;
   margin-top: var(--spacing-s);
 }
 
@@ -28,6 +28,20 @@
 
 .genre {
   color: red;
+  margin-bottom: var(--spacing-m) !important;
+}
+
+.memberWrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.memberWrapper h2 {
+  font-size: var(--type-big-body);
+}
+
+.bodytext {
+  color: var(--secondary-100);
 }
 
 @media screen and (min-width: 400px) {
@@ -35,7 +49,6 @@
 
 @media screen and (min-width: 768px) {
   .article {
-    margin-bottom: var(--spacing-2xl);
   }
 }
 

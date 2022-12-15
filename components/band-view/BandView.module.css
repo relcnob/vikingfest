@@ -15,27 +15,31 @@
 
 .image {
   position: relative;
+  padding: 0;
   width: 100%;
   max-width: 650px;
   height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
 
 .ornamentTopRight,
 .ornamentBottomLeft {
   position: absolute;
-  width: 26px;
+  width: 48px;
+  height: 48px;
   z-index: 100;
 }
 
 .ornamentTopRight {
-  top: -33px;
-  right: -4px;
+  top: -8px;
+  right: -8px;
   rotate: 90deg;
 }
 
 .ornamentBottomLeft {
-  bottom: -33px;
-  left: -4px;
+  bottom: -8px;
+  left: -8px;
   rotate: -90deg;
 }
 
@@ -49,6 +53,8 @@
   .top {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
   }
 }
 

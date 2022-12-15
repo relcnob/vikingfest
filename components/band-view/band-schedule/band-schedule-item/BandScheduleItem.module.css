@@ -28,13 +28,15 @@
 
 .li {
   position: relative;
+  display: flex;
+  flex-direction: row;
 }
 
 .ornamentLeft,
 .ornamentRight {
   position: absolute;
-  top: -2.2px;
   height: 38px;
+  width: 38px;
 }
 
 .ornamentLeft {
