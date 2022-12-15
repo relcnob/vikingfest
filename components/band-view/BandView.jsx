@@ -74,7 +74,7 @@ function BandView(props) {
           </div>
         </div>
         <div className="bottom">
-          <BandSchedule />
+          <BandSchedule name={props.data.name} schedule={props.schedule} />
           {/* <CampingMap/> */}
         </div>
       </div>
