@@ -2,8 +2,58 @@ import styles from "./BandList.module.css";
 import BandCard from "./BandCard/BandCard";
 import { useEffect, useState } from "react";
 function BandList(props) {
-  console.log(props.start);
-  const displayedArr = props.data;
+  const [sortValue, setSortValue] = useState("Sorting");
+  const [filterValue, setFilterValue] = useState("Filter by genre");
+  let displayedArr;
+
+  function handleFilter() {
+    if (filterValue != "Filter by genre") {
+      const filteredArray = [...props.data];
+
+      function isMatching(band) {
+        if (band.genre === filterValue) {
+          return band;
+        } else {
+          return 0;
+        }
+      }
+
+      displayedArr = filteredArray.filter(isMatching);
+    } else {
+      displayedArr = props.data;
+    }
+  }
+
+  function handleSort() {
+    if (sortValue != "Sorting") {
+      if (sortValue === "By name A-Z") {
+        displayedArr.sort((a, b) => {
+          if (a.name < b.name) {
+            return -1;
+          }
+          if (a.name > b.name) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+      } else {
+        displayedArr.sort((a, b) => {
+          if (a.name > b.name) {
+            return -1;
+          }
+          if (a.name < b.name) {
+            return 1;
+          } else {
+            return 0;
+          }
+        });
+      }
+    } else {
+      displayedArr = displayedArr;
+    }
+  }
+
   let slicedArr;
   function handlePage() {
     let firstIndex, lastIndex;
@@ -15,10 +65,11 @@ function BandList(props) {
       lastIndex = props.start * 14;
     }
     slicedArr = displayedArr.slice(firstIndex, lastIndex);
-    console.log(slicedArr);
     // console.log("first", firstIndex);
     // console.log("last", lastIndex);
   }
+  handleFilter();
+  handleSort();
   handlePage();
 
   return (
@@ -26,8 +77,36 @@ function BandList(props) {
       <header className={styles.bandListHeader}>
         <h2 className={styles.headline}>Artists</h2>
         <div className={styles.bandListOptions}>
-          <p className={styles.function}>Sort</p>
-          <p className={styles.function}>Filter</p>
+          <span className={styles.function}>
+            <select
+              value={sortValue}
+              onChange={(e) => {
+                setSortValue(e.target.value);
+              }}
+            >
+              <option>Sorting</option>
+              <option>By name A-Z</option>
+              <option>By name Z-A</option>
+            </select>
+          </span>
+          <span className={styles.function}>
+            <select
+              value={filterValue}
+              onChange={(e) => {
+                setFilterValue(e.target.value);
+              }}
+            >
+              <option>Filter by genre</option>
+              <option>Country</option>
+              <option>Electronic</option>
+              <option>Pop</option>
+              <option>Punk</option>
+              <option>Rap</option>
+              <option>Rock</option>
+              <option>Soul</option>
+              <option>World</option>
+            </select>
+          </span>
         </div>
       </header>
       <div className={styles.bandList}>
