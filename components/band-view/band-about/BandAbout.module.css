@@ -29,6 +29,7 @@
 .genre {
   color: red;
   margin-bottom: var(--spacing-m) !important;
+  font-family: var(--ff-display) !important;
 }
 
 .memberWrapper {
@@ -42,6 +43,40 @@
 
 .bodytext {
   color: var(--secondary-100);
+}
+
+/* genres */
+
+.Rock {
+  color: var(--accent-orange-2);
+}
+
+.Pop {
+  color: var(--accent-teal);
+}
+
+.Punk {
+  color: var(--accent-red);
+}
+
+.Soul {
+  color: var(--accent-pink);
+}
+
+.Rap {
+  color: var(--accent-yellow);
+}
+
+.Country {
+  color: var(--accent-green);
+}
+
+.Electronic {
+  color: var(--accent-blue);
+}
+
+.World {
+  color: var(--accent-purple);
 }
 
 @media screen and (min-width: 400px) {

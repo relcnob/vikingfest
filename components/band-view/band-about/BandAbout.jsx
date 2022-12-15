@@ -6,7 +6,9 @@ function BandAbout(props) {
     <article className={styles.article}>
       <section>
         <h1>{props.name.toUpperCase()}</h1>
-        <h2 className={styles.genre}>{props.genre}</h2>
+        <h2 className={`${styles.genre} ${styles[props.genre]}`}>
+          {props.genre}
+        </h2>
         <div className={styles.memberWrapper}>
           <h2>Members: </h2>
           <p className={styles.bodytext}>{props.members.join(", ")}</p>

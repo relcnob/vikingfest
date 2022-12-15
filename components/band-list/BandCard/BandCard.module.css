@@ -110,35 +110,35 @@
 }
 
 .Rock span svg {
-  fill: rgb(255, 115, 0);
+  fill: var(--accent-orange-2);
 }
 
 .Pop span svg {
-  fill: rgb(53, 177, 255);
+  fill: var(--accent-teal);
 }
 
 .Punk span svg {
-  fill: red;
+  fill: var(--accent-red);
 }
 
 .Soul span svg {
-  fill: hotpink;
+  fill: var(--accent-pink);
 }
 
 .Rap span svg {
-  fill: yellow;
+  fill: var(--accent-yellow);
 }
 
 .Country span svg {
-  fill: green;
+  fill: var(--accent-green);
 }
 
 .Electronic span svg {
-  fill: blue;
+  fill: var(--accent-blue);
 }
 
 .World span svg {
-  fill: rgb(140, 0, 175);
+  fill: var(--accent-purple);
 }
 
 @media screen and (min-width: 400px) {
