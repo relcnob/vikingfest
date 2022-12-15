@@ -26,22 +26,22 @@ function Navbar() {
         <div className={styles.mobileNav}>
           <ul className={styles.navWrapper}>
             <li>
-              <Anchor href="/bands" className={styles.link}>
+              <Anchor href="/Bands" className={styles.link}>
                 Bands
               </Anchor>
             </li>
             <li>
-              <Anchor href="/about" className={styles.link}>
+              <Anchor href="/About" className={styles.link}>
                 About
               </Anchor>
             </li>
             <li>
-              <Anchor href="/scheduleApp" className={styles.link}>
+              <Anchor href="/ScheduleApp" className={styles.link}>
                 Schedule App
               </Anchor>
             </li>
           </ul>
-          <Anchor className={styles.button} href="/orderTickets">
+          <Anchor className={styles.button} href="/OrderTickets">
             Order Tickets
           </Anchor>
         </div>
