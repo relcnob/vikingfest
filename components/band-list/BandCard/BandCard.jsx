@@ -87,7 +87,7 @@ function BandCard(props) {
       <section className={styles.bandDetails}>
         <h2>{props.name}</h2>
         <p>{props.genre}</p>
-        <Anchor href="props.bandID">Check details</Anchor>
+        <Anchor href={`/bands/${props.id}`}>Check details</Anchor>
       </section>
     </article>
   );
