@@ -6,7 +6,39 @@ function Footer() {
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.top}>
-          <div className={styles.logo}>VIKINGfest</div>
+          <div className={styles.logo}>
+            <em>VIKING</em>fest
+          </div>
+
+          <div className={styles.column2}>
+            <section className={styles.address}>
+              <h2 className={styles.h2}>Address</h2>
+              <ul className={styles.ul}>
+                <li>Valhalla</li>
+                <li>Asgard 3TV</li>
+              </ul>
+            </section>
+            <section className={styles.contact}>
+              <h2 className={styles.h2}>Contact</h2>
+              <div>
+                <p>+45 30 18 18</p>
+                <Anchor href="info@vikingfest.io" className={styles.emailLink}>
+                  info@vikingfest.io
+                </Anchor>
+                <ul className={styles.someList}>
+                  <li>
+                    <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
+                  </li>
+                  <li>
+                    <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
+                  </li>
+                  <li>
+                    <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
+                  </li>
+                </ul>
+              </div>
+            </section>
+          </div>
           <div className={styles.column1}>
             <section className={styles.about}>
               <h2 className={styles.h2}>About</h2>
@@ -52,35 +84,6 @@ function Footer() {
                   </Anchor>
                 </li>
               </ul>
-            </section>
-          </div>
-          <div className={styles.column2}>
-            <section className={styles.address}>
-              <h2 className={styles.h2}>Address</h2>
-              <ul className={styles.ul}>
-                <li>Valhalla</li>
-                <li>Asgard 3TV</li>
-              </ul>
-            </section>
-            <section className={styles.contact}>
-              <h2 className={styles.h2}>Contact</h2>
-              <div>
-                <p>+45 30 18 18</p>
-                <Anchor href="info@vikingfest.io" className={styles.emailLink}>
-                  info@vikingfest.io
-                </Anchor>
-                <ul className={styles.someList}>
-                  <li>
-                    <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
-                  </li>
-                  <li>
-                    <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
-                  </li>
-                  <li>
-                    <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
-                  </li>
-                </ul>
-              </div>
             </section>
           </div>
         </div>
