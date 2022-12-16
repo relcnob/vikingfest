@@ -4,7 +4,6 @@ import axethrowing from "../../public/images/axe-throwing.webp";
 import odinmeetup from "../../public/images/meeting-with-odin.webp";
 import drinkwiththor from "../../public/images/drink-with-thor.webp";
 function UpcomingEvents() {
-  console.log({ drinkwiththor });
   return (
     <section className={styles.upcomingEventsWrapper}>
       <h1 className={styles.headline}>Upcoming Events</h1>
