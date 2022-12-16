@@ -10,7 +10,7 @@
 }
 
 .bottom {
-  margin-top: 50rem;
+  margin-top: 4rem;
 }
 
 .image {
@@ -44,6 +44,14 @@
   bottom: -8px;
   left: -8px;
   rotate: -90deg;
+}
+
+.areaOverview h2 {
+  font-size: var(--type-h4);
+  line-height: 1.5;
+  margin: auto;
+  margin-bottom: var(--spacing-m);
+  text-align: center;
 }
 
 /* genres */
@@ -92,6 +100,11 @@
     gap: var(--spacing-xl);
     align-items: center;
     margin-bottom: var(--spacing-xl);
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
   }
 }
 

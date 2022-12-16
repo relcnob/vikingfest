@@ -12,12 +12,15 @@ function BandSchedule(props) {
   let midgardActs = [];
   let vanaheimActs = [];
   let jotunheimActs = [];
+  let actArray = [];
+  props.updateMap(actArray);
 
   midgard.forEach((day) => {
     day[1].forEach((entry) => {
       if (entry.act == props.name) {
         let gig = [entry, day[0]];
         midgardActs.push(gig);
+        actArray.push("Midgard");
       }
     });
   });
@@ -27,6 +30,7 @@ function BandSchedule(props) {
       if (entry.act == props.name) {
         let gig = [entry, day[0]];
         jotunheimActs.push(gig);
+        actArray.push("Jotunheim");
       }
     });
   });
@@ -36,6 +40,7 @@ function BandSchedule(props) {
       if (entry.act == props.name) {
         let gig = [entry, day[0]];
         vanaheimActs.push(gig);
+        actArray.push("Vanaheim");
       }
     });
   });

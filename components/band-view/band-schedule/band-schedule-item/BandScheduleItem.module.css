@@ -10,20 +10,14 @@
   text-transform: capitalize;
 }
 
-.svartheim {
-  color: var(--accent-purple);
-}
-.alfheim {
-  color: var(--accent-yellow);
-}
-.helheim {
+.Vanaheim {
   color: var(--accent-red);
 }
-.niflheim {
-  color: var(--accent-green);
-}
-.muspelheim {
+.Jotunheim {
   color: var(--accent-blue);
+}
+.Midgard {
+  color: var(--accent-yellow);
 }
 
 .li {

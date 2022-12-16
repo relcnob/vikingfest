@@ -5,7 +5,20 @@ import BandSchedule from "./band-schedule/BandSchedule";
 import styles from "./BandView.module.css";
 import ornament from "../../public/images/ornament.svg";
 import placeholderImage from "../../public/images/placeholderBand.png";
+import AreaMap from "../area-map/AreaMap";
+import { useState, useEffect } from "react";
+
 function BandView(props) {
+  let activeStages;
+  const [activeMap, setActiveMap] = useState([]);
+  function updateMap(arr) {
+    activeStages = arr;
+  }
+
+  useEffect(() => {
+    setActiveMap(activeStages);
+  }, []);
+
   return (
     <div className={styles.bandView}>
       <div className="container">
@@ -73,9 +86,16 @@ function BandView(props) {
             />
           </div>
         </div>
-        <div className="bottom">
-          <BandSchedule name={props.data.name} schedule={props.schedule} />
-          {/* <CampingMap/> */}
+        <div className={styles.bottom}>
+          <BandSchedule
+            name={props.data.name}
+            schedule={props.schedule}
+            updateMap={updateMap}
+          />
+          <div className={styles.areaOverview}>
+            <h2>Area Map</h2>
+            <AreaMap activeStages={activeMap} />
+          </div>
         </div>
       </div>
     </div>
