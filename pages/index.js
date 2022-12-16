@@ -2,7 +2,7 @@ import Head from "next/head";
 import Hero from "../components/hero/Hero.jsx";
 import InformationBar from "../components/informationBar/InformationBar.jsx";
 import ArtistsOverview from "../components/artists-overview/ArtistsOverview.jsx";
-/* import AreaOverview from "../components/area-overview/AreaOverview.jsx"; */
+import AreaSection from "../components/area-section/AreaSection.jsx";
 import Sponsors from "../components/sponsors/Sponsors.jsx";
 import UpcomingEvents from "../components/upcoming-events/UpcomingEvents.jsx";
 import Help from "../components/help/Help.jsx";
@@ -10,8 +10,8 @@ export default function Home() {
   return (
     <div>
       <Head>
-        <title>VIKINGfest</title>
-        <meta name="description" content="FooFest" />
+        <title>VIKINGfest 2022 </title>
+        <meta name="description" content="VIKINGfest 2022" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -19,7 +19,8 @@ export default function Home() {
         <Hero />
         <InformationBar />
         <ArtistsOverview />
-        {/* <AreaOverview/> */}
+        <AreaSection></AreaSection>
+
         <Sponsors />
         <UpcomingEvents />
         <Help />
