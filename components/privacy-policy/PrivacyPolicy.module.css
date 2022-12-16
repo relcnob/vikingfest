@@ -1,0 +1,33 @@
+.wrapper {
+  max-width: 1440px;
+  margin: auto;
+  color: var(--secondary-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding: var(--spacing-m) var(--spacing-s);
+  align-items: center;
+}
+
+.header {
+  font-size: var(--type-h3);
+}
+.header em {
+  font-family: var(--ff-display);
+}
+
+.wrapper ul {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  list-style: disc;
+}
+
+.wrapper ul li {
+  margin-left: var(--spacing-m);
+}
+.wrapper p,
+.wrapper ul li {
+  max-width: 86ch;
+  line-height: 1.6;
+}

@@ -8,12 +8,12 @@ function Help() {
         <h3>Need More Help?</h3>
         <ul>
           <li>
-            <Anchor href="/about#terms">
+            <Anchor href="/terms">
               <button>TERMS & CONDITIONS</button>
             </Anchor>
           </li>
           <li>
-            <Anchor href="/about#contact">
+            <Anchor href="mailto:contact@vikingfest.io">
               <button>CONTACT</button>
             </Anchor>
           </li>

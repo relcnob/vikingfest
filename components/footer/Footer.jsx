@@ -89,10 +89,10 @@ function Footer() {
         </div>
         <div className={styles.bottom}>
           <div className={styles.privacyTerms}>
-            <Anchor href="/about#privacy" className={styles.link}>
+            <Anchor href="/privacy" className={styles.link}>
               Privacy Policy
             </Anchor>
-            <Anchor href="/about#terms" className={styles.link}>
+            <Anchor href="/terms" className={styles.link}>
               Terms & Conditions{" "}
             </Anchor>
           </div>
