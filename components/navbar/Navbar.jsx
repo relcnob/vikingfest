@@ -21,7 +21,9 @@ function Navbar() {
     <header className={ToggleMenu}>
       <nav className={styles.nav}>
         <Anchor href="/" className={styles.logo}>
-          <Image alt="logotype" src=""></Image>
+          <p>
+            <em>VIKING</em>fest
+          </p>
         </Anchor>
         <div className={styles.mobileNav}>
           <ul className={styles.navWrapper}>
