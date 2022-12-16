@@ -35,12 +35,24 @@ function PurchaseFlow() {
   };
   const displayCurrentStep = () => {
     if (currentStep === 1) {
+      /* need to send data forwards & get quantity of tickets as selectedAmount for reserveSpot */
       return <TicketForm />;
     } else if (currentStep === 2) {
+      /* need to recieve selectedArea for reserveSpot & display amount of available spots on map */
+
       return <LocationForm />;
     } else {
+      /* get selectedArea & selectedAmount to reservse spot */
+      /* start timer */
+      /* store id sent back? */
+
       reserveSpot("Svartheim", 2);
+
       return <BillingForm />;
+      /* TIME OUT */
+      /* If completed send fulfillReservation with id back to fly.io server & disply order confirmation page */
+      /* If not completed send user to select ticket type */
+      /* Send users data to our own server */
     }
   };
   return (
