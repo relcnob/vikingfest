@@ -36,7 +36,7 @@ function Cart(props) {
         <h2>Order summary</h2>
         <div className={s.basket_items}>
           <article>
-            <h3>Overall</h3>
+            {cart.regular.quantity !== 0 || cart.vip.quantity !== 0 || cart["2p"].quantity !== 0 || (cart["3p"].quantity !== 0 && <h3>Overall</h3>)}
             {cart.regular.quantity !== 0 && (
               <CartItem title={"VikingFest 1st Edition Regular Ticket"} quantity={cart.regular.quantity} price={Number(cart.regular.price) * Number(cart.regular.quantity)} />
             )}
@@ -48,13 +48,15 @@ function Cart(props) {
             <h3>Camping site selected</h3>
             <CartItem title={"Camping site 1"} />
           </article>
-          <article>
-            <h3>Donation</h3>
-            <CartItem
-              title={`You’re helping the Viking museum with 20% of the total
+          {cart.donation.value_in_percentage !== 0 && (
+            <article>
+              <h3>Donation</h3>
+              <CartItem
+                title={`You’re helping the Viking museum with ${cart.donation.value_in_percentage}% of the total
 purchase, without VAT.`}
-            />
-          </article>
+              />
+            </article>
+          )}
         </div>
         <div className={s.overview}>
           <div className={s.overview_item}>

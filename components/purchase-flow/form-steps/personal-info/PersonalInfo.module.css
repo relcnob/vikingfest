@@ -1,0 +1,47 @@
+.input_grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  column-gap: var(--spacing-xs);
+  row-gap: var(--spacing-s);
+}
+.input_grid label {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--type-small);
+  gap: var(--spacing-2xs);
+}
+
+.full_row {
+  grid-column: 1/-1;
+}
+
+.personal_info input {
+  padding-block: 1rem;
+  padding-left: var(--spacing-xs);
+  border-radius: 4px;
+  border: none;
+  outline: 2px solid var(--secondary-100);
+}
+.personal_info input:focus {
+  outline: 2px solid var(--accent-orange);
+}
+.personal_info fieldset {
+  padding-bottom: var(--spacing-m);
+}
+.personal_info input,
+.personal_info textarea {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.subtitle {
+  font-size: var(--type-small);
+  font-weight: 400;
+  color: var(--secondary-100);
+}
+
+@media only screen and (min-width: 550px) {
+  .input_grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}

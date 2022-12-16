@@ -1,8 +1,29 @@
+import { useContext, useState } from "react";
 import FormBreadcrumbs from "../../form-components/FormBreadcrumbs";
 import s from "./TicketForm.module.css";
 import NumberField from "../../form-components/NumberField";
+import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 
 function TicketForm() {
+  const [disabled, setDisabled] = useState(true);
+  const [checked, setChecked] = useState("none");
+  const cart = useContext(CartContext);
+  const dispatch = useContext(CartDispatchContext);
+
+  function handleRadio(e) {
+    if (e.target.value === "green") {
+      setDisabled(true);
+      setChecked("green");
+      dispatch({ type: "GREEN", payload: true });
+    } else if (e.target.value === "pre") {
+      setDisabled(false);
+      setChecked("pre");
+      dispatch({ type: "GREEN", payload: false });
+    } else {
+      setChecked("none");
+    }
+  }
+
   return (
     <div className={s.ticket_form}>
       <fieldset className={s.fieldset}>
@@ -41,7 +62,7 @@ function TicketForm() {
         <article>
           <div>
             <label htmlFor="green">
-              <input type="radio" name="camping" id="green" />
+              <input type="radio" name="camping" id="green" value="green" onChange={handleRadio} checked={checked === "green" ? true : false} />
               Optional: Green Camping
             </label>
             <p>This ticket gives you access to the VikingFest for all 7 days, it also gives you access to vip areas, and accomodation spots.</p>
@@ -51,7 +72,7 @@ function TicketForm() {
         <article className={s.flex_vert}>
           <div>
             <label htmlFor="pre">
-              <input type="radio" name="camping" id="pre" />
+              <input type="radio" name="camping" id="pre" value="pre" onChange={handleRadio} checked={checked === "pre" ? true : false} />
               Optional: Pre-setup of tents
             </label>
             <p>The crew will setup all the tents for you.</p>
@@ -60,12 +81,20 @@ function TicketForm() {
           <div className={s.tents}>
             <div>
               <h4>2 Person tent</h4>
-              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"2p"} />
+              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"2p"} disabled={disabled} />
             </div>
             <div>
               <h4>3 Person tent</h4>
-              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"3p"} />
+              <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"3p"} disabled={disabled} />
             </div>
+          </div>
+        </article>
+        <article>
+          <div>
+            <label htmlFor="none">
+              <input type="radio" name="camping" id="none" value="none" onChange={handleRadio} checked={checked === "none" ? true : false} />I do not want green camping neither pre setup tents
+            </label>
+            <p>Choose this option in case you do not want neither of the options above.</p>
           </div>
         </article>
       </fieldset>

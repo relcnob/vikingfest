@@ -12,6 +12,10 @@ function FormBreadcrumbs(props) {
         <div className={s.indicator}></div>
       </div>
       <div className={`${s.divider} ${props.currentStep === 3 ? s.active : ""}`}>
+        <span>Information</span>
+        <div className={s.indicator}></div>
+      </div>
+      <div className={`${s.divider} ${props.currentStep === 4 ? s.active : ""}`}>
         <span>Payment</span>
         <div className={s.indicator}></div>
       </div>
