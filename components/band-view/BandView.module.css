@@ -103,8 +103,9 @@
   }
   .bottom {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     gap: var(--spacing-m);
+    align-items: center;
   }
 }
 

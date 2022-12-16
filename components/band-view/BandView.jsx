@@ -93,7 +93,6 @@ function BandView(props) {
             updateMap={updateMap}
           />
           <div className={styles.areaOverview}>
-            <h2>Area Map</h2>
             <AreaMap activeStages={activeMap} />
           </div>
         </div>

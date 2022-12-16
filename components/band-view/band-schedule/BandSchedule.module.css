@@ -16,6 +16,8 @@
   margin: var(--spacing-2xs);
   gap: var(--spacing-s);
   max-width: 600px;
+  justify-content: center;
+  margin: auto;
 }
 
 .article ol li {
