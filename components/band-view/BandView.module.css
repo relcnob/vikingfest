@@ -10,33 +10,82 @@
 }
 
 .bottom {
-  margin-top: 50rem;
+  margin-top: 4rem;
 }
 
 .image {
   position: relative;
+  padding: 0;
   width: 100%;
   max-width: 650px;
   height: auto;
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  border-radius: var(--spacing-xs);
+  background-color: var(--primary-200);
 }
 
 .ornamentTopRight,
 .ornamentBottomLeft {
   position: absolute;
-  width: 26px;
+  width: 64px;
+  height: 64px;
   z-index: 100;
+  filter: drop-shadow(0px 0px 2px var(--primary-100));
 }
 
 .ornamentTopRight {
-  top: -33px;
-  right: -4px;
+  top: -8px;
+  right: -8px;
   rotate: 90deg;
 }
 
 .ornamentBottomLeft {
-  bottom: -33px;
-  left: -4px;
+  bottom: -8px;
+  left: -8px;
   rotate: -90deg;
+}
+
+.areaOverview h2 {
+  font-size: var(--type-h4);
+  line-height: 1.5;
+  margin: auto;
+  margin-bottom: var(--spacing-m);
+  text-align: center;
+}
+
+/* genres */
+
+.Rock svg {
+  fill: var(--accent-orange-2);
+}
+
+.Pop svg {
+  fill: var(--accent-teal);
+}
+
+.Punk svg {
+  fill: var(--accent-red);
+}
+
+.Soul svg {
+  fill: var(--accent-pink);
+}
+
+.Rap svg {
+  fill: var(--accent-yellow);
+}
+
+.Country svg {
+  fill: var(--accent-green);
+}
+
+.Electronic svg {
+  fill: var(--accent-blue);
+}
+
+.World svg {
+  fill: var(--accent-purple);
 }
 
 @media screen and (min-width: 400px) {
@@ -49,6 +98,13 @@
   .top {
     grid-template-columns: 1fr 1fr;
     gap: var(--spacing-xl);
+    align-items: center;
+    margin-bottom: var(--spacing-xl);
+  }
+  .bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-m);
   }
 }
 

@@ -5,7 +5,9 @@
 .article h2 {
   font-size: var(--type-h4);
   line-height: 1.5;
-  margin-bottom: var(--spacing-l);
+  margin-bottom: var(--spacing-m);
+  display: flex;
+  justify-content: center;
 }
 
 .article ol {
@@ -22,4 +24,5 @@
   display: grid;
   grid-template-columns: 1fr 3fr 1fr;
   padding-inline: var(--spacing-l);
+  align-items: center;
 }

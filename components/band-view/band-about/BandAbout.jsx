@@ -5,13 +5,18 @@ function BandAbout(props) {
   return (
     <article className={styles.article}>
       <section>
-        <h1>{props.name}</h1>
-        <h2 className={styles.genre}>{props.genre}</h2>
-        <p>Members: {props.members}</p>
+        <h1>{props.name.toUpperCase()}</h1>
+        <h2 className={`${styles.genre} ${styles[props.genre]}`}>
+          {props.genre}
+        </h2>
+        <div className={styles.memberWrapper}>
+          <h2>Members: </h2>
+          <p className={styles.bodytext}>{props.members.join(", ")}</p>
+        </div>
       </section>
       <section>
         <h2>About</h2>
-        <p>{props.description}</p>
+        <p className={styles.bodytext}>{props.description}</p>
       </section>
     </article>
   );
