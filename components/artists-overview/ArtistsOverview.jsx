@@ -26,7 +26,7 @@ function ArtistsOverview() {
             <Anchor href="/bands/pink-floyd">Pink Floyd</Anchor>
           </li>
         </ul>
-        <ul class={styles["small_list"]}>
+        <ul className={styles["small_list"]}>
           <li>
             <Anchor href="/bands/jenkins-and-sons">Jenkins And Sons</Anchor>
           </li>

@@ -11,7 +11,7 @@ function InformationBar(props) {
   const nowTime = today.getHours();
   const playingIndex = Math.floor(nowTime / 2);
 
-  console.log(props.schedule.Jotunheim[nowDay][playingIndex]);
+  // console.log(props.schedule.Jotunheim[nowDay][playingIndex]);
 
   return (
     <section className={styles.section}>

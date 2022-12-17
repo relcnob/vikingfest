@@ -59,7 +59,8 @@
   height: 100%;
 }
 
-.list li:hover a {
+.list li:hover a,
+.small_list li:hover a {
   color: var(--primary-100);
 }
 
