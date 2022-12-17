@@ -44,32 +44,31 @@ function Footer() {
               <h2 className={styles.h2}>About</h2>
               <ul className={styles.ul}>
                 <li>
-                  <Anchor href="/About" className={styles.link}>
+                  <Anchor href="/about" className={styles.link}>
                     Our Story
                   </Anchor>
                 </li>
                 <li>
-                  <Anchor href="/Bands" className={styles.link}>
+                  <Anchor href="/bands" className={styles.link}>
                     Bands
                   </Anchor>
                 </li>
-                <li>
-                  <Anchor href="/About#Map" className={styles.link}>
-                    Vikingfest Area
-                  </Anchor>
-                </li>
+                <li></li>
               </ul>
             </section>
             <section className={styles.info}>
               <h2 className={styles.h2}>Info</h2>
               <ul className={styles.ul}>
                 <li>
-                  <Anchor href="/About" className={styles.link}>
+                  <Anchor href="/about" className={styles.link}>
                     Order Ticket
                   </Anchor>
                 </li>
                 <li>
-                  <Anchor href="/About#Contact" className={styles.link}>
+                  <Anchor
+                    href="mailto:contact@vikingfest.io"
+                    className={styles.link}
+                  >
                     Contact
                   </Anchor>
                 </li>
@@ -79,7 +78,7 @@ function Footer() {
                   </Anchor>
                 </li>
                 <li>
-                  <Anchor href="/About#FAQ" className={styles.link}>
+                  <Anchor href="/about" className={styles.link}>
                     FAQ
                   </Anchor>
                 </li>
