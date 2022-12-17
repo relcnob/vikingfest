@@ -1,0 +1,8 @@
+.accordionWrapper {
+  max-width: 1440px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+  padding: var(--spacing-s);
+}

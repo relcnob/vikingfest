@@ -16,6 +16,9 @@
   line-height: var(--type-h5);
   text-align: center;
 }
+.h2 em {
+  font-family: var(--ff-display);
+}
 
 .display {
   display: flex;
@@ -43,7 +46,44 @@
   filter: contrast(0);
   opacity: 0.4;
 }
+.eventWrapper {
+  max-width: 300px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px 300px 300px;
+  overflow: hidden;
+}
 
+.eventWrapper article {
+  display: inline-block;
+  max-width: 100%;
+  max-width: 300px;
+  animation: switch 15s ease-in-out infinite;
+}
+
+@keyframes switch {
+  0% {
+    margin-left: 0;
+  }
+  27% {
+    margin-left: 0;
+  }
+  33% {
+    margin-left: -300px;
+  }
+  60% {
+    margin-left: -300px;
+  }
+  66% {
+    margin-left: -600px;
+  }
+  94% {
+    margin-left: -600px;
+  }
+  100% {
+    margin-left: 0;
+  }
+}
 @media screen and (min-width: 400px) {
 }
 

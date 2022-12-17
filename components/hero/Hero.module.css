@@ -27,7 +27,6 @@
   margin-bottom: 0;
 }
 .heroWrapper {
-  margin-top: 40%;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -119,16 +118,12 @@
   }
 
   .parallaxWrapper {
-    height: 85vh;
+    max-height: 800px;
     background: var(--accent-orange);
     position: relative;
   }
   .heroWrapper {
-    margin-top: 400px;
     max-width: 1440px;
-  }
-  .heroWrapper {
-    margin-top: 20%;
   }
 }
 

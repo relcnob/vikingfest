@@ -17,32 +17,31 @@
   text-transform: uppercase;
   color: var(--secondary-300);
   font-weight: var(--fw-medium);
-  margin-bottom: var(--spacing-s);
+  margin-bottom: var(--spacing-xs);
+  max-width: 15ch;
 }
 
-.svartheim,
-.alfheim,
-.helheim,
-.niflheim,
-.muspelheim {
+.Midgard,
+.Jotunheim,
+.Vanaheim {
   font-family: var(--ff-main);
   font-weight: var(--fw-medium);
   font-size: var(--type-label);
-  text-transform: lowercase;
 }
 
-.svartheim {
-  color: var(--accent-purple);
-}
-.alfheim {
+.Midgard {
   color: var(--accent-yellow);
 }
-.helheim {
+.Jotunheim {
+  color: var(--accent-blue);
+}
+
+.Vanaheim {
   color: var(--accent-red);
 }
-.niflheim {
-  color: var(--accent-green);
-}
-.muspelheim {
-  color: var(--accent-blue);
+
+@media screen and (min-width: 768px) {
+  .artist {
+    max-width: 25ch;
+  }
 }

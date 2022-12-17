@@ -14,7 +14,7 @@ function Hero() {
   return (
     <ParallaxProvider>
       <ParallaxBanner className={styles.parallaxWrapper}>
-        <ParallaxBannerLayer speed={-50} className={styles.backgroundWrapper}>
+        <ParallaxBannerLayer speed={-40} className={styles.backgroundWrapper}>
           <Image
             src={background}
             alt="foreground"
@@ -29,7 +29,7 @@ function Hero() {
             className={styles.middleground}
           ></Image>
         </ParallaxBannerLayer>
-        <ParallaxBannerLayer speed={-35}>
+        <ParallaxBannerLayer>
           <div className={styles.heroWrapper}>
             <h1 className={styles.headline}>
               VIKING<em>fest</em> 2022 <br /> PARTY EVERYDAY

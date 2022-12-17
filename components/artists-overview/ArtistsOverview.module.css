@@ -29,11 +29,47 @@
 .list li {
   position: relative;
 }
+
+.list li a,
+.small_list li a {
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+.list li:before,
+.small_list li:before {
+  content: " ";
+  width: 102%;
+  display: block;
+  background: var(--accent-orange);
+  top: -10%;
+  left: -1%;
+  position: absolute;
+  z-index: 0;
+  height: 0%;
+  transition: 0.3s ease-in-out;
+  transform-origin: bottom;
+}
+.small_list li:before {
+  top: -2%;
+}
+
+.list li:hover:before,
+.small_list li:hover:before {
+  height: 100%;
+}
+
+.list li:hover a,
+.small_list li:hover a {
+  color: var(--primary-100);
+}
+
 .list li::after {
   content: "|";
   position: absolute;
   right: calc((var(--spacing-l) / 2) * -1);
   translate: 50%;
+  margin-top: -2%;
 }
 .list li:last-child::after {
   content: "";
@@ -61,6 +97,7 @@
 .small_list li {
   position: relative;
 }
+
 .small_list li::after {
   content: "|";
   position: absolute;

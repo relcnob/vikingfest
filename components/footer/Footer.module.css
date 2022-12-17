@@ -24,6 +24,10 @@
   font-size: var(--type-h1);
   margin-bottom: var(--spacing-l);
   line-height: var(--type-h1);
+  grid-column: 1/-1;
+}
+.logo em {
+  font-family: var(--ff-display);
 }
 
 .h2 {

@@ -18,7 +18,7 @@
 
 .img {
   width: 100%;
-  height: auto;
+  height: 150px;
   display: block;
   object-fit: cover;
   aspect-ratio: 16/9;
@@ -34,25 +34,25 @@
 .eventDetails {
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-xs);
+  gap: var(--spacing-2xs);
+  align-items: center;
+  position: relative;
 }
 
 .eventDetails p {
   position: relative;
+  font-size: var(--type-label);
+  display: flex;
+  align-items: center;
 }
 
 .eventDetails p:after {
-  display: block;
-  content: "|";
-  height: 100%;
-  position: absolute;
-  top: 0;
-  right: -0.55rem;
-  font-size: var(--type-small);
-  margin-top: 0.15rem;
-  transform: scaleY(0.9);
-  transform-origin: top;
-  margin-top: -0px;
+  display: inline-block;
+  content: " ";
+  height: 16px;
+  width: 2px;
+  margin-left: var(--spacing-2xs);
+  background-color: var(--secondary-200);
 }
 
 .eventDetails p:last-of-type:after {
@@ -72,19 +72,19 @@
 }
 
 .svartheim {
-  color: var(--accent-purple);
+  color: var(--accent-teal);
 }
 .alfheim {
-  color: var(--accent-yellow);
-}
-.helheim {
-  color: var(--accent-red);
-}
-.niflheim {
   color: var(--accent-green);
 }
+.helheim {
+  color: var(--accent-purple);
+}
+.niflheim {
+  color: var(--accent-pink);
+}
 .muspelheim {
-  color: var(--accent-blue);
+  color: var(--accent-orange-2);
 }
 @media screen and (min-width: 768px) {
   .cardWrapper {
@@ -106,16 +106,7 @@
   .contentWrapper {
     padding: var(--spacing-s);
   }
-  .eventDetails p:after {
-    display: block;
-    content: "|";
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -0.55rem;
-    font-size: var(--type-normal);
-    margin-top: 0.15rem;
-    transform-origin: top;
-    margin-top: -0px;
+  .img {
+    height: 250px;
   }
 }
