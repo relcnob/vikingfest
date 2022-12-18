@@ -13,7 +13,7 @@ export function reducer(state, action) {
       return { ...state, green };
     }
     case "PRE": {
-      const green = { ...state.pre, checked: action.payload };
+      const pre = { ...state.pre, checked: action.payload };
       return { ...state, pre };
     }
     case "2P": {
@@ -27,6 +27,16 @@ export function reducer(state, action) {
     case "DONATION": {
       const donation = { ...state.donation, value_in_percentage: Number(action.payload) };
       return { ...state, donation };
+    }
+    case "INFO": {
+      const personal_errors = action.payload.personal_errors;
+      const personal_info = action.payload.personalData;
+      return { ...state, personal_info, personal_errors };
+    }
+    case "PAYMENT": {
+      const payment_errors = action.payload.payment_errors;
+      const payment_info = action.payload.payment_info;
+      return { ...state, payment_errors, payment_info };
     }
     default:
       return state;

@@ -8,7 +8,7 @@ function FormSubmit(props) {
   function handleClick(e, action) {
     e.preventDefault();
     if (action === "next") {
-      props.next(props.currentStep);
+      props.next(props.currentStep, e);
     } else {
       props.prev();
     }

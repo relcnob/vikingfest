@@ -8,7 +8,7 @@ function NumberField(props) {
 
   function handleChange(e) {
     dispatch({ type: props.id.toUpperCase(), payload: e.target.value });
-    console.log(cart);
+    // console.log(cart);
   }
   return (
     <div className={s.mini_label}>

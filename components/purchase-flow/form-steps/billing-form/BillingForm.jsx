@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 import s from "./BillingForm.module.css";
+import InlineError from "../../form-components/inline-error/InlineError";
 
 function BillingForm() {
   const cart = useContext(CartContext);
   const dispatch = useContext(CartDispatchContext);
   function handleRadio(e) {
-    console.log(e.target.value);
     dispatch({ type: "DONATION", payload: e.target.value });
   }
 
@@ -18,18 +18,22 @@ function BillingForm() {
           <label htmlFor="cc" className={s.full_row}>
             Card number
             <input type="text" name="cc" id="cc" placeholder="Card number" />
+            {cart.payment_errors.includes("cc") && <InlineError message={"Please insert a 16 digit card number"} />}
           </label>
           <label htmlFor="name_on_card" className={s.full_row}>
             Name on card
             <input type="text" name="name_on_card" id="name_on_card" placeholder="Name on card" />
+            {cart.payment_errors.includes("name_on_card") && <InlineError message={"Please insert the name written on your card"} />}
           </label>
           <label htmlFor="expiration">
             Expiration date
             <input type="text" name="expiration" id="expiration" placeholder="Expiration date (MM/YY)" />
+            {cart.payment_errors.includes("expiration") && <InlineError message={"Please insert the expiration date of your card"} />}
           </label>
           <label htmlFor="security_code">
             Security code
             <input type="number" name="security_code" id="security_code" placeholder="Security code (CVV)" />
+            {cart.payment_errors.includes("security_code") && <InlineError message={"Please insert the three digit security code from the back of your card"} />}
           </label>
         </div>
       </fieldset>
