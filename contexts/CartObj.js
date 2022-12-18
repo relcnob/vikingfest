@@ -11,6 +11,9 @@ export const CartObj = {
     checked: false,
     price: 249,
   },
+  pre: {
+    checked: false,
+  },
   "2p": {
     quantity: 0,
     price: 299,

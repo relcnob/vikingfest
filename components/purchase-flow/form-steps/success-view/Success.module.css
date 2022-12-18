@@ -1,0 +1,118 @@
+.success {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  grid-column: 1/-1;
+  color: var(--secondary-200);
+  align-self: center;
+  padding-block: var(--spacing-m);
+}
+.success > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  align-items: center;
+  max-width: 600px;
+  align-self: center;
+  justify-self: center;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  align-items: center;
+}
+.header h1 {
+  font-weight: 700;
+  font-size: var(--type-h3);
+  color: var(--secondary-300);
+}
+.success h2 {
+  font-size: var(--type-big-body);
+  font-weight: 700;
+  color: var(--secondary-300);
+}
+.success h3 {
+  font-size: var(--type-body);
+  font-weight: 700;
+  color: var(--secondary-300);
+}
+.header > span {
+  font-size: var(--type-big-body);
+}
+.success section {
+  padding: var(--spacing-s);
+  border-radius: 0.5rem;
+  width: 100%;
+  border: 1px solid var(--secondary-100);
+}
+.qrCodeArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+.qrCodeSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+.appSection {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: var(--spacing-s);
+}
+.customerSection {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-s);
+}
+.customerSection h2 {
+  grid-column: 1/-1;
+}
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+}
+.paymentInfo {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+}
+.downloadBtn {
+  display: flex;
+  gap: var(--spacing-s);
+  align-items: center;
+}
+.downloadArea {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-2xs);
+  align-items: flex-start;
+}
+
+@media only screen and (min-width: 768px) {
+  .success {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    border-radius: 1rem;
+    border: 1px solid var(--secondary-100);
+    grid-column: 1/-1;
+    color: var(--secondary-200);
+    align-self: center;
+    padding-block: var(--spacing-m);
+    background-color: var(--primary-300);
+  }
+  .qrCodeArea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-s);
+  }
+  .customerSection {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-s);
+  }
+}

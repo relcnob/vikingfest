@@ -12,6 +12,10 @@ export function reducer(state, action) {
       const green = { ...state.green, checked: action.payload };
       return { ...state, green };
     }
+    case "PRE": {
+      const green = { ...state.pre, checked: action.payload };
+      return { ...state, pre };
+    }
     case "2P": {
       const newValue = { ...state["2p"], quantity: Number(action.payload) };
       return { ...state, "2p": newValue };

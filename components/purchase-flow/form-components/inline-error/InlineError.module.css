@@ -1,0 +1,11 @@
+.error {
+  color: var(--secondary-300);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-2xs);
+  font-size: var(--type-label);
+  padding: var(--spacing-2xs);
+  background-color: rgba(255, 0, 0, 0.197);
+  border-radius: 25px;
+  border: 1px solid var(--accent-red);
+}
