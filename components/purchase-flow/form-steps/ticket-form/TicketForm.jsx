@@ -3,8 +3,9 @@ import FormBreadcrumbs from "../../form-components/FormBreadcrumbs";
 import s from "./TicketForm.module.css";
 import NumberField from "../../form-components/NumberField";
 import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
+import InlineError from "../../form-components/inline-error/InlineError";
 
-function TicketForm() {
+function TicketForm({ error }) {
   const [disabled, setDisabled] = useState(true);
   const [checked, setChecked] = useState("none");
   const cart = useContext(CartContext);
@@ -19,6 +20,7 @@ function TicketForm() {
       setDisabled(false);
       setChecked("pre");
       dispatch({ type: "GREEN", payload: false });
+      dispatch({ type: "PRE", payload: true });
     } else {
       setChecked("none");
     }
@@ -28,6 +30,7 @@ function TicketForm() {
     <div className={s.ticket_form}>
       <fieldset className={s.fieldset}>
         <legend className={s.legend}>Choose your prefered ticket</legend>
+
         <article>
           <div className={s.inner}>
             <img src="/form_thumbnail.jpg" alt="Regular ticket" className={s.thumbnail} />
@@ -44,11 +47,12 @@ function TicketForm() {
             <img className={s.thumbnail} src="/form_thumbnail.jpg" alt="VIP ticket" />
             <div>
               <h3>VikingFest 1st Edition VIP Ticket</h3>
-              <p>This ticket gives you access to the VikingFest for all 7 days, it also gives you access to vip areas, and accomodation spots.</p>
+              <p>This ticket gives you access to the VikingFest for all 7 days, it also gives you access to vip areas.</p>
             </div>
           </div>
           <NumberField min={0} max={10} step={1} label={"799,-DKK"} id={"vip"}></NumberField>
         </article>
+        {error === 1 && <InlineError message={"Choose at least 1 ticket"} />}
       </fieldset>
       <fieldset>
         <legend className={s.legend}>Choose your camping</legend>
@@ -87,6 +91,11 @@ function TicketForm() {
               <h4>3 Person tent</h4>
               <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"3p"} disabled={disabled} />
             </div>
+            {error === 2 && (
+              <InlineError
+                message={`The number of tent space must be 1 or more, and cannot exceed ${cart.vip.quantity + cart.regular.quantity > 1 ? cart.vip.quantity + cart.regular.quantity + 1 : 2}`}
+              />
+            )}
           </div>
         </article>
         <article>
