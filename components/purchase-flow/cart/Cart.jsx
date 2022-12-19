@@ -38,20 +38,24 @@ function Cart(props) {
           <article>
             {cart.regular.quantity !== 0 || cart.vip.quantity !== 0 || cart["2p"].quantity !== 0 || (cart["3p"].quantity !== 0 && <h3>Overall</h3>)}
             {cart.regular.quantity !== 0 && (
-              <CartItem title={"VikingFest 1st Edition Regular Ticket"} quantity={cart.regular.quantity} price={Number(cart.regular.price) * Number(cart.regular.quantity)} />
+              <CartItem name={"regular"} title={"VikingFest 1st Edition Regular Ticket"} quantity={cart.regular.quantity} price={Number(cart.regular.price) * Number(cart.regular.quantity)} />
             )}
-            {cart.vip.quantity !== 0 && <CartItem title={"VikingFest 1st Edition VIP Ticket"} quantity={cart.vip.quantity} price={cart.vip.price * cart.vip.quantity} />}
-            {cart["2p"].quantity !== 0 && <CartItem title={"Pre-setup of 2 preson tent"} quantity={cart["2p"].quantity} price={cart["2p"].quantity * cart["2p"].price} />}
-            {cart["3p"].quantity !== 0 && <CartItem title={"Pre-setup of 3 preson tent"} quantity={cart["3p"].quantity} price={cart["3p"].quantity * cart["3p"].price} />}
+            {cart.vip.quantity !== 0 && <CartItem name={"vip"} title={"VikingFest 1st Edition VIP Ticket"} quantity={cart.vip.quantity} price={cart.vip.price * cart.vip.quantity} />}
+            {cart["2p"].quantity !== 0 && <CartItem name={"2p"} title={"Pre-setup of 2 preson tent"} quantity={cart["2p"].quantity} price={cart["2p"].quantity * cart["2p"].price} />}
+            {cart["3p"].quantity !== 0 && <CartItem name={"3p"} title={"Pre-setup of 3 preson tent"} quantity={cart["3p"].quantity} price={cart["3p"].quantity * cart["3p"].price} />}
+            {cart.green.checked && <CartItem name={"green"} title={"Green camping"} quantity={1} price={cart.green.price} />}
           </article>
-          <article>
-            <h3>Camping site selected</h3>
-            <CartItem title={"Camping site 1"} />
-          </article>
+          {cart.camping.site && (
+            <article>
+              <h3>Camping site selected</h3>
+              <CartItem name={"3p"} title={`${cart.camping.site} Camping site`} />
+            </article>
+          )}
           {cart.donation.value_in_percentage !== 0 && (
             <article>
               <h3>Donation</h3>
               <CartItem
+                name={"donation"}
                 title={`You’re helping the Viking museum with ${cart.donation.value_in_percentage}% of the total
 purchase, without VAT.`}
               />

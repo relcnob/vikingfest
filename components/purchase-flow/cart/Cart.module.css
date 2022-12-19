@@ -5,7 +5,7 @@
   padding: var(--spacing-l) var(--spacing-m);
   position: relative;
   position: fixed;
-  inset: 0.5rem 1rem 0.5rem 1rem;
+  inset: 4rem 1rem 0.5rem 1rem;
 }
 .cart_close {
   display: block;

@@ -16,6 +16,7 @@ function TicketForm({ error }) {
       setDisabled(true);
       setChecked("green");
       dispatch({ type: "GREEN", payload: true });
+      dispatch({ type: "PRE", payload: false });
     } else if (e.target.value === "pre") {
       setDisabled(false);
       setChecked("pre");
@@ -52,7 +53,7 @@ function TicketForm({ error }) {
           </div>
           <NumberField min={0} max={10} step={1} label={"799,-DKK"} id={"vip"}></NumberField>
         </article>
-        {error === 1 && <InlineError message={"Choose at least 1 ticket"} />}
+        {error.ticket === 1 && <InlineError message={"Choose at least 1 ticket"} />}
       </fieldset>
       <fieldset>
         <legend className={s.legend}>Choose your camping</legend>
@@ -91,7 +92,7 @@ function TicketForm({ error }) {
               <h4>3 Person tent</h4>
               <NumberField min={0} max={10} step={1} label={"299,-DKK"} id={"3p"} disabled={disabled} />
             </div>
-            {error === 2 && (
+            {error.ticket === 2 && (
               <InlineError
                 message={`The number of tent space must be 1 or more, and cannot exceed ${cart.vip.quantity + cart.regular.quantity > 1 ? cart.vip.quantity + cart.regular.quantity + 1 : 2}`}
               />

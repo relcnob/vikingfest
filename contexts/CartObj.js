@@ -23,7 +23,17 @@ export const CartObj = {
     price: 399,
   },
   camping: {
-    site: "svartheim",
+    site: "",
+  },
+  reservation: {
+    message: "",
+    id: null,
+    timeout: null,
+    cc_ending: "",
+    time: 0,
+  },
+  order: {
+    status: "in progress",
   },
   donation: {
     value_in_percentage: 0,

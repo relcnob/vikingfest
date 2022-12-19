@@ -12,7 +12,8 @@
   width: 64px;
   height: 64px;
   border-radius: 8px;
-  background-color: hotpink;
+  color: var(--secondary-100);
+  /* border: 1px solid var(--secondary-100); */
 }
 .content {
   display: flex;
