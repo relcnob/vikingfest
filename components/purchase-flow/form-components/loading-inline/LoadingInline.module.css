@@ -35,8 +35,6 @@
     width: 100%;
     color: var(--secondary-300);
     background-color: var(--primary-300);
-    border-radius: 1rem;
-    border: 1px solid var(--secondary-100);
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -51,11 +49,11 @@
     gap: var(--spacing-xs);
   }
   .loading h1 {
-    font-size: var(--type-h4);
+    font-size: var(--type-h5);
     font-weight: 700;
   }
   .loading span {
-    font-size: var(--type-big-body);
+    font-size: var(--type-body);
   }
   .loading svg {
     width: 60px;

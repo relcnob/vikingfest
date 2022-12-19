@@ -1,17 +1,30 @@
 import { useContext, useEffect, useState } from "react";
 import s from "./LocationForm.module.css";
 import LoadingInline from "../../form-components/loading-inline/LoadingInline";
+import FormOverview from "../../form-components/form-overview/FormOverview";
+import { CartContext } from "../../../../contexts/CartContext";
+// import AreaMap from "../../form-components/area-map/AreaMap";
 
-function LocationForm() {
+function LocationForm({ error }) {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
+  const [availableSpots, setAvailableSpots] = useState({});
+  const cart = useContext(CartContext);
   useEffect(() => {
     async function getAvailability() {
       setMessage("Getting available spots");
       setLoading(true);
       const res = await fetch(`http://localhost:8080/available-spots`);
       const spots = await res.json();
-      console.log(spots);
+      if (!error) {
+        const newSpots = {};
+        spots.forEach((spot) => {
+          newSpots[spot.area] = Number(spot.available);
+        });
+        setAvailableSpots((old) => {
+          return { ...old, ...newSpots };
+        });
+      }
       setTimeout(() => {
         setLoading(false);
       }, 1000);
@@ -26,29 +39,7 @@ function LocationForm() {
         <div className={s.location_form}>
           <fieldset>
             <legend>Click on the camping spot</legend>
-            <div className={s.map_wrapper}></div>
-            <div className={s.map_legend}>
-              <div>
-                <div className={s.color}></div>
-                <p>Camping 1</p>
-              </div>
-              <div>
-                <div className={s.color}></div>
-                <p>Camping 2</p>
-              </div>
-              <div>
-                <div className={s.color}></div>
-                <p>Camping 3</p>
-              </div>
-              <div>
-                <div className={s.color}></div>
-                <p>Camping 4</p>
-              </div>
-              <div>
-                <div className={s.color}></div>
-                <p>Camping 5</p>
-              </div>
-            </div>
+            <FormOverview error={error} availableSpots={availableSpots} tickets={cart.vip.quantity + cart.regular.quantity} />
           </fieldset>
         </div>
       )}

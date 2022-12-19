@@ -38,6 +38,22 @@ export function reducer(state, action) {
       const payment_info = action.payload.payment_info;
       return { ...state, payment_errors, payment_info };
     }
+    case "CAMPING": {
+      const camping = { ...state.camping, site: action.payload };
+      return { ...state, camping };
+    }
+    case "RESERVATION": {
+      const reservation = { ...state.reservation, message: action.payload.message, id: action.payload.id, timeout: action.payload.timeout, time: action.payload.time };
+      return { ...state, reservation };
+    }
+    case "CC": {
+      const reservation = { ...state.reservation, cc_ending: action.payload };
+      return { ...state, reservation };
+    }
+    case "ORDER": {
+      const order = { ...state.order, status: action.payload };
+      return { ...state, order };
+    }
     default:
       return state;
   }

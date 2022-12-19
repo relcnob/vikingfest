@@ -1,4 +1,4 @@
-import { useContext, useState, useRef } from "react";
+import { useContext, useState, useRef, useEffect } from "react";
 import Cart from "./cart/Cart";
 import s from "./PurchaseFlow.module.css";
 import TicketForm from "./form-steps/ticket-form/TicketForm";
@@ -10,10 +10,12 @@ import PersonalInfo from "./form-steps/personal-info/PersonalInfo";
 import Success from "./form-steps/success-view/Success";
 import LoadingForm from "./form-steps/loading/LoadingForm";
 import { CartContext, CartDispatchContext } from "../../contexts/CartContext";
-import next from "next";
+import { supabase } from "../../utils/supabaseClient";
+import TimedOut from "./form-steps/timed-out/TimedOut";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
+  const [timedOut, setTimedOut] = useState(true);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     ticket: 0,
@@ -21,6 +23,7 @@ function PurchaseFlow() {
     personal: 0,
     billing: 0,
   });
+  const [currentView, setCurrentView] = useState(null);
   const cart = useContext(CartContext);
   const dispatch = useContext(CartDispatchContext);
   const theForm = useRef(null);
@@ -30,6 +33,7 @@ function PurchaseFlow() {
       case 1:
         {
           if (cart.vip.quantity <= 0 && cart.regular.quantity <= 0) {
+            console.log("next", cart.vip.quantity <= 0 && cart.regular.quantity <= 0);
             setError((old) => {
               return { ...old, ticket: 1 };
             });
@@ -47,7 +51,16 @@ function PurchaseFlow() {
         break;
       case 2:
         {
-          nextStep();
+          if (!cart.camping.site) {
+            setError((old) => {
+              return { ...old, location: 1 };
+            });
+          } else {
+            setError((old) => {
+              return { ...old, location: 0 };
+            });
+            nextStep();
+          }
         }
         break;
       case 3:
@@ -95,13 +108,10 @@ function PurchaseFlow() {
             body[key] = value;
           }
           console.log(body);
-          if (
-            !body.cc
-              .replace(" ", "")
-              .replace("-", "")
-              .match(/^(?:4[0-9]{12}(?:[0-9]{3})?|[25][1-7][0-9]{14}|6(?:011|5[0-9][0-9])[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|(?:2131|1800|35\d{3})\d{11})$/)
-          ) {
+          if ([...body.cc.replace(" ", "").replace("-", "")].length !== 16) {
             payment_errors.push("cc");
+          } else {
+            dispatch({ type: "CC", payload: body.cc.slice(-4) });
           }
           if (!body.expiration) {
             payment_errors.push("expiration");
@@ -117,11 +127,6 @@ function PurchaseFlow() {
             nextStep();
           }
         }
-
-        // dispatch({ type: "PAYMENT", payload: { personalData, personal_errors } });
-        // if (payment_errors.length === 0) {
-        //   nextStep();
-        // }
         break;
     }
   };
@@ -162,17 +167,74 @@ function PurchaseFlow() {
       return "Congratulations";
     }
   }
-  function displayCurrentStep() {
+  useEffect(() => {
     if (currentStep === 1) {
-      return <TicketForm error={error.ticket} />;
+      setCurrentView(<TicketForm error={error} />);
     } else if (currentStep === 2) {
-      return <LocationForm error={error.location} />;
+      setCurrentView(<LocationForm error={error.location} />);
     } else if (currentStep === 3) {
-      return <PersonalInfo error={error.personal} />;
+      reserveSpot();
+      setCurrentView(<PersonalInfo error={error.personal} />);
     } else if (currentStep === 4) {
-      return <BillingForm error={error.billing} />;
+      setCurrentView(<BillingForm error={error.billing} />);
+    } else if (currentStep === 5) {
+      setLoading(true);
+      fulfillOrder();
     }
-  }
+
+    async function reserveSpot() {
+      const res = await fetch("http://localhost:8080/" + "reserve-spot", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ area: cart.camping.site, amount: cart.vip.quantity + cart.regular.quantity }),
+      });
+      const reservation = await res.json();
+      console.log(reservation);
+      dispatch({ type: "RESERVATION", payload: { ...reservation, time: Date.now() } });
+    }
+
+    async function fulfillOrder() {
+      if (Number(Date.now()) - Number(cart.reservation.time) < Number(cart.reservation.timeout)) {
+        const res = await fetch("http://localhost:8080/" + "fullfill-reservation", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ id: cart.reservation.id }),
+        });
+        const fulfill = await res.json();
+        const { data, error } = await supabase
+          .from("orders")
+          .insert([
+            {
+              basket: {
+                tickets: {
+                  regular: cart.regular.quantity,
+                  vip: cart.vip.quantity,
+                },
+                camping: {
+                  green: cart.green.checked ? 1 : 0,
+                  "2p": cart["2p"].quantity,
+                  "3p": cart["3p"].quantity,
+                  site: cart.camping.site,
+                },
+                donation_in_percentage: cart.donation.value_in_percentage,
+              },
+              personal_info: cart.personal_info,
+              order_id: cart.reservation.id,
+            },
+          ])
+          .select("*");
+        if (fulfill.message === "Reservation completed") {
+          dispatch({ type: "ORDER", payload: "fulfilled" });
+          setTimeout(() => {
+            setLoading(false);
+          }, 1000);
+        }
+      } else {
+        setLoading(false);
+        setTimedOut(true);
+      }
+    }
+  }, [currentStep, error]);
 
   return (
     <section className={s.purchase_flow}>
@@ -184,13 +246,14 @@ function PurchaseFlow() {
             <form className={s.form} ref={theForm}>
               <h1 className={s.h1}>{currentTitle()}</h1>
               <FormBreadcrumbs currentStep={currentStep} />
-              {displayCurrentStep()}
-              <FormSubmit currentStep={currentStep} prev={prevStep} next={validateCurrentStep} price={1736.35} />
+              {currentStep !== 5 && currentView}
+              <FormSubmit currentStep={currentStep} prev={prevStep} next={validateCurrentStep} />
             </form>
           )
         )}
         {currentStep !== 5 && !loading && <Cart className={s.cart} />}
-        {currentStep === 5 && !loading && <Success />}
+        {currentStep === 5 && !loading && !timedOut && <Success />}
+        {currentStep === 5 && timedOut && <TimedOut />}
       </div>
     </section>
   );

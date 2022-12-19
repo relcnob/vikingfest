@@ -112,7 +112,17 @@
   gap: var(--spacing-2xs);
   align-items: flex-start;
 }
-
+.link {
+  color: var(--accent-orange);
+  transition: color 0.2s ease-in-out;
+  background: none;
+  background-color: none;
+  border: none;
+  cursor: pointer;
+}
+.link:hover {
+  color: var(--secondary-100);
+}
 @media only screen and (min-width: 768px) {
   .success {
     display: flex;
