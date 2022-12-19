@@ -3,10 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    protocol: "http",
     domains: ["localhost", "placeimg.com"],
-    port: "8080",
-    pathname: "/logos/**",
   },
 };
 
