@@ -1,6 +1,9 @@
 import { useContext } from "react";
 import s from "./NumberField.module.css";
-import { CartContext, CartDispatchContext } from "../../../contexts/CartContext";
+import {
+  CartContext,
+  CartDispatchContext,
+} from "../../../contexts/CartContext";
 
 function NumberField(props) {
   const cart = useContext(CartContext);
@@ -24,7 +27,7 @@ function NumberField(props) {
           onChange={handleChange}
           disabled={props.disabled ? true : false}
         />
-        <div className={s.input_number_arrows}></div>
+        {/* <div className={s.input_number_arrows}></div> */}
       </div>
       <label htmlFor={props.id}>{props.label}</label>
     </div>

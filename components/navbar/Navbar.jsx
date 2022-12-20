@@ -65,7 +65,7 @@ function Navbar() {
               ToggleMenu === styles.show ? setToggleMenu("") : "";
             }}
           >
-            Order Tickets
+            Book Tickets
           </Anchor>
         </div>
 
