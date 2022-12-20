@@ -48,7 +48,7 @@ function Cart(props) {
           {cart.camping.site && (
             <article>
               <h3>Camping site selected</h3>
-              <CartItem name={"3p"} title={`${cart.camping.site} Camping site`} />
+              <CartItem name={cart.camping.site.toLowerCase()} title={cart.camping.site} />
             </article>
           )}
           {cart.donation.value_in_percentage !== 0 && (

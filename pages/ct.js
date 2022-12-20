@@ -13,7 +13,7 @@ function testpage() {
       <ArtistsOverview />
       <Sponsors />
       <UpcomingEvents /> */}
-      <BandView />
+      {/* <BandView /> */}
     </>
   );
 }

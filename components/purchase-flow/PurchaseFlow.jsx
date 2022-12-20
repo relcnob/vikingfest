@@ -15,7 +15,7 @@ import TimedOut from "./form-steps/timed-out/TimedOut";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [timedOut, setTimedOut] = useState(true);
+  const [timedOut, setTimedOut] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     ticket: 0,
@@ -183,7 +183,7 @@ function PurchaseFlow() {
     }
 
     async function reserveSpot() {
-      const res = await fetch("http://localhost:8080/" + "reserve-spot", {
+      const res = await fetch("https://vikingfestserver.fly.dev/" + "reserve-spot", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ area: cart.camping.site, amount: cart.vip.quantity + cart.regular.quantity }),
@@ -195,7 +195,7 @@ function PurchaseFlow() {
 
     async function fulfillOrder() {
       if (Number(Date.now()) - Number(cart.reservation.time) < Number(cart.reservation.timeout)) {
-        const res = await fetch("http://localhost:8080/" + "fullfill-reservation", {
+        const res = await fetch("https://vikingfestserver.fly.dev/" + "fullfill-reservation", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ id: cart.reservation.id }),
@@ -253,7 +253,7 @@ function PurchaseFlow() {
         )}
         {currentStep !== 5 && !loading && <Cart className={s.cart} />}
         {currentStep === 5 && !loading && !timedOut && <Success />}
-        {currentStep === 5 && timedOut && <TimedOut />}
+        {currentStep === 5 && !loading && timedOut && <TimedOut />}
       </div>
     </section>
   );

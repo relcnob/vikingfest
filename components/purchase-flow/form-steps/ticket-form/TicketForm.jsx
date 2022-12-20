@@ -4,6 +4,7 @@ import s from "./TicketForm.module.css";
 import NumberField from "../../form-components/NumberField";
 import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 import InlineError from "../../form-components/inline-error/InlineError";
+import Image from "next/image";
 
 function TicketForm({ error }) {
   const [disabled, setDisabled] = useState(true);
@@ -34,7 +35,7 @@ function TicketForm({ error }) {
 
         <article>
           <div className={s.inner}>
-            <img src="/form_thumbnail.jpg" alt="Regular ticket" className={s.thumbnail} />
+            <Image src={"/images/vikingfest-icons/other/ticket-regular.svg"} width={64} height={64} alt={"Regular Ticket"} />
             <div>
               <h3>VikingFest 1st Edition Regular Ticket</h3>
               <p>This ticket gives you access to the festival for all 7 days.</p>
@@ -45,7 +46,7 @@ function TicketForm({ error }) {
         </article>
         <article>
           <div className={s.inner}>
-            <img className={s.thumbnail} src="/form_thumbnail.jpg" alt="VIP ticket" />
+            <Image src={"/images/vikingfest-icons/other/ticket-vip.svg"} width={64} height={64} alt={"VIP Ticket"} />
             <div>
               <h3>VikingFest 1st Edition VIP Ticket</h3>
               <p>This ticket gives you access to the VikingFest for all 7 days, it also gives you access to vip areas.</p>

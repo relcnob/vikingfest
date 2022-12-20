@@ -3,11 +3,11 @@ import BandCard from "./BandCard/BandCard";
 import { useEffect, useState } from "react";
 function BandList(props) {
   const [sortValue, setSortValue] = useState("Sorting");
-  const [filterValue, setFilterValue] = useState("Filter by genre");
+  const [filterValue, setFilterValue] = useState("All genres");
   let displayedArr;
 
   function handleFilter() {
-    if (filterValue != "Filter by genre") {
+    if (filterValue != "All genres") {
       const filteredArray = [...props.data];
 
       function isMatching(band) {
@@ -96,7 +96,7 @@ function BandList(props) {
                 setFilterValue(e.target.value);
               }}
             >
-              <option>Filter by genre</option>
+              <option>All genres</option>
               <option>Country</option>
               <option>Electronic</option>
               <option>Pop</option>
@@ -111,15 +111,7 @@ function BandList(props) {
       </header>
       <div className={styles.bandList}>
         {slicedArr.map((band) => {
-          return (
-            <BandCard
-              key={band.slug}
-              name={band.name}
-              genre={band.genre}
-              id={band.slug}
-              image={band.logo}
-            ></BandCard>
-          );
+          return <BandCard key={band.slug} name={band.name} genre={band.genre} id={band.slug} image={band.logo}></BandCard>;
         })}
       </div>
     </section>

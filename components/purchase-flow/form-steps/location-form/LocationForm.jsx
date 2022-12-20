@@ -14,7 +14,7 @@ function LocationForm({ error }) {
     async function getAvailability() {
       setMessage("Getting available spots");
       setLoading(true);
-      const res = await fetch(`http://localhost:8080/available-spots`);
+      const res = await fetch(`https://vikingfestserver.fly.dev/available-spots`);
       const spots = await res.json();
       if (!error) {
         const newSpots = {};

@@ -4,10 +4,10 @@ function bandPage(props) {
   return <BandView data={props.data} schedule={props.schedule}></BandView>;
 }
 
-export async function getServerSideProps(context) {
+export async function getStaticProps(context) {
   const slug = context.params.slug;
-  const res = await fetch("http://localhost:8080/bands");
-  const sched = await fetch("http://localhost:8080/schedule");
+  const res = await fetch("https://vikingfestserver.fly.dev/bands");
+  const sched = await fetch("https://vikingfestserver.fly.dev/schedule");
   if (res.status !== 200) {
     return {
       notFound: true,
@@ -23,6 +23,20 @@ export async function getServerSideProps(context) {
       data: band[0],
       schedule,
     },
+  };
+}
+
+export async function getStaticPaths() {
+  const res = await fetch("https://vikingfestserver.fly.dev/bands");
+  const data = await res.json();
+
+  const paths = data.map((entry) => {
+    return { params: { slug: entry.slug } };
+  });
+
+  return {
+    paths,
+    fallback: false,
   };
 }
 

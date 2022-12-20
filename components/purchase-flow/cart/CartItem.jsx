@@ -11,6 +11,11 @@ function CartItem(props) {
         {props.name === "2p" && <Image src={"/images/vikingfest-icons/other/tent.svg"} width={64} height={64} alt={"decorative"} />}
         {props.name === "green" && <Image src={"/images/vikingfest-icons/other/green-camping.svg"} width={64} height={64} alt={"decorative"} />}
         {props.name === "donation" && <Image src={"/images/vikingfest-icons/other/donation.svg"} width={64} height={64} alt={"decorative"} />}
+        {props.name === "alfheim" && <Image src={"/images/vikingfest-icons/camping-areas/alfheim.svg"} width={64} height={64} alt={"decorative"} />}
+        {props.name === "helheim" && <Image src={"/images/vikingfest-icons/camping-areas/helheim.svg"} width={64} height={64} alt={"decorative"} />}
+        {props.name === "muspelheim" && <Image src={"/images/vikingfest-icons/camping-areas/muspelheim.svg"} width={64} height={64} alt={"decorative"} />}
+        {props.name === "nilfheim" && <Image src={"/images/vikingfest-icons/camping-areas/niflheim.svg"} width={64} height={64} alt={"decorative"} />}
+        {props.name === "svartheim" && <Image src={"/images/vikingfest-icons/camping-areas/svartheim.svg"} width={64} height={64} alt={"decorative"} />}
       </div>
       <div className={s.content}>
         <span className={s.title}>{props.title}</span>
