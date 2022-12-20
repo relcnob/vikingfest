@@ -28,7 +28,7 @@ function Home(props) {
   );
 }
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const res = await fetch("https://vikingfestserver.fly.dev/schedule");
   // if (res.status !== 200) {
   //   return {
