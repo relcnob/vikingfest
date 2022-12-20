@@ -5,7 +5,7 @@ import styles from "../components/band-list/Pagenav.module.css";
 function Bands() {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/bands")
+    fetch("https://vikingfestserver.fly.dev/bands")
       .then((res) => res.json())
       .then((data) => {
         setData(data);

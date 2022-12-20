@@ -29,7 +29,7 @@ function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:8080/schedule");
+  const res = await fetch("https://vikingfestserver.fly.dev/schedule");
   if (res.status !== 200) {
     return {
       notFound: true,
