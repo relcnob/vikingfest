@@ -11,58 +11,27 @@ function InformationBar(props) {
   const nowTime = today.getHours();
   const playingIndex = Math.floor(nowTime / 2);
 
-  // console.log(props.schedule.Jotunheim[nowDay][playingIndex]);
-
   return (
     <section className={styles.section}>
       <div className="container">
         <div className={styles.display}>
           <div className={styles.eventWrapper}>
-            <CurrentlyPlaying
-              stage="Midgard"
-              artist={props.schedule.Midgard[nowDay][playingIndex].act}
-            />
-            <CurrentlyPlaying
-              stage="Vanaheim"
-              artist={props.schedule.Vanaheim[nowDay][playingIndex].act}
-            />
-            <CurrentlyPlaying
-              stage="Jotunheim"
-              artist={props.schedule.Jotunheim[nowDay][playingIndex].act}
-            />
+            <CurrentlyPlaying stage="Midgard" artist={props.schedule.Midgard[nowDay][playingIndex].act} />
+            <CurrentlyPlaying stage="Vanaheim" artist={props.schedule.Vanaheim[nowDay][playingIndex].act} />
+            <CurrentlyPlaying stage="Jotunheim" artist={props.schedule.Jotunheim[nowDay][playingIndex].act} />
           </div>
           <div className={styles.eventWrapper}>
-            <ComingUp
-              stage="Midgard"
-              start={`${playingIndex * 2 + 2}:00`}
-              artist={props.schedule.Midgard[nowDay][playingIndex + 1].act}
-            />
-            <ComingUp
-              stage="Vanaheim"
-              start={`${playingIndex * 2 + 2}:00`}
-              artist={props.schedule.Vanaheim[nowDay][playingIndex + 1].act}
-            />
-            <ComingUp
-              stage="Jotunheim"
-              start={`${playingIndex * 2 + 2}:00`}
-              artist={props.schedule.Jotunheim[nowDay][playingIndex + 1].act}
-            />
+            <ComingUp stage="Midgard" start={`${playingIndex * 2 + 2}:00`} artist={props.schedule.Midgard[nowDay][playingIndex + 1].act} />
+            <ComingUp stage="Vanaheim" start={`${playingIndex * 2 + 2}:00`} artist={props.schedule.Vanaheim[nowDay][playingIndex + 1].act} />
+            <ComingUp stage="Jotunheim" start={`${playingIndex * 2 + 2}:00`} artist={props.schedule.Jotunheim[nowDay][playingIndex + 1].act} />
           </div>
         </div>
         <h2 className={styles.h2}>
           <em>VIKING</em>fest
         </h2>
       </div>
-      <Image
-        src={ornament}
-        className={styles.ornamentLeft}
-        alt="viking ornament"
-      />
-      <Image
-        src={ornament}
-        className={styles.ornamentRight}
-        alt="viking ornament"
-      />
+      <Image src={ornament} className={styles.ornamentLeft} alt="viking ornament" />
+      <Image src={ornament} className={styles.ornamentRight} alt="viking ornament" />
     </section>
   );
 }

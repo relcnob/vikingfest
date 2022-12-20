@@ -65,8 +65,6 @@ function BandList(props) {
       lastIndex = props.start * 14;
     }
     slicedArr = displayedArr.slice(firstIndex, lastIndex);
-    // console.log("first", firstIndex);
-    // console.log("last", lastIndex);
   }
   handleFilter();
   handleSort();

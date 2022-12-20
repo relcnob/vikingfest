@@ -33,7 +33,7 @@ function PurchaseFlow() {
       case 1:
         {
           if (cart.vip.quantity <= 0 && cart.regular.quantity <= 0) {
-            console.log("next", cart.vip.quantity <= 0 && cart.regular.quantity <= 0);
+
             setError((old) => {
               return { ...old, ticket: 1 };
             });
@@ -107,7 +107,7 @@ function PurchaseFlow() {
           for (const [key, value] of formData) {
             body[key] = value;
           }
-          console.log(body);
+
           if ([...body.cc.replace(" ", "").replace("-", "")].length !== 16) {
             payment_errors.push("cc");
           } else {
@@ -189,7 +189,7 @@ function PurchaseFlow() {
         body: JSON.stringify({ area: cart.camping.site, amount: cart.vip.quantity + cart.regular.quantity }),
       });
       const reservation = await res.json();
-      console.log(reservation);
+
       dispatch({ type: "RESERVATION", payload: { ...reservation, time: Date.now() } });
     }
 
