@@ -18,7 +18,7 @@ function AreaSection() {
           deities in Norse mythology. VIKINGfest is a unique and immersive event
           that combines music and Norse mythology in a creative way.
         </p>
-        <Anchor href="/order" className="button">
+        <Anchor href="/booking" className="button">
           Book tickets
         </Anchor>
       </div>

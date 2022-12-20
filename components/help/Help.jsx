@@ -18,7 +18,7 @@ function Help() {
             </Anchor>
           </li>
           <li>
-            <Anchor href="/about#faq">
+            <Anchor href="/about">
               <button>FAQ</button>
             </Anchor>
           </li>

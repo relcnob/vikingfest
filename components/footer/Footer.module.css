@@ -25,6 +25,8 @@
   margin-bottom: var(--spacing-l);
   line-height: var(--type-h1);
   grid-column: 1/-1;
+  font-family: var(--ff-display);
+  font-weight: var(--fw-medium);
 }
 .logo em {
   font-family: var(--ff-display);

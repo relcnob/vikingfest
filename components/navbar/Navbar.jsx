@@ -43,7 +43,7 @@ function Navbar() {
               </Anchor>
             </li>
           </ul>
-          <Anchor className={styles.button} href="/orderTickets">
+          <Anchor className={styles.button} href="/booking">
             Order Tickets
           </Anchor>
         </div>

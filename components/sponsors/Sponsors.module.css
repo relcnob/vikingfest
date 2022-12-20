@@ -27,6 +27,7 @@
 .h3 {
   font-size: var(--type-big-body);
   color: var(--primary-100);
+  font-weight: var(--fw-medium);
 }
 
 .li {

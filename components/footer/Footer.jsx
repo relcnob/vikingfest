@@ -27,13 +27,19 @@ function Footer() {
                 </Anchor>
                 <ul className={styles.someList}>
                   <li>
-                    <Anchor href="facebook.com/vikingfest">FACEBOOK</Anchor>
+                    <Anchor href="https://facebook.com/vikingfest">
+                      FACEBOOK
+                    </Anchor>
                   </li>
                   <li>
-                    <Anchor href="instagram.com/vikingfest">INSTAGRAM</Anchor>
+                    <Anchor href="https://instagram.com/vikingfest">
+                      INSTAGRAM
+                    </Anchor>
                   </li>
                   <li>
-                    <Anchor href="twitter.com/vikingfest">TWITTER</Anchor>
+                    <Anchor href="https://twitter.com/vikingfest">
+                      TWITTER
+                    </Anchor>
                   </li>
                 </ul>
               </div>
@@ -60,7 +66,7 @@ function Footer() {
               <h2 className={styles.h2}>Info</h2>
               <ul className={styles.ul}>
                 <li>
-                  <Anchor href="/about" className={styles.link}>
+                  <Anchor href="/booking" className={styles.link}>
                     Order Ticket
                   </Anchor>
                 </li>
@@ -73,7 +79,10 @@ function Footer() {
                   </Anchor>
                 </li>
                 <li>
-                  <Anchor href="/ScheduleApp" className={styles.link}>
+                  <Anchor
+                    href="https://vikingfest-app.netlify.app/"
+                    className={styles.link}
+                  >
                     Schedule App
                   </Anchor>
                 </li>
