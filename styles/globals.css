@@ -70,6 +70,7 @@ body {
   margin: 0;
   font-size: 0.875em;
   font-family: var(--ff-main);
+  overflow-x: hidden;
 }
 
 a {
