@@ -30,8 +30,8 @@ export async function getStaticPaths() {
   const res = await fetch("https://vikingfestserver.fly.dev/bands");
   const data = await res.json();
 
-  const paths = data.map((entry) => {
-    return { params: { slug: entry.slug } };
+  const paths = data.map((band) => {
+    return { params: { slug: band.slug } };
   });
 
   return {
