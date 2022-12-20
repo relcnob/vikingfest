@@ -38,7 +38,7 @@ function Navbar() {
               </Anchor>
             </li>
             <li>
-              <Anchor href="/scheduleApp" className={styles.link}>
+              <Anchor href="https://vikingfest-app.netlify.app/" className={styles.link}>
                 Schedule App
               </Anchor>
             </li>

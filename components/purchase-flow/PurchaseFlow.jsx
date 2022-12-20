@@ -15,7 +15,7 @@ import TimedOut from "./form-steps/timed-out/TimedOut";
 
 function PurchaseFlow() {
   const [currentStep, setCurrentStep] = useState(1);
-  const [timedOut, setTimedOut] = useState(true);
+  const [timedOut, setTimedOut] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
     ticket: 0,
@@ -253,7 +253,7 @@ function PurchaseFlow() {
         )}
         {currentStep !== 5 && !loading && <Cart className={s.cart} />}
         {currentStep === 5 && !loading && !timedOut && <Success />}
-        {currentStep === 5 && timedOut && <TimedOut />}
+        {currentStep === 5 && !loading && timedOut && <TimedOut />}
       </div>
     </section>
   );

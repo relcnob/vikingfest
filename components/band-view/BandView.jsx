@@ -30,6 +30,7 @@ function BandView(props) {
               alt={"band name"}
               width="768"
               height="768"
+              priority
             />
             <span className={`${styles.ornamentTopRight} ${styles[props.data.genre]}`}>
               <svg viewBox="0 0 84 84">
