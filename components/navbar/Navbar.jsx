@@ -27,23 +27,44 @@ function Navbar() {
         </Anchor>
         <div className={styles.mobileNav}>
           <ul className={styles.navWrapper}>
-            <li>
+            <li
+              onClick={() => {
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
+              }}
+            >
               <Anchor href="/bands" className={styles.link}>
                 Bands
               </Anchor>
             </li>
-            <li>
+            <li
+              onClick={() => {
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
+              }}
+            >
               <Anchor href="/about" className={styles.link}>
                 About
               </Anchor>
             </li>
-            <li>
-              <Anchor href="https://vikingfest-app.netlify.app/" className={styles.link}>
+            <li
+              onClick={() => {
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
+              }}
+            >
+              <Anchor
+                href="https://vikingfest-app.netlify.app/"
+                className={styles.link}
+              >
                 Schedule App
               </Anchor>
             </li>
           </ul>
-          <Anchor className={styles.button} href="/booking">
+          <Anchor
+            className={styles.button}
+            href="/booking"
+            onClick={() => {
+              ToggleMenu === styles.show ? setToggleMenu("") : "";
+            }}
+          >
             Order Tickets
           </Anchor>
         </div>
