@@ -15,9 +15,12 @@
   font-size: var(--type-h5);
   line-height: var(--type-h5);
   text-align: center;
+  font-family: var(--ff-display);
+  font-weight: var(--fw-medium);
 }
 .h2 em {
   font-family: var(--ff-display);
+  font-weight: var(--fw-bold);
 }
 
 .display {
