@@ -79,7 +79,10 @@ function Footer() {
                   </Anchor>
                 </li>
                 <li>
-                  <Anchor href="/ScheduleApp" className={styles.link}>
+                  <Anchor
+                    href="https://vikingfest-app.netlify.app/"
+                    className={styles.link}
+                  >
                     Schedule App
                   </Anchor>
                 </li>
