@@ -18,6 +18,14 @@ function BandAbout(props) {
         <h2>About</h2>
         <p className={styles.bodytext}>{props.description}</p>
       </section>
+      {props.credits != undefined ? (
+        <section className={styles.credits}>
+          <h3>Logo credits</h3>
+          <p>{props.credits}</p>
+        </section>
+      ) : (
+        ""
+      )}
     </article>
   );
 }

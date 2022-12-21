@@ -45,6 +45,16 @@
   color: var(--secondary-100);
 }
 
+.credits h3 {
+  font-size: var(--type-body);
+  margin-bottom: var(--spacing-xs);
+}
+
+.credits p {
+  font-size: var(--type-label);
+  color: var(--secondary-100);
+}
+
 /* genres */
 
 .Rock {

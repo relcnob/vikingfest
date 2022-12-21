@@ -18,7 +18,7 @@ function BandView(props) {
   useEffect(() => {
     setActiveMap(activeStages);
   }, []);
-
+  console.log(props);
   return (
     <div className={styles.bandView}>
       <div className="container">
@@ -26,13 +26,21 @@ function BandView(props) {
           <div className={styles.image}>
             <Image
               className={styles.image}
-              src={props.data.logo.includes("http") ? props.data.logo : `https://vikingfestserver.fly.dev/logos/${props.data.logo}`}
+              src={
+                props.data.logo.includes("http")
+                  ? props.data.logo
+                  : `https://vikingfestserver.fly.dev/logos/${props.data.logo}`
+              }
               alt={"band name"}
               width="768"
               height="768"
               priority
             />
-            <span className={`${styles.ornamentTopRight} ${styles[props.data.genre]}`}>
+            <span
+              className={`${styles.ornamentTopRight} ${
+                styles[props.data.genre]
+              }`}
+            >
               <svg viewBox="0 0 84 84">
                 <g>
                   <g>
@@ -47,7 +55,11 @@ function BandView(props) {
                 </g>
               </svg>
             </span>
-            <span className={`${styles.ornamentBottomLeft} ${styles[props.data.genre]}`}>
+            <span
+              className={`${styles.ornamentBottomLeft} ${
+                styles[props.data.genre]
+              }`}
+            >
               <svg viewBox="0 0 84 84">
                 <g>
                   <g>
@@ -64,11 +76,23 @@ function BandView(props) {
             </span>
           </div>
           <div class={styles.about}>
-            <BandAbout name={props.data.name} genre={props.data.genre} members={props.data.members} id="1" image="img" description={props.data.bio} schedule="" />
+            <BandAbout
+              name={props.data.name}
+              genre={props.data.genre}
+              members={props.data.members}
+              id="1"
+              image="img"
+              description={props.data.bio}
+              credits={props.data.logoCredits}
+            />
           </div>
         </div>
         <div className={styles.bottom}>
-          <BandSchedule name={props.data.name} schedule={props.schedule} updateMap={updateMap} />
+          <BandSchedule
+            name={props.data.name}
+            schedule={props.schedule}
+            updateMap={updateMap}
+          />
           <div className={styles.areaOverview}>
             <AreaMap activeStages={activeMap} />
           </div>
