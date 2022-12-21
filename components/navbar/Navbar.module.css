@@ -35,7 +35,7 @@
   transform: translateX(120%);
   transition: transform 0.5s ease-in-out;
   background-color: var(--primary-100);
-  z-index: 10;
+  z-index: 997;
   font-size: var(--type-big-body);
 }
 
@@ -62,11 +62,11 @@
   width: 50px;
   height: 50px;
   transition: all 0.3s ease-in-out;
-  z-index: 15;
+  z-index: 998;
 }
 
 .logo {
-  z-index: 15;
+  z-index: 999;
   color: var(--accent-orange);
   font-size: var(--type-big-body);
 }
