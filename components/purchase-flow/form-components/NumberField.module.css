@@ -23,7 +23,7 @@
   position: absolute;
   width: 50px;
   height: 50px;
-  display: block;
+  display: none;
   border-left: 1px solid #eee;
   top: 0px;
   right: 0px;
@@ -67,7 +67,6 @@
 .mini_label::after {
   content: "Quantity";
   display: block;
-
   position: absolute;
   color: var(--primary-300);
   z-index: 10;

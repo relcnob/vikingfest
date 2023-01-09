@@ -29,6 +29,7 @@
   opacity: 0;
   transform: translateY(16px);
   pointer-events: none;
+  cursor: default !important;
 }
 
 .show {
@@ -332,8 +333,4 @@
     bottom: 79%;
     left: 38%;
   }
-}
-@media screen and (min-width: 1200px) {
-}
-@media screen and (min-width: 1440px) {
 }

@@ -8,7 +8,6 @@ function AreaOverview() {
 
   return (
     <div className={styles.componentWrapper}>
-      {/* ternary operator shows only one label at a time */}
       <section className={styles.labelWrapper}>
         <span
           onClick={() => {
