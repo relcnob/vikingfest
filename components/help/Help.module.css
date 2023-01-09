@@ -35,6 +35,10 @@
   cursor: pointer;
 }
 
+.helpSection button:hover {
+  filter: brightness(1.3);
+}
+
 @media screen and (min-width: 768px) {
   .helpSection ul {
     grid-template-columns: 1fr 1fr 1fr;

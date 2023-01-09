@@ -13,6 +13,11 @@
   font-size: var(--type-body);
 }
 
+.footer a:hover {
+  text-decoration: underline;
+  filter: brightness(1.3);
+}
+
 .emailLink {
   color: var(--accent-orange);
   font-size: var(--type-body);
@@ -51,6 +56,7 @@
 .column2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  margin-bottom: var(--spacing-m);
 }
 
 .about,
@@ -97,8 +103,9 @@
 .someList {
   margin-top: var(--spacing-s);
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
   color: var(--accent-orange);
+  gap: var(--spacing-xs);
 }
 
 .bottom {
@@ -123,6 +130,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .someList {
+    flex-flow: row nowrap;
+  }
 }
 
 @media screen and (min-width: 1200px) {

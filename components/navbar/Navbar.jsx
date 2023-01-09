@@ -29,7 +29,7 @@ function Navbar() {
           <ul className={styles.navWrapper}>
             <li
               onClick={() => {
-                setToggleMenu("");
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
               }}
             >
               <Anchor href="/bands" className={styles.link}>
@@ -38,7 +38,7 @@ function Navbar() {
             </li>
             <li
               onClick={() => {
-                setToggleMenu("");
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
               }}
             >
               <Anchor href="/about" className={styles.link}>
@@ -47,7 +47,7 @@ function Navbar() {
             </li>
             <li
               onClick={() => {
-                setToggleMenu("");
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
               }}
             >
               <Anchor
@@ -58,15 +58,15 @@ function Navbar() {
               </Anchor>
             </li>
           </ul>
-          <span
+          <Anchor
+            className={styles.button}
+            href="/booking"
             onClick={() => {
-              setToggleMenu("");
+              ToggleMenu === styles.show ? setToggleMenu("") : "";
             }}
           >
-            <Anchor className={styles.button} href="/booking">
-              Order Tickets
-            </Anchor>
-          </span>
+            Book Tickets
+          </Anchor>
         </div>
 
         <div className={BurgerState} onClick={changeMenuState}>

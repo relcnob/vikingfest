@@ -21,6 +21,7 @@
   border-radius: 4px;
   border: none;
   outline: 2px solid var(--secondary-100);
+  font-family: var(--ff-main);
 }
 .personal_info input:focus {
   outline: 2px solid var(--accent-orange);
