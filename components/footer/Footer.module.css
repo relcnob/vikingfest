@@ -103,7 +103,7 @@
 .someList {
   margin-top: var(--spacing-s);
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column;
   color: var(--accent-orange);
   gap: var(--spacing-xs);
 }
@@ -130,6 +130,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .someList {
+    flex-flow: row nowrap;
+  }
 }
 
 @media screen and (min-width: 1200px) {
