@@ -13,6 +13,11 @@
   font-size: var(--type-body);
 }
 
+.footer a:hover {
+  text-decoration: underline;
+  filter: brightness(1.3);
+}
+
 .emailLink {
   color: var(--accent-orange);
   font-size: var(--type-body);
