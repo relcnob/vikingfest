@@ -14,7 +14,7 @@ import { supabase } from "../../utils/supabaseClient";
 import TimedOut from "./form-steps/timed-out/TimedOut";
 
 function PurchaseFlow() {
-  const [currentStep, setCurrentStep] = useState(1);
+  const [currentStep, setCurrentStep] = useState(4);
   const [timedOut, setTimedOut] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
@@ -33,7 +33,6 @@ function PurchaseFlow() {
       case 1:
         {
           if (cart.vip.quantity <= 0 && cart.regular.quantity <= 0) {
-
             setError((old) => {
               return { ...old, ticket: 1 };
             });
