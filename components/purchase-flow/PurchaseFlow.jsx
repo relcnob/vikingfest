@@ -106,16 +106,18 @@ function PurchaseFlow() {
           for (const [key, value] of formData) {
             body[key] = value;
           }
+          console.log(body);
 
-          if ([...body.cc.replace(" ", "").replace("-", "")].length !== 16) {
+          if ([...body.cardNumber.replace(" ", "")].length !== 16) {
             payment_errors.push("cc");
+            console.log("error cc");
           } else {
-            dispatch({ type: "CC", payload: body.cc.slice(-4) });
+            dispatch({ type: "CC", payload: body.cardNumber.slice(-4) });
           }
-          if (!body.expiration) {
+          if (!body.expiryDate) {
             payment_errors.push("expiration");
           }
-          if (!body.security_code) {
+          if (!body.cvc) {
             payment_errors.push("security_code");
           }
           if (!body.name_on_card.match(/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/)) {
