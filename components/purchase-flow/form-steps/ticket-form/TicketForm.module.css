@@ -51,7 +51,7 @@
   align-self: flex-end;
 }
 
-.tents div {
+.tents > div {
   display: flex;
   gap: var(--spacing-s);
   justify-content: space-between;
@@ -61,7 +61,7 @@
   flex-direction: column;
 }
 .ticket_form .flex_vert div:first-child {
-  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
   align-items: center;
 }
 

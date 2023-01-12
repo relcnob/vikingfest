@@ -6,6 +6,7 @@
   position: relative;
   position: fixed;
   inset: 4rem 1rem 0.5rem 1rem;
+  z-index: 10;
 }
 .cart_close {
   display: block;
