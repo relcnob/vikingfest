@@ -27,7 +27,6 @@ function PurchaseFlow() {
   const cart = useContext(CartContext);
   const dispatch = useContext(CartDispatchContext);
   const theForm = useRef(null);
-  // setMessage("Hello world");
   const validateCurrentStep = (step, e) => {
     switch (step) {
       case 1:

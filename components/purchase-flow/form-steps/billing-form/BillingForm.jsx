@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 import s from "./BillingForm.module.css";
 import InlineError from "../../form-components/inline-error/InlineError";
@@ -8,6 +8,12 @@ import images from "react-payment-inputs/images";
 function BillingForm() {
   const cart = useContext(CartContext);
   const dispatch = useContext(CartDispatchContext);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    window.addEventListener("resize", () => {
+      setScreenWidth(window.innerWidth);
+    });
+  }, []);
   const ERROR_MESSAGES = {
     emptyCardNumber: "Invalid credit card number",
     invalidCardNumber: "Invalid credit card number, try 4242 4242...",
@@ -38,7 +44,7 @@ function BillingForm() {
     inputWrapper: {
       base: {
         display: "flex",
-        gap: "1rem",
+        gap: ".5rem",
         paddingBlock: "1.5rem",
         borderRadius: "4px",
         outline: "2px solid var(--secondary-100)",
@@ -51,7 +57,7 @@ function BillingForm() {
       base: {
         padding: ".5rem",
         borderRadius: "4px",
-        fontSize: "1rem",
+        fontSize: `${screenWidth > 400 ? "1rem" : ".8rem"}`,
         // outline: "2px solid black",
       },
       //   errored: css | Object,
