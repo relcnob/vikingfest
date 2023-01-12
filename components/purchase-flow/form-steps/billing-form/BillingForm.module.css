@@ -22,10 +22,10 @@
   border: none;
   font-weight: 400;
   font-size: 1rem;
-  outline: 2px solid var(--secondary-100);
+  border: 2px solid var(--secondary-100);
 }
 .billing_form input:focus {
-  outline: 2px solid var(--accent-orange);
+  border: 2px solid var(--accent-orange);
 }
 .billing_form fieldset {
   padding-bottom: var(--spacing-m);
@@ -52,7 +52,7 @@
   justify-content: space-around;
   align-items: center;
   border-radius: 4px;
-  outline: 1px solid var(--secondary-100);
+  border: 1px solid var(--secondary-100);
 }
 .selecotr_item {
   position: relative;
@@ -85,7 +85,7 @@
 }
 
 .selector_item_label:hover {
-  outline: 2px solid var(--accent-orange);
+  border: 2px solid var(--accent-orange);
 }
 .selector_item_radio:checked + .selector_item_label {
   background-color: #ff9d4192;
