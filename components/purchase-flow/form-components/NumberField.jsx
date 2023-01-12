@@ -6,11 +6,11 @@ function NumberField(props) {
   const cart = useContext(CartContext);
   const dispatch = useContext(CartDispatchContext);
   const input = useRef(null);
-  const [inputValue, setInputValue] = useState(0);
 
   function handleChange(e) {
     console.log("change event");
-    // dispatch({ type: props.id.toUpperCase(), payload: e.target.value });
+    console.log(e.target.value);
+    dispatch({ type: props.id.toUpperCase(), payload: e.target.value });
   }
 
   function handleArrow(e, direction) {
