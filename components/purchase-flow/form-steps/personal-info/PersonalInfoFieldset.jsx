@@ -12,6 +12,15 @@ function PersonalInfoFieldset(props) {
   const dob = useRef(null);
   const phone = useRef(null);
   const [value, setValue] = useState();
+  const d = new Date();
+  const maxDate = `${d.getFullYear() - 18}-${Number(d.getMonth() + 1).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  })}-${Number(d.getDate()).toLocaleString("en-US", {
+    minimumIntegerDigits: 2,
+    useGrouping: false,
+  })}`;
+  const [date, setDate] = useState(maxDate);
 
   return (
     <>
@@ -30,7 +39,7 @@ function PersonalInfoFieldset(props) {
           </label>
           <label htmlFor={`dob_guest_${props.index}`}>
             Date of birth (required)
-            <input type="date" name={`dob_guest_${props.index}`} id={`dob_guest_${props.index}`} ref={dob} />
+            <input type="date" max={maxDate} name={`dob_guest_${props.index}`} value={date} onChange={(e) => setDate(e.target.value)} id={`dob_guest_${props.index}`} ref={dob} />
             {cart.personal_errors.includes(`dob_guest_${props.index}`) && <InlineError message={"Please insert your date of birth"} />}
           </label>
           <label htmlFor={`phone_guest_${props.index}`}>
