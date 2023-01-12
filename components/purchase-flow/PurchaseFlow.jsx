@@ -14,7 +14,7 @@ import { supabase } from "../../utils/supabaseClient";
 import TimedOut from "./form-steps/timed-out/TimedOut";
 
 function PurchaseFlow() {
-  const [currentStep, setCurrentStep] = useState(4);
+  const [currentStep, setCurrentStep] = useState(1);
   const [timedOut, setTimedOut] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState({
@@ -106,9 +106,8 @@ function PurchaseFlow() {
           for (const [key, value] of formData) {
             body[key] = value;
           }
-          console.log(body);
 
-          if ([...body.cardNumber.replace(" ", "")].length !== 16) {
+          if (body.cardNumber.replaceAll(" ", "").length !== 16) {
             payment_errors.push("cc");
             console.log("error cc");
           } else {

@@ -41,6 +41,8 @@ function BillingForm() {
         gap: "1rem",
         paddingBlock: "1.5rem",
         borderRadius: "4px",
+        outline: "2px solid var(--secondary-100)",
+        border: "none",
       },
       // errored: css | Object,
       // focused: css | Object,
