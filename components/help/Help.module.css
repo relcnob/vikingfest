@@ -26,6 +26,7 @@
 }
 .helpSection button {
   font-size: var(--type-h4);
+  font-weight: 700;
   line-height: 1.5;
   padding-block: var(--spacing-xs);
   background-color: var(--accent-orange);
