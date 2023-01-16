@@ -71,6 +71,7 @@
   position: relative;
   height: 100%;
   align-self: flex-end;
+  margin-left: var(--spacing-2xs);
 }
 .mini_label::after {
   content: "Quantity";
@@ -85,4 +86,13 @@
 }
 .no_events {
   pointer-events: none;
+}
+.label {
+  width: 60px;
+}
+
+@media only screen and (min-width: 1200px) {
+  .label {
+    width: 80px;
+  }
 }

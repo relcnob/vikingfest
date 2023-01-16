@@ -43,6 +43,10 @@
   gap: 1rem;
   align-items: flex-start;
 }
+
+.inner img {
+  align-self: center;
+}
 .thumbnail {
   border: 2px solid var(--secondary-100);
   border-radius: 4px;
@@ -65,6 +69,24 @@
   align-items: center;
 }
 
+.ticket_form article div label + p {
+  margin-top: var(--spacing-2xs);
+  margin-left: var(--spacing-m);
+}
+
+.ticket_form article div p:nth-of-type(2) {
+  color: var(--accent-orange);
+  font-size: var(--type-small);
+  margin-top: var(--spacing-2xs);
+}
+
+.additional_info {
+  margin-left: var(--spacing-m);
+}
+.radio_button {
+  margin-right: 0.7rem;
+}
+
 @media only screen and (min-width: 768px) {
   .purchase_flow {
     padding-block: var(--spacing-m);
@@ -75,6 +97,9 @@
   }
   .tents {
     padding-left: var(--spacing-m);
+  }
+  .flex_horizontal div:last-of-type {
+    align-self: center;
   }
 }
 @media only screen and (min-width: 1200px) {
