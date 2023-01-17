@@ -15,6 +15,7 @@
 }
 .form_submit button {
   border: none;
+  font-size: var(--type-body);
   padding-block: var(--spacing-s);
   padding-inline: var(--spacing-m);
   border-radius: 4px;
@@ -22,9 +23,10 @@
   font-weight: 700;
   cursor: pointer;
   transition: 200ms ease-in-out;
+  font-family: var(--ff-main);
 }
 .next_button:hover {
-  background-color: var(--accent-yellow);
+  filter: brightness(1.3);
 }
 
 .next_button {

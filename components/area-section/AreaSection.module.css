@@ -14,7 +14,7 @@
 .sectionWrapper > div > h2 {
   font-size: var(--type-h2);
   font-family: var(--ff-display);
-  margin-bottom: var(--spacing-s);
+  margin-bottom: var(--spacing-2xs);
 }
 
 .sectionWrapper > div:first-of-type {

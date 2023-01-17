@@ -6,10 +6,15 @@ import styles from "../components/band-list/Pagenav.module.css";
 function Bands({ data }) {
   const [currentArray, setCurrentArray] = useState(data);
   const [currentPage, setCurrentPage] = useState(1);
-
+  const [maxPage, setMaxPage] = useState(Math.ceil(data.length / 14));
   return (
     <>
-      <BandList data={data} start={currentPage} />
+      <BandList
+        data={data}
+        start={currentPage}
+        setMaxPage={setMaxPage}
+        setCurrentPage={setCurrentPage}
+      />
       <div className={styles.pagenavWrapper}>
         <span
           className={currentPage === 1 ? styles.grayedOut : ""}
@@ -21,9 +26,9 @@ function Bands({ data }) {
         </span>
         <span>{currentPage}</span>
         <span
-          className={currentPage === 9 ? styles.grayedOut : ""}
+          className={currentPage === maxPage ? styles.grayedOut : ""}
           onClick={() => {
-            currentPage < 9 ? setCurrentPage(currentPage + 1) : [];
+            currentPage < maxPage ? setCurrentPage(currentPage + 1) : [];
           }}
         >
           {`>`}

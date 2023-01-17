@@ -9,12 +9,12 @@ function Help() {
         <ul>
           <li>
             <Anchor href="/terms">
-              <button>TERMS & CONDITIONS</button>
+              <button>Terms & Conditions</button>
             </Anchor>
           </li>
           <li>
             <Anchor href="mailto:contact@vikingfest.io">
-              <button>CONTACT</button>
+              <button>Contact</button>
             </Anchor>
           </li>
           <li>
