@@ -27,12 +27,7 @@ function about() {
 		In addition to music, VIKINGfest may also feature a variety of other entertainment and activities, such as reenactments, crafts, games, and more. Whether you're a fan of traditional Viking music or just looking for a fun and unique festival experience, VIKINGfest has something for everyone."
         image={atendeeImage2}
       ></AboutSection>
-      <AboutSection
-        headline="BEYOND THE FESTIVAL - The impact of your visit"
-        content="VIKINGfest is more than just a celebration of Viking and Norse culture - it's also a way to give back to the community. A portion of all ticket sales and proceeds from the festival will be donated to the local Viking museum, helping to preserve and promote the history and heritage of the Vikings for future generations.Your donations will directly support the preservation and restoration of valuable artifacts, as well as educational programming and outreach efforts. By attending VIKINGfest, you're not just having a great time - you're also playing a critical role in the preservation of our shared history."
-        image={atendeeImage2}
-        order="rev"
-      ></AboutSection>
+
       <FaqAccordion></FaqAccordion>
     </div>
   );
