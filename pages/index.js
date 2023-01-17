@@ -6,6 +6,7 @@ import AreaSection from "../components/area-section/AreaSection.jsx";
 import Sponsors from "../components/sponsors/Sponsors.jsx";
 import UpcomingEvents from "../components/upcoming-events/UpcomingEvents.jsx";
 import Help from "../components/help/Help.jsx";
+import CTAButton from "../components/cta-button/CTAButton.jsx";
 function Home(props) {
   return (
     <div>
@@ -16,6 +17,7 @@ function Home(props) {
       </Head>
 
       <main>
+        <CTAButton />
         <Hero />
         <InformationBar schedule={props.data} />
         <ArtistsOverview />
