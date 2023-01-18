@@ -27,6 +27,7 @@ function about() {
 		In addition to music, VIKINGfest may also feature a variety of other entertainment and activities, such as reenactments, crafts, games, and more. Whether you're a fan of traditional Viking music or just looking for a fun and unique festival experience, VIKINGfest has something for everyone."
         image={atendeeImage2}
       ></AboutSection>
+
       <FaqAccordion></FaqAccordion>
     </div>
   );

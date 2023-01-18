@@ -1,0 +1,67 @@
+.button {
+  height: 160px;
+  width: 160px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  position: fixed;
+  z-index: 100;
+  margin: auto;
+  right: calc(50vw - 80px);
+  bottom: 5vh;
+}
+
+.svg {
+  grid-area: 1/1;
+  z-index: -1;
+  height: 160px;
+  width: 160px;
+  animation: rotateButton 25s linear infinite;
+}
+
+.buttonAnchor {
+  grid-area: 1/1;
+  z-index: 1;
+  color: var(--secondary-300);
+  text-align: center;
+  font-family: var(--ff-display);
+  text-transform: uppercase;
+  font-size: var(--type-h4);
+}
+.buttonAnchor:hover {
+  color: var(--accent-orange);
+}
+
+@keyframes rotateButton {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* @media screen and (min-width: 400px) {
+} */
+
+@media screen and (min-width: 768px) {
+  .button,
+  .svg {
+    height: 180px;
+    width: 180px;
+  }
+  .button {
+    right: 3vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .button,
+  .svg {
+    height: 250px;
+    width: 250px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+}

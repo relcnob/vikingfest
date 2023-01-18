@@ -1,0 +1,7 @@
+.section h1 {
+  font-size: var(--type-h1);
+  color: var(--accent-orange);
+  margin-top: var(--spacing-xl);
+  text-align: center;
+  font-family: var(--ff-display);
+}

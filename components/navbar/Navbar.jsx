@@ -50,10 +50,16 @@ function Navbar() {
                 ToggleMenu === styles.show ? setToggleMenu("") : "";
               }}
             >
-              <Anchor
-                href="https://vikingfest-app.netlify.app/"
-                className={styles.link}
-              >
+              <Anchor href="/impact" className={styles.link}>
+                Impact
+              </Anchor>
+            </li>
+            <li
+              onClick={() => {
+                ToggleMenu === styles.show ? setToggleMenu("") : "";
+              }}
+            >
+              <Anchor href="https://vikingfest-app.netlify.app/" className={styles.link}>
                 Schedule App
               </Anchor>
             </li>
