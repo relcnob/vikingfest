@@ -1,21 +1,21 @@
 .button {
-  height: 160px;
-  width: 160px;
+  height: 120px;
+  width: 120px;
   display: grid;
   align-items: center;
   justify-items: center;
   position: fixed;
   z-index: 100;
   margin: auto;
-  right: calc(50vw - 80px);
-  bottom: 5vh;
+  right: var(--spacing-m);
+  bottom: var(--spacing-m);
 }
 
 .svg {
   grid-area: 1/1;
   z-index: -1;
-  height: 160px;
-  width: 160px;
+  height: 120px;
+  width: 120px;
   animation: rotateButton 25s linear infinite;
 }
 
@@ -26,7 +26,8 @@
   text-align: center;
   font-family: var(--ff-display);
   text-transform: uppercase;
-  font-size: var(--type-h4);
+  font-size: var(--type-body);
+  max-width: 7ch;
 }
 .buttonAnchor:hover {
   color: var(--accent-orange);
@@ -51,7 +52,10 @@
     width: 180px;
   }
   .button {
-    right: 3vw;
+    right: var(--spacing-m);
+  }
+  .buttonAnchor {
+    font-size: var(--type-h4);
   }
 }
 
