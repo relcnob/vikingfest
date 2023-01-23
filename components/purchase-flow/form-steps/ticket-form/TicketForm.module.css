@@ -43,6 +43,10 @@
   gap: 1rem;
   align-items: flex-start;
 }
+
+.inner img {
+  align-self: center;
+}
 .thumbnail {
   border: 2px solid var(--secondary-100);
   border-radius: 4px;
@@ -51,7 +55,7 @@
   align-self: flex-end;
 }
 
-.tents div {
+.tents > div {
   display: flex;
   gap: var(--spacing-s);
   justify-content: space-between;
@@ -61,8 +65,26 @@
   flex-direction: column;
 }
 .ticket_form .flex_vert div:first-child {
-  padding-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-xs);
   align-items: center;
+}
+
+.ticket_form article div label + p {
+  margin-top: var(--spacing-2xs);
+  margin-left: var(--spacing-m);
+}
+
+.ticket_form article div p:nth-of-type(2) {
+  color: var(--accent-orange);
+  font-size: var(--type-small);
+  margin-top: var(--spacing-2xs);
+}
+
+.additional_info {
+  margin-left: var(--spacing-m);
+}
+.radio_button {
+  margin-right: 0.7rem;
 }
 
 @media only screen and (min-width: 768px) {
@@ -75,6 +97,9 @@
   }
   .tents {
     padding-left: var(--spacing-m);
+  }
+  .flex_horizontal div:last-of-type {
+    align-self: center;
   }
 }
 @media only screen and (min-width: 1200px) {

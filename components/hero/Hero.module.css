@@ -63,6 +63,10 @@
   align-items: flex-end;
 }
 
+.foregroundWrapper {
+  margin-bottom: -1px;
+}
+
 @media screen and (min-width: 400px) {
   .headline {
     font-size: var(--type-h2);

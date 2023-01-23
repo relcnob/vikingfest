@@ -19,8 +19,11 @@ function BandList(props) {
       }
 
       displayedArr = filteredArray.filter(isMatching);
+      props.setMaxPage(Math.ceil(displayedArr.length / 14));
+      props.setCurrentPage(1);
     } else {
       displayedArr = props.data;
+      props.setMaxPage(Math.ceil(displayedArr.length / 14));
     }
   }
 
@@ -109,7 +112,15 @@ function BandList(props) {
       </header>
       <div className={styles.bandList}>
         {slicedArr.map((band) => {
-          return <BandCard key={band.slug} name={band.name} genre={band.genre} id={band.slug} image={band.logo}></BandCard>;
+          return (
+            <BandCard
+              key={band.slug}
+              name={band.name}
+              genre={band.genre}
+              id={band.slug}
+              image={band.logo}
+            ></BandCard>
+          );
         })}
       </div>
     </section>

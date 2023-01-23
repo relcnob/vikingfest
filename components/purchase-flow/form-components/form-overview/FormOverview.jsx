@@ -1,7 +1,4 @@
-import {
-  CartContext,
-  CartDispatchContext,
-} from "../../../../contexts/CartContext";
+import { CartContext, CartDispatchContext } from "../../../../contexts/CartContext";
 import InlineError from "../inline-error/InlineError";
 import styles from "./FormOverview.module.css";
 import { useState, useEffect, useContext } from "react";
@@ -31,120 +28,40 @@ function FormOverview({ error, tickets, availableSpots }) {
         >
           Hide labels
         </span>
-        <div
-          className={
-            showStage === "Vanaheim"
-              ? `${styles.show} ${styles.vanaheim}`
-              : `${styles.hide} ${styles.vanaheim}`
-          }
-        >
+        <div className={showStage === "Vanaheim" ? `${styles.show} ${styles.vanaheim}` : `${styles.hide} ${styles.vanaheim}`}>
           <h3>Vanaheim</h3>
           <p>Stage</p>
         </div>
-        <div
-          className={
-            showStage === "Midgard"
-              ? `${styles.show} ${styles.midgard}`
-              : `${styles.hide} ${styles.midgard}`
-          }
-        >
+        <div className={showStage === "Midgard" ? `${styles.show} ${styles.midgard}` : `${styles.hide} ${styles.midgard}`}>
           <h3>Midgard</h3>
           <p>Stage</p>
         </div>
-        <div
-          className={
-            showStage === "Jotunheim"
-              ? `${styles.show} ${styles.jotunheim}`
-              : `${styles.hide} ${styles.jotunheim}`
-          }
-        >
+        <div className={showStage === "Jotunheim" ? `${styles.show} ${styles.jotunheim}` : `${styles.hide} ${styles.jotunheim}`}>
           <h3>Jotunheim</h3>
           <p>Stage</p>
         </div>
-        <div
-          className={
-            showStage === "Svartheim"
-              ? `${styles.show} ${styles.svartheim}`
-              : `${styles.hide} ${styles.svartheim}`
-          }
-        >
+        <div className={showStage === "Svartheim" ? `${styles.show} ${styles.svartheim}` : `${styles.hide} ${styles.svartheim}`}>
           <h3>Svartheim</h3>
-          <p>
-            {Object.keys(availableSpots).length > 0 &&
-            availableSpots["Svartheim"] > tickets
-              ? `${availableSpots["Svartheim"]} left`
-              : "No available spots"}
-          </p>
+          <p>{Object.keys(availableSpots).length > 0 && availableSpots["Svartheim"] > tickets ? `${availableSpots["Svartheim"]} left` : "No available spots"}</p>
         </div>
-        <div
-          className={
-            showStage === "Nilfheim"
-              ? `${styles.show} ${styles.niflheim}`
-              : `${styles.hide} ${styles.niflheim}`
-          }
-        >
+        <div className={showStage === "Nilfheim" ? `${styles.show} ${styles.niflheim}` : `${styles.hide} ${styles.niflheim}`}>
           <h3>Nilfheim</h3>
-          <p>
-            {Object.keys(availableSpots).length > 0 &&
-            availableSpots["Nilfheim"] > tickets
-              ? `${availableSpots["Nilfheim"]} left`
-              : "No available spots"}
-          </p>
+          <p>{Object.keys(availableSpots).length > 0 && availableSpots["Nilfheim"] > tickets ? `${availableSpots["Nilfheim"]} left` : "No available spots"}</p>
         </div>
-        <div
-          className={
-            showStage === "Helheim"
-              ? `${styles.show} ${styles.helheim}`
-              : `${styles.hide} ${styles.helheim}`
-          }
-        >
+        <div className={showStage === "Helheim" ? `${styles.show} ${styles.helheim}` : `${styles.hide} ${styles.helheim}`}>
           <h3>Helheim</h3>
-          <p>
-            {Object.keys(availableSpots).length > 0 &&
-            availableSpots["Helheim"] > tickets
-              ? `${availableSpots["Helheim"]} left`
-              : "No available spots"}
-          </p>
+          <p>{Object.keys(availableSpots).length > 0 && availableSpots["Helheim"] > tickets ? `${availableSpots["Helheim"]} left` : "No available spots"}</p>
         </div>
-        <div
-          className={
-            showStage === "Muspelheim"
-              ? `${styles.show} ${styles.muspelheim}`
-              : `${styles.hide} ${styles.muspelheim}`
-          }
-        >
+        <div className={showStage === "Muspelheim" ? `${styles.show} ${styles.muspelheim}` : `${styles.hide} ${styles.muspelheim}`}>
           <h3>Muspelheim</h3>
-          <p>
-            {Object.keys(availableSpots).length > 0 &&
-            availableSpots["Muspelheim"] > tickets
-              ? `${availableSpots["Muspelheim"]} left`
-              : "No available spots"}{" "}
-          </p>
+          <p>{Object.keys(availableSpots).length > 0 && availableSpots["Muspelheim"] > tickets ? `${availableSpots["Muspelheim"]} left` : "No available spots"} </p>
         </div>
-        <div
-          className={
-            showStage === "Alfheim"
-              ? `${styles.show} ${styles.alfheim}`
-              : `${styles.hide} ${styles.alfheim}`
-          }
-        >
+        <div className={showStage === "Alfheim" ? `${styles.show} ${styles.alfheim}` : `${styles.hide} ${styles.alfheim}`}>
           <h3>Alfheim</h3>
-          <p>
-            {Object.keys(availableSpots).length > 0 &&
-            availableSpots["Alfheim"] > tickets
-              ? `${availableSpots["Alfheim"]} left`
-              : "No available spots"}
-          </p>
+          <p>{Object.keys(availableSpots).length > 0 && availableSpots["Alfheim"] > tickets ? `${availableSpots["Alfheim"]} left` : "No available spots"}</p>
         </div>
       </section>
-      <svg
-        width="1024"
-        height="1024"
-        viewBox="0 0 1024 1024"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        className={styles.mapWrapper}
-      >
+      <svg width="1024" height="1024" viewBox="0 0 1024 1024" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.mapWrapper}>
         <g clipPath="url(#clip0_555_4750)">
           <path d="M1024 0H0V1024H1024V0Z" fill="#1A1A24" />
           <path
@@ -247,22 +164,10 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M433.706 409.934H401.436V396.893H389.516V367.334L402.339 354.51H432.853L445.676 367.334V396.893H433.706V409.934ZM406.354 405.016H428.788V391.975H440.758V369.37L430.816 359.428H404.375L394.434 369.37V391.975H406.354V405.016H406.354Z"
               fill="white"
             />
-            <path
-              d="M410.909 380.556L405.72 375.367L400.531 380.556L405.72 385.745L410.909 380.556Z"
-              fill="white"
-            />
-            <path
-              d="M434.56 380.556L429.371 375.367L424.182 380.556L429.371 385.745L434.56 380.556Z"
-              fill="white"
-            />
-            <path
-              d="M415.418 398.155H410.5V407.475H415.418V398.155Z"
-              fill="white"
-            />
-            <path
-              d="M424.6 398.155H419.682V407.475H424.6V398.155Z"
-              fill="white"
-            />
+            <path d="M410.909 380.556L405.72 375.367L400.531 380.556L405.72 385.745L410.909 380.556Z" fill="white" />
+            <path d="M434.56 380.556L429.371 375.367L424.182 380.556L429.371 385.745L434.56 380.556Z" fill="white" />
+            <path d="M415.418 398.155H410.5V407.475H415.418V398.155Z" fill="white" />
+            <path d="M424.6 398.155H419.682V407.475H424.6V398.155Z" fill="white" />
           </g>
           <g opacity="0.5">
             <path
@@ -273,10 +178,7 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M444.855 672.136L425.803 661.566L422.535 643.095L433.774 629.483L432.115 618.516L453.98 599.49L450.551 621.055L456.953 629.58L456.366 638.168L469.117 646.669L462.086 666.234L444.855 672.136ZM430.237 658.403L445.329 666.775L458.257 662.347L463.187 648.627L451.265 640.678L451.923 631.071L445.368 622.34L446.997 612.085L437.382 620.453L438.964 630.92L427.773 644.475L430.237 658.403V658.403Z"
               fill="white"
             />
-            <path
-              d="M445.233 659.141L437.602 655.29L436.104 647.588L441.382 640.599L445.091 635.321L445.887 645.02L454.291 650.155L452.703 657.007L445.233 659.141Z"
-              fill="white"
-            />
+            <path d="M445.233 659.141L437.602 655.29L436.104 647.588L441.382 640.599L445.091 635.321L445.887 645.02L454.291 650.155L452.703 657.007L445.233 659.141Z" fill="white" />
           </g>
           <g opacity="0.5">
             <path
@@ -287,24 +189,15 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M569.875 530.666H504.237L527.068 477.609L540.434 505.16L548.149 490.033L569.875 530.666ZM511.707 525.747H561.669L548.251 500.655L540.322 516.2L527.337 489.429L511.707 525.747H511.707Z"
               fill="white"
             />
-            <path
-              d="M518.655 503.38L523.435 509.435L527.994 500.484L531.89 506.866L535.995 501.644L527.202 483.519L518.655 503.38Z"
-              fill="white"
-            />
-            <path
-              d="M543.908 504.462L548.418 511.446L553.087 504.485L548.2 495.344L543.908 504.462Z"
-              fill="white"
-            />
+            <path d="M518.655 503.38L523.435 509.435L527.994 500.484L531.89 506.866L535.995 501.644L527.202 483.519L518.655 503.38Z" fill="white" />
+            <path d="M543.908 504.462L548.418 511.446L553.087 504.485L548.2 495.344L543.908 504.462Z" fill="white" />
           </g>
           <g opacity="0.5">
             <path
               d="M507.664 309.927C480.095 309.927 457.664 287.497 457.664 259.927C457.664 232.357 480.095 209.927 507.664 209.927C535.234 209.927 557.664 232.357 557.664 259.927C557.664 287.497 535.234 309.927 507.664 309.927ZM507.664 214.845C482.807 214.845 462.582 235.069 462.582 259.927C462.582 284.785 482.807 305.009 507.664 305.009C532.522 305.009 552.746 284.785 552.746 259.927C552.746 235.069 532.522 214.845 507.664 214.845Z"
               fill="white"
             />
-            <path
-              d="M506.123 254.042L501.486 258.678L531.143 288.335L535.78 283.699L506.123 254.042Z"
-              fill="white"
-            />
+            <path d="M506.123 254.042L501.486 258.678L531.143 288.335L535.78 283.699L506.123 254.042Z" fill="white" />
             <path
               d="M490.525 277.45L469.613 256.54L481.622 249.919L487.307 239.863L497.364 234.178L503.983 222.169L524.893 243.079L512.933 249.747L507.209 259.765L497.189 265.489L490.525 277.45L490.525 277.45ZM477.717 257.688L489.397 269.368L493.561 261.898L503.604 256.16L509.343 246.117L516.812 241.953L505.133 230.273L500.998 237.773L490.915 243.472L485.217 253.554L477.717 257.688Z"
               fill="white"
@@ -315,22 +208,13 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M739.672 559.122C712.102 559.122 689.672 536.693 689.672 509.122C689.672 481.552 712.102 459.122 739.672 459.122C767.241 459.122 789.672 481.552 789.672 509.122C789.672 536.693 767.241 559.122 739.672 559.122ZM739.672 464.04C714.814 464.04 694.59 484.264 694.59 509.122C694.59 533.981 714.814 554.204 739.672 554.204C764.529 554.204 784.754 533.981 784.754 509.122C784.754 484.264 764.529 464.04 739.672 464.04Z"
               fill="white"
             />
-            <path
-              d="M739.799 512.648H733.241V545.159H739.799V512.648Z"
-              fill="white"
-            />
-            <path
-              d="M726.386 513.498L723.03 517.095L734.659 527.941L738.015 524.344L726.386 513.498Z"
-              fill="white"
-            />
+            <path d="M739.799 512.648H733.241V545.159H739.799V512.648Z" fill="white" />
+            <path d="M726.386 513.498L723.03 517.095L734.659 527.941L738.015 524.344L726.386 513.498Z" fill="white" />
             <path
               d="M755.484 520.533L743.57 513.78L729.471 513.456L722.057 520.146L711.204 519.233L703.299 507.554L709.013 495.242L722.178 487.412L729.335 476.562L750.03 473.759L771.285 489.201L770.528 509.432L755.484 520.533V520.533ZM713.958 514.529L720.344 515.067L727.63 508.495L744.918 508.893L755.132 514.68L765.703 506.882L766.271 491.637L748.736 478.898L732.21 481.136L725.662 491.062L712.832 498.692L708.931 507.101L713.958 514.529V514.529Z"
               fill="white"
             />
-            <path
-              d="M738.258 532.154L734.781 528.677L746.149 517.309V513.81H751.067V519.347L738.258 532.154Z"
-              fill="white"
-            />
+            <path d="M738.258 532.154L734.781 528.677L746.149 517.309V513.81H751.067V519.347L738.258 532.154Z" fill="white" />
           </g>
           <g opacity="0.1">
             <path
@@ -341,10 +225,7 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M839.247 792.6C840.107 791.56 841.007 790.58 841.947 789.64C840.967 790.58 840.087 791.56 839.247 792.6ZM837.247 795.2V795.24C837.307 795.12 837.387 795 837.487 794.9C837.387 795 837.327 795.1 837.247 795.2Z"
               fill="white"
             />
-            <path
-              d="M894.947 853.38C898.327 851.1 901.347 848.28 903.927 845.04C901.327 848.22 898.327 851.02 894.947 853.38Z"
-              fill="white"
-            />
+            <path d="M894.947 853.38C898.327 851.1 901.347 848.28 903.927 845.04C901.327 848.22 898.327 851.02 894.947 853.38Z" fill="white" />
             <path
               d="M912.967 817.28C912.947 816.68 912.906 816.08 912.847 815.5C912.807 814.96 912.746 814.44 912.687 813.92C912.667 813.84 912.667 813.74 912.646 813.64C912.607 813.24 912.547 812.84 912.467 812.44C912.347 811.6 912.167 810.76 911.987 809.92C911.886 809.5 911.786 809.08 911.687 808.66C911.667 808.56 911.626 808.48 911.607 808.38C911.506 807.96 911.386 807.54 911.246 807.12C911.187 806.88 911.107 806.66 911.026 806.42C910.927 806.04 910.807 805.68 910.667 805.32C910.407 804.6 910.146 803.88 909.847 803.16C909.666 802.72 909.487 802.3 909.286 801.86C909.047 801.32 908.787 800.8 908.527 800.28C908.247 799.74 907.987 799.22 907.687 798.72C906.767 797.06 905.707 795.46 904.547 793.94C904.287 793.58 903.987 793.22 903.707 792.86H903.647C897.067 784.76 887.567 779.16 876.707 777.78C875.607 777.62 874.487 777.52 873.347 777.48C872.687 777.44 872.027 777.42 871.367 777.42C870.247 777.42 869.127 777.46 868.007 777.58C867.607 777.58 867.207 777.62 866.807 777.68C866.447 777.7 866.067 777.76 865.707 777.82C865.207 777.88 864.707 777.96 864.207 778.04C864.027 778.08 863.847 778.1 863.667 778.14C862.907 778.28 862.147 778.44 861.407 778.64C860.587 778.84 859.787 779.06 859.007 779.3H858.987C858.187 779.56 857.427 779.82 856.647 780.12C855.927 780.38 855.187 780.68 854.487 781.02C854.387 781.06 854.267 781.1 854.167 781.16C853.627 781.38 853.107 781.64 852.587 781.92C852.347 782.02 852.127 782.14 851.887 782.28C851.227 782.62 850.587 782.98 849.967 783.36C849.047 783.9 848.147 784.5 847.267 785.14C846.887 785.38 846.507 785.66 846.147 785.96C845.647 786.32 845.167 786.7 844.687 787.14C844.247 787.48 843.847 787.84 843.427 788.22C843.367 788.26 843.307 788.3 843.267 788.38C842.827 788.78 842.387 789.2 841.947 789.64C841.007 790.58 840.107 791.56 839.247 792.6C838.907 793 838.567 793.42 838.247 793.86C838.047 794.08 837.887 794.32 837.727 794.56C837.647 794.66 837.567 794.76 837.487 794.88C837.473 794.88 837.473 794.887 837.487 794.9C837.386 795 837.307 795.12 837.246 795.24C832.506 801.98 829.727 810.2 829.727 819.06C829.727 836.9 840.987 852.14 856.786 858.06V858.08C856.906 858.12 857.027 858.16 857.146 858.2C857.746 858.42 858.366 858.64 858.987 858.82C859.646 859.02 860.307 859.22 860.967 859.38C861.587 859.54 862.207 859.7 862.847 859.82C862.987 859.86 863.126 859.9 863.266 859.9C863.667 860 864.087 860.06 864.506 860.12C864.847 860.2 865.167 860.24 865.487 860.28C866.047 860.36 866.587 860.44 867.146 860.48C867.847 860.56 868.526 860.62 869.227 860.64C869.927 860.68 870.646 860.7 871.366 860.7C872.087 860.7 872.807 860.68 873.507 860.64C874.207 860.62 874.887 860.56 875.587 860.48H875.647C876.307 860.42 876.947 860.34 877.607 860.24C878.207 860.14 878.807 860.04 879.406 859.92C879.687 859.88 879.967 859.82 880.246 859.74C880.746 859.64 881.266 859.52 881.766 859.38C882.427 859.22 883.087 859.02 883.746 858.82C884.386 858.62 885.026 858.4 885.667 858.18C886.307 857.94 886.947 857.7 887.567 857.44C888.567 857.02 889.567 856.56 890.526 856.04C891.366 855.6 892.207 855.12 893.006 854.64C893.667 854.24 894.307 853.82 894.947 853.38C898.327 851.02 901.327 848.22 903.927 845.04C904.286 844.58 904.646 844.1 905.006 843.62C905.386 843.06 905.786 842.5 906.167 841.94C906.407 841.54 906.667 841.14 906.927 840.72C907.646 839.56 908.286 838.34 908.886 837.1C909.187 836.5 909.467 835.88 909.727 835.26C909.766 835.18 909.786 835.12 909.827 835.04V835.02C911.866 830.14 912.987 824.78 913.006 819.2V819.06C913.006 818.46 912.987 817.86 912.967 817.28ZM905.467 829.44C899.437 837.314 886.041 820.475 882.281 820.595C876.521 820.735 879.381 826.548 878.101 830.708C877.461 832.808 878.232 838.517 877.292 839.337C875.112 841.257 875.73 843.1 875.27 845.04C874.61 847.68 870.475 850.6 866.775 851.44C862.235 852.46 860.303 853.38 856.487 851.44C844.246 845.8 835.727 833.4 835.727 819.06C835.727 813.26 837.127 807.78 839.587 802.94C839.787 803.28 840.007 803.62 840.207 803.98C842.047 807.08 853.138 808.703 853.157 810.483C853.157 811.563 854.347 821.207 853.427 823.427C851.047 829.267 838.727 833.86 843.187 837.3C844.087 837.98 845.127 838.34 846.347 838.34C850.927 838.34 858.167 833.38 870.587 822.06C871.087 821.6 871.467 821.24 871.727 821.02C872.847 820.04 873.427 818.7 873.367 817.26C873.207 813.82 869.547 810.86 864.387 807.06L863.887 806.7C863.307 805.58 862.787 803.94 863.107 803.1C863.307 802.62 864.027 802.34 864.607 802.18C869.887 800.72 876.547 791.22 878.627 784.16C885.987 785.7 892.527 789.52 897.467 794.82C894.667 798.14 893.606 805.406 891.989 805.09C879.584 802.663 880.047 807.1 880.047 811.06C880.047 813.5 881.087 815.58 882.907 816.8C885.507 818.52 889.187 818.34 894.187 816.24C898.667 814.36 904.327 818.34 906.987 820.56C906.847 823.64 906.327 826.62 905.467 829.44Z"
               fill="white"
@@ -363,30 +244,12 @@ function FormOverview({ error, tickets, availableSpots }) {
               d="M157.535 873.515C141.377 873.515 126.318 864.817 118.236 850.815L117.369 849.315L118.236 847.815C126.318 833.814 141.377 825.116 157.535 825.116C173.68 825.116 188.73 833.814 196.812 847.815L197.68 849.315L196.812 850.815C188.73 864.817 173.68 873.515 157.535 873.515ZM124.344 849.315C131.541 860.585 144.102 867.515 157.535 867.515C170.957 867.515 183.508 860.585 190.705 849.315C183.508 838.046 170.957 831.116 157.535 831.116C144.102 831.116 131.541 838.046 124.344 849.315Z"
               fill="white"
             />
-            <path
-              d="M160.523 806.386H154.523V819.061H160.523V806.386Z"
-              fill="white"
-            />
-            <path
-              d="M184.279 818.313L178.279 824.313L182.521 828.555L188.521 822.555L184.279 818.313Z"
-              fill="white"
-            />
-            <path
-              d="M130.775 818.326L126.533 822.568L132.533 828.568L136.775 824.326L130.775 818.326Z"
-              fill="white"
-            />
-            <path
-              d="M160.529 879.583H154.529V892.257H160.529V879.583Z"
-              fill="white"
-            />
-            <path
-              d="M132.533 870.088L126.533 876.088L130.775 880.33L136.775 874.33L132.533 870.088Z"
-              fill="white"
-            />
-            <path
-              d="M182.521 870.075L178.279 874.317L184.279 880.317L188.521 876.075L182.521 870.075Z"
-              fill="white"
-            />
+            <path d="M160.523 806.386H154.523V819.061H160.523V806.386Z" fill="white" />
+            <path d="M184.279 818.313L178.279 824.313L182.521 828.555L188.521 822.555L184.279 818.313Z" fill="white" />
+            <path d="M130.775 818.326L126.533 822.568L132.533 828.568L136.775 824.326L130.775 818.326Z" fill="white" />
+            <path d="M160.529 879.583H154.529V892.257H160.529V879.583Z" fill="white" />
+            <path d="M132.533 870.088L126.533 876.088L130.775 880.33L136.775 874.33L132.533 870.088Z" fill="white" />
+            <path d="M182.521 870.075L178.279 874.317L184.279 880.317L188.521 876.075L182.521 870.075Z" fill="white" />
           </g>
         </g>
         <defs>
@@ -395,41 +258,29 @@ function FormOverview({ error, tickets, availableSpots }) {
           </clipPath>
         </defs>
       </svg>
-      {showStage &&
-        Object.keys(availableSpots).length > 0 &&
-        availableSpots[showStage] > tickets && (
-          <section className={styles.selection}>
-            <h2>You&apos;ve selected {showStage}</h2>
-          </section>
-        )}
-      {showStage &&
-        Object.keys(availableSpots).length > 0 &&
-        availableSpots[showStage] < tickets && (
-          <section className={styles.selection}>
-            <InlineError
-              message={`There are not enough spots for you at ${showStage}`}
-            />
-          </section>
-        )}
+      {showStage && Object.keys(availableSpots).length > 0 && availableSpots[showStage] > tickets && (
+        <section className={styles.selection}>
+          <h2>You&apos;ve selected {showStage}</h2>
+        </section>
+      )}
+      {showStage && Object.keys(availableSpots).length > 0 && availableSpots[showStage] < tickets && (
+        <section className={styles.selection}>
+          <InlineError message={`There are not enough spots for you at ${showStage}`} />
+        </section>
+      )}
 
       <section className={styles.legendWrapper}>
         <div>
           <h2>LEGEND</h2>
           <span
             onClick={() => {
-              toggleLegend === ""
-                ? setToggleLegend("toggled")
-                : setToggleLegend("");
+              toggleLegend === "" ? setToggleLegend("toggled") : setToggleLegend("");
             }}
           >
             {toggleLegend === "" ? "SHOW" : "HIDE"}
           </span>
         </div>
-        <div
-          className={
-            toggleLegend === "toggled" ? styles.showLegend : styles.hideLegend
-          }
-        >
+        <div className={toggleLegend === "toggled" ? styles.showLegend : styles.hideLegend}>
           <ul>
             <li>
               <h4>CAMPING SITES</h4>
@@ -442,7 +293,7 @@ function FormOverview({ error, tickets, availableSpots }) {
           </ul>
         </div>
       </section>
-      {error === 1 && <InlineError message={"You must select a stage"} />}
+      {error === 1 && <InlineError message={"You must select a camping site"} />}
     </div>
   );
 }

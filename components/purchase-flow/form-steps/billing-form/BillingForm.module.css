@@ -12,7 +12,7 @@
 }
 
 .full_row {
-  grid-column: 1/-1;
+  grid-row: 2/3;
 }
 
 .billing_form input {
@@ -20,6 +20,8 @@
   padding-left: var(--spacing-xs);
   border-radius: 4px;
   border: none;
+  font-weight: 400;
+  font-size: 1rem;
   outline: 2px solid var(--secondary-100);
 }
 .billing_form input:focus {
@@ -83,7 +85,7 @@
 }
 
 .selector_item_label:hover {
-  outline: 2px solid var(--accent-orange);
+  border: 2px solid var(--accent-orange);
 }
 .selector_item_radio:checked + .selector_item_label {
   background-color: #ff9d4192;
@@ -101,5 +103,10 @@
   }
   .selector_item_label {
     height: 58px;
+  }
+}
+@media only screen and (max-width: 400px) {
+  .billing_form input {
+    font-size: 0.8rem;
   }
 }
