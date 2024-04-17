@@ -29,7 +29,7 @@ function BandView(props) {
               src={
                 props.data.logo.includes("http")
                   ? props.data.logo
-                  : `https://vikingfest-api.onrender.com//logos/${props.data.logo}`
+                  : `https://vikingfest-api.onrender.com/logos/${props.data.logo}`
               }
               alt={"band name"}
               width="768"

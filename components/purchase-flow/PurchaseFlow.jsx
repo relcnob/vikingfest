@@ -201,7 +201,7 @@ function PurchaseFlow() {
 
     async function reserveSpot() {
       const res = await fetch(
-        "https://vikingfest-api.onrender.com//" + "reserve-spot",
+        "https://vikingfest-api.onrender.com/" + "reserve-spot",
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -225,7 +225,7 @@ function PurchaseFlow() {
         Number(cart.reservation.timeout)
       ) {
         const res = await fetch(
-          "https://vikingfest-api.onrender.com//" + "fullfill-reservation",
+          "https://vikingfest-api.onrender.com/" + "fullfill-reservation",
           {
             method: "POST",
             headers: { "Content-Type": "application/json" },

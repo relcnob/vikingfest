@@ -15,7 +15,7 @@ function LocationForm({ error }) {
       setMessage("Getting available spots");
       setLoading(true);
       const res = await fetch(
-        `https://vikingfest-api.onrender.com//available-spots`
+        `https://vikingfest-api.onrender.com/available-spots`
       );
       const spots = await res.json();
       if (!error) {

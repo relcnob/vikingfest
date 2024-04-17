@@ -77,7 +77,7 @@ function BandCard(props) {
         src={
           props.image.includes("http")
             ? props.image
-            : `https://vikingfest-api.onrender.com//logos/${props.image}`
+            : `https://vikingfest-api.onrender.com/logos/${props.image}`
         }
         alt="bandimage"
         className={styles.bandImage}

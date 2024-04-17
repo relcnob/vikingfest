@@ -6,8 +6,8 @@ function bandPage(props) {
 
 export async function getStaticProps(context) {
   const slug = context.params.slug;
-  const res = await fetch("https://vikingfest-api.onrender.com//bands");
-  const sched = await fetch("https://vikingfest-api.onrender.com//schedule");
+  const res = await fetch("https://vikingfest-api.onrender.com/bands");
+  const sched = await fetch("https://vikingfest-api.onrender.com/schedule");
   if (res.status !== 200) {
     return {
       notFound: true,
@@ -27,7 +27,7 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-  const res = await fetch("https://vikingfest-api.onrender.com//bands");
+  const res = await fetch("https://vikingfest-api.onrender.com/bands");
   const data = await res.json();
 
   const paths = data.map((band) => {
