@@ -15,6 +15,18 @@ function BandView(props) {
     activeStages = arr;
   }
 
+  const getImage = () => {
+    if (props.data.logo.includes("placeimg")) {
+      return `https://via.assets.so/album.png?id=${Math.floor(
+        Math.random() * 64 + 1
+      )}&q=95&w=360&h=360&fit=fill`;
+    } else {
+      return props.data.logo.includes("http")
+        ? props.data.logo
+        : `https://vikingfest-api.onrender.com/logos/${props.data.logo}`;
+    }
+  };
+
   useEffect(() => {
     setActiveMap(activeStages);
   }, []);
@@ -26,11 +38,7 @@ function BandView(props) {
           <div className={styles.image}>
             <Image
               className={styles.image}
-              src={
-                props.data.logo.includes("http")
-                  ? props.data.logo
-                  : `https://vikingfest-api.onrender.com/logos/${props.data.logo}`
-              }
+              src={getImage()}
               alt={"band name"}
               width="768"
               height="768"

@@ -4,6 +4,18 @@ import imageSrc from "../../../public/images/placeholder-viking.webp";
 import shieldOverlay from "../../../public/images/shield.svg";
 import Anchor from "../../Anchor";
 function BandCard(props) {
+  const getImage = () => {
+    if (props.image.includes("placeimg")) {
+      return `https://via.assets.so/album.png?id=${Math.floor(
+        Math.random() * 64 + 1
+      )}&q=95&w=360&h=360&fit=fill`;
+    } else {
+      return props.image.includes("http")
+        ? props.image
+        : `https://vikingfest-api.onrender.com/logos/${props.image}`;
+    }
+  };
+
   return (
     <article className={styles.bandCard}>
       <section className={`${styles.ornaments} ${styles[props.genre]}`}>
@@ -74,11 +86,7 @@ function BandCard(props) {
         className={styles.shieldOverlay}
       ></Image>
       <Image
-        src={
-          props.image.includes("http")
-            ? props.image
-            : `https://vikingfest-api.onrender.com/logos/${props.image}`
-        }
+        src={getImage()}
         alt="bandimage"
         className={styles.bandImage}
         width="768"
