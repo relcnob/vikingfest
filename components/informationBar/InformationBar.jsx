@@ -10,7 +10,8 @@ function InformationBar(props) {
   let today = new Date();
   const nowDay = days[today.getDay()];
   const nowTime = today.getHours();
-  const playingIndex = Math.floor(nowTime / 2);
+  const playingIndex =
+    Math.floor(nowTime / 2) > 0 ? Math.floor(nowTime / 2) : 1;
   const [data, setData] = useState();
   const [isDataLoaded, setIsDataLoaded] = useState(false);
   useEffect(() => {
@@ -19,7 +20,6 @@ function InformationBar(props) {
         res.json().then((data) => {
           setData(data);
           setIsDataLoaded(true);
-          console.log(playingIndex);
         })
       );
     }
