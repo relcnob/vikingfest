@@ -83,15 +83,26 @@ function PurchaseFlow() {
             if (!personalData[i][`dob_guest_${i}`]) {
               personal_errors.push(`dob_guest_${i}`);
             }
-            if (!personalData[i][`full_name_guest_${i}`].match(/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/)) {
+            if (
+              !personalData[i][`full_name_guest_${i}`].match(
+                /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/
+              )
+            ) {
               personal_errors.push(`full_name_guest_${i}`);
             }
-            if (!personalData[i][`email_guest_${i}`].match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+            if (
+              !personalData[i][`email_guest_${i}`].match(
+                /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+              )
+            ) {
               personal_errors.push(`email_guest_${i}`);
             }
           }
 
-          dispatch({ type: "INFO", payload: { personalData, personal_errors } });
+          dispatch({
+            type: "INFO",
+            payload: { personalData, personal_errors },
+          });
           if (personal_errors.length === 0) {
             nextStep();
           }
@@ -118,10 +129,17 @@ function PurchaseFlow() {
           if (!body.cvc) {
             payment_errors.push("security_code");
           }
-          if (!body.name_on_card.match(/(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/)) {
+          if (
+            !body.name_on_card.match(
+              /(^[A-Za-z]{3,16})([ ]{0,1})([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})?([ ]{0,1})?([A-Za-z]{3,16})/
+            )
+          ) {
             payment_errors.push("name_on_card");
           }
-          dispatch({ type: "PAYMENT", payload: { payment_info: { ...body }, payment_errors } });
+          dispatch({
+            type: "PAYMENT",
+            payload: { payment_info: { ...body }, payment_errors },
+          });
           if (payment_errors.length < 1) {
             nextStep();
           }
@@ -182,23 +200,38 @@ function PurchaseFlow() {
     }
 
     async function reserveSpot() {
-      const res = await fetch("https://vikingfestserver.fly.dev/" + "reserve-spot", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ area: cart.camping.site, amount: cart.vip.quantity + cart.regular.quantity }),
-      });
+      const res = await fetch(
+        "https://vikingfest-api.onrender.com//" + "reserve-spot",
+        {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            area: cart.camping.site,
+            amount: cart.vip.quantity + cart.regular.quantity,
+          }),
+        }
+      );
       const reservation = await res.json();
 
-      dispatch({ type: "RESERVATION", payload: { ...reservation, time: Date.now() } });
+      dispatch({
+        type: "RESERVATION",
+        payload: { ...reservation, time: Date.now() },
+      });
     }
 
     async function fulfillOrder() {
-      if (Number(Date.now()) - Number(cart.reservation.time) < Number(cart.reservation.timeout)) {
-        const res = await fetch("https://vikingfestserver.fly.dev/" + "fullfill-reservation", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ id: cart.reservation.id }),
-        });
+      if (
+        Number(Date.now()) - Number(cart.reservation.time) <
+        Number(cart.reservation.timeout)
+      ) {
+        const res = await fetch(
+          "https://vikingfest-api.onrender.com//" + "fullfill-reservation",
+          {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ id: cart.reservation.id }),
+          }
+        );
         const fulfill = await res.json();
         const { data, error } = await supabase
           .from("orders")
@@ -246,7 +279,11 @@ function PurchaseFlow() {
               <h1 className={s.h1}>{currentTitle()}</h1>
               <FormBreadcrumbs currentStep={currentStep} />
               {currentStep !== 5 && currentView}
-              <FormSubmit currentStep={currentStep} prev={prevStep} next={validateCurrentStep} />
+              <FormSubmit
+                currentStep={currentStep}
+                prev={prevStep}
+                next={validateCurrentStep}
+              />
             </form>
           )
         )}

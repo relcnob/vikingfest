@@ -39,7 +39,7 @@ function Bands({ data }) {
 }
 
 export async function getStaticProps(ctx) {
-  const res = await fetch("https://vikingfestserver.fly.dev/bands");
+  const res = await fetch("https://vikingfest-api.onrender.com//bands");
   const data = await res.json();
 
   return {

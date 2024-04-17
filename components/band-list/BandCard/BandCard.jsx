@@ -68,8 +68,22 @@ function BandCard(props) {
           </svg>
         </span>
       </section>
-      <Image src={shieldOverlay} alt="shield" className={styles.shieldOverlay}></Image>
-      <Image src={props.image.includes("http") ? props.image : `https://vikingfestserver.fly.dev/logos/${props.image}`} alt="bandimage" className={styles.bandImage} width="768" height="768"></Image>
+      <Image
+        src={shieldOverlay}
+        alt="shield"
+        className={styles.shieldOverlay}
+      ></Image>
+      <Image
+        src={
+          props.image.includes("http")
+            ? props.image
+            : `https://vikingfest-api.onrender.com//logos/${props.image}`
+        }
+        alt="bandimage"
+        className={styles.bandImage}
+        width="768"
+        height="768"
+      ></Image>
       <section className={styles.bandDetails}>
         <h2>{props.name}</h2>
         <p>{props.genre}</p>

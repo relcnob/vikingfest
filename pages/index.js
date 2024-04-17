@@ -7,6 +7,8 @@ import Sponsors from "../components/sponsors/Sponsors.jsx";
 import UpcomingEvents from "../components/upcoming-events/UpcomingEvents.jsx";
 import Help from "../components/help/Help.jsx";
 import CTAButton from "../components/cta-button/CTAButton.jsx";
+import { useState } from "react";
+
 function Home(props) {
   return (
     <div>
@@ -19,7 +21,7 @@ function Home(props) {
       <main>
         <CTAButton />
         <Hero />
-        <InformationBar schedule={props.data} />
+        <InformationBar />
         <ArtistsOverview />
         <AreaSection></AreaSection>
         <Sponsors />
@@ -30,19 +32,19 @@ function Home(props) {
   );
 }
 
-export async function getStaticProps() {
-  const res = await fetch("https://vikingfestserver.fly.dev/schedule");
-  // if (res.status !== 200) {
-  //   return {
-  //     notFound: true,
-  //   };
-  // }
-  const data = await res.json();
-  return {
-    props: {
-      data: data,
-    },
-  };
-}
+// export async function getStaticProps() {
+//   const res = await fetch("https://vikingfest-api.onrender.com/schedule");
+//   // if (res.status !== 200) {
+//   //   return {
+//   //     notFound: true,
+//   //   };
+//   // }
+//   const data = await res.json();
+//   return {
+//     props: {
+//       data: data,
+//     },
+//   };
+// }
 
 export default Home;

@@ -14,7 +14,9 @@ function LocationForm({ error }) {
     async function getAvailability() {
       setMessage("Getting available spots");
       setLoading(true);
-      const res = await fetch(`https://vikingfestserver.fly.dev/available-spots`);
+      const res = await fetch(
+        `https://vikingfest-api.onrender.com//available-spots`
+      );
       const spots = await res.json();
       if (!error) {
         const newSpots = {};
@@ -39,7 +41,11 @@ function LocationForm({ error }) {
         <div className={s.location_form}>
           <fieldset>
             <legend>Click on the camping spot</legend>
-            <FormOverview error={error} availableSpots={availableSpots} tickets={cart.vip.quantity + cart.regular.quantity} />
+            <FormOverview
+              error={error}
+              availableSpots={availableSpots}
+              tickets={cart.vip.quantity + cart.regular.quantity}
+            />
           </fieldset>
         </div>
       )}
