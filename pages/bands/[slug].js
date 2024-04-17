@@ -5,7 +5,8 @@ function bandPage(props) {
 }
 
 export async function getStaticProps(context) {
-  const slug = context.params.slug;
+  console.log(context);
+  const slug = context.params.slug.toString();
   const res = await fetch("https://vikingfest-api.onrender.com/bands");
   const sched = await fetch("https://vikingfest-api.onrender.com/schedule");
   if (res.status !== 200) {
